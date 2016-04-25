@@ -1,0 +1,129 @@
+@font-face {
+	font-family: 'antwerpen_regular';
+	src: url('../fonts/webfonts/regular/Antwerpen-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'antwerpen_smallCaps';
+	src: url('../fonts/webfonts/smallCaps/AntwerpenSmallCaps-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'antwerpen_tall';
+	src: url('../fonts/webfonts/tall/AntwerpenTall-Tall.ttf');
+}
+
+body {
+	height: 100%;
+}
+
+.navbar {
+	background-color: #8d9092;
+	
+}
+
+.navbar-header>.navbar-brand {
+	color: white;
+	font-family: 'antwerpen_regular';
+}
+
+#brand-image {
+	float: left;
+	height: 100%;
+}
+
+#div-brand-image {
+	display: block;
+	float: left;
+	padding: 0;
+	padding-right: 15px;
+	margin-left: 0;
+	height: 50px;
+}
+
+.navbar-collapse>.nav>li>a {
+	color: white;
+	font-family: 'antwerpen_smallCaps';
+}
+
+.navbar-header>.navbar-toggle>.icon-bar {
+	background-color: white;
+}
+
+@media screen and (max-width: 767px) {
+	#div-brand-image {
+		padding-right: 0px;
+		padding-left: 15px;
+	}
+}
+
+
+/* Makes images fully responsive */
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------- Carousel Styling ------------------- */
+.carousel-caption {
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 0 0 10px 25px;
+  color: #fff;
+  text-align: left;
+  font-family: 'antwerpen_tall';
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+  margin: 0;
+  padding: 0 25px 25px 0;
+  text-align: right;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+
+.footer {
+	background-color: #8d9092;
+}
+
+.footer span {
+	display: block;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.footer>span.left, .footer>span.right {
+	display: block;
+	float: left;
+	width: 50%;
+}
+
+.footer>span.right {
+	text-align: right;
+}
+
+.footer span p {
+	margin: 0;
+	color: white;
+	font-family: 'antwerpen_smallCaps';
+}
