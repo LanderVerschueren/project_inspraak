@@ -112,13 +112,13 @@ body {
 	padding-top: 5px;
 }
 
-.footer>span.left, .footer>span.right {
+.footer>.container>span.left, .footer>.container>span.right {
 	display: block;
 	float: left;
 	width: 50%;
 }
 
-.footer>span.right {
+.footer>.container>span.right {
 	text-align: right;
 }
 

@@ -95,13 +95,14 @@
     @yield('content')
 
     <div class="footer navbar-fixed-bottom">
-        <span class="left">
-            <p>Team Bananas</p>
-        </span>
-        <span class="right">
-            <p>Project Antwerpen</p>
-        </span>
-      </div>
+        <div class="container">
+            <span class="left">
+                <p>Team Bananas</p>
+            </span>
+            <span class="right">
+                <p>Project Antwerpen</p>
+            </span>
+        </div>
     </div>
 
     <!-- JavaScripts -->
