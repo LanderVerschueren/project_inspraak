@@ -30,7 +30,6 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
@@ -39,9 +38,9 @@
                     <span class="icon-bar"></span>
                 </button>
                                 
-                <div id="div-brand-image" href=" {{ url('/home') }} ">    
+                <a href="{{ url('/home') }}" id="div-brand-image">    
                     <img src="{{ URL::asset('images/logo_antwerpen/Tweekleurig_A-LOGO/sRGB/JPEG/A_logo_RGB_123x123.jpg') }}" alt="" id="brand-image">
-                </div>
+                </a>
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/home') }}">
@@ -52,22 +51,11 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/home') }}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ url('/projects') }}">Projecten</a></li>
                 </ul>
 
-                <div class="col-sm-3 col-md-3" id="div-search">
-                    <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Wat zoekt u?" name="q">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-                    </form>
-                </div>
+                
 
 
                 <!-- Right Side Of Navbar -->
@@ -87,6 +75,19 @@
                             </ul>
                         </li>
                     @endif
+
+                    <li id="li_search">
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Wat zoekt u?" name="q">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -108,6 +109,7 @@
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="{{ URL::asset('js/base.js') }}"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>
