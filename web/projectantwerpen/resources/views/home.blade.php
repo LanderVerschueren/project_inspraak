@@ -44,21 +44,28 @@
             <input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios" checked>
             <input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
             <input id="panel-3-ctrl" class="panel-radios" type="radio" name="tab-radios">
+            <input id="nav-ctrl" class="panel-radios" type="checkbox" name="nav-checkbox">
 
             <!-- TABS LIST -->
             <ul id="tabs-list">
                 <!-- MENU TOGGLE -->
                 <label id="open-nav-label" for="nav-ctrl"></label>
                 <li id="li-for-panel-1">
-                    <label class="panel-label" for="panel-1-ctrl">Meest recent</label>
+                    <label class="panel-label" for="panel-1-ctrl">
+                        Meest recent
+                    </label>
                 </li>
                 <!--INLINE-BLOCK FIX-->
                 <li id="li-for-panel-2">
-                    <label class="panel-label" for="panel-2-ctrl">Meest bekeken</label>
+                    <label class="panel-label" for="panel-2-ctrl">
+                        Meest bekeken
+                    </label>
                 </li>
                 <!--INLINE-BLOCK FIX-->
                 <li id="li-for-panel-3">
-                    <label class="panel-label" for="panel-3-ctrl">Populairst</label>
+                    <label class="panel-label" for="panel-3-ctrl">
+                        Populairst
+                    </label>
                 </li>
                 <label id="close-nav-label" for="nav-ctrl">Sluiten</label>
             </ul>
@@ -68,17 +75,29 @@
                 <div class="container">
                     <section id="panel-1">
                         <main>
-                            Meest recent
+                            <ul>
+                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
+                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
+                            </ul>
                         </main>
                     </section>
                     <section id="panel-2">
                         <main>
-                            Meest bekeken
+                            <ul>
+                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
+                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                            </ul>
                         </main>
                     </section>
                     <section id="panel-3">
                         <main>
-                            Populairst
+                            <ul>
+                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
+                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                            </ul>
                         </main>
                     </section>
                 </div>
