@@ -17,9 +17,12 @@ class CreateProjectsTable extends Migration
             $table->string('titel');
             $table->string('categorie');
             $table->text('uitleg');
+            $table->text('fotonaam');
             $table->date('einddatum');
             $table->double('kostprijs');
             $table->integer('fase');
+            $table->text('likes');
+            $table->text('aantal_bekeken');
             $table->timestamps();
         });
     }
