@@ -21,8 +21,8 @@ class CreateProjectsTable extends Migration
             $table->date('einddatum');
             $table->double('kostprijs');
             $table->integer('fase');
-            $table->text('likes');
-            $table->text('aantal_bekeken');
+            $table->integer('likes');
+            $table->integer('aantal_bekeken');
             $table->timestamps();
         });
     }
