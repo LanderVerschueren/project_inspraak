@@ -18,7 +18,7 @@
 	src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.ttf');
 }
 
-body {
+body, html {
 	height: 100%;
 }
 
@@ -166,6 +166,63 @@ input[type="text"] {
 	margin: 0;
 	color: white;
 	font-family: 'antwerpen_smallCaps';
+}
+
+.panel-body {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.panel-body section {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.panel-body section span {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#projects_list {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#projects_list section {
+  display: flex;
+  flex-flow: row wrap;
+  height: 15em;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#projects_list section span {
+  flex: 4;
+  height: 100%;
+  margin-right: 10px;
+}
+
+#projects_list section p {
+  flex: 6;
+}
+
+#projects_list section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+#projects_list>.odd>span {
+  order: 2;
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+#projects_list>.odd>p {
+  order: 1;
 }
 
 
