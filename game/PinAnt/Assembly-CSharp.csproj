@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\CloseMenu.cs" />
      <Compile Include="Assets\Scripts\DisableButtons.cs" />
      <Compile Include="Assets\Scripts\OpenMenu.cs" />
+     <Compile Include="Assets\Scripts\ToggleButtons.cs" />
      <Compile Include="Assets\Scripts\ToggleInfo.cs" />
      <Compile Include="Assets\Scripts\ToggleLike.cs" />
      <Compile Include="Assets\addLike.cs" />
