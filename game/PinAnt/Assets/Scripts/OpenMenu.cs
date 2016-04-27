@@ -7,9 +7,6 @@ public class OpenMenu : MonoBehaviour {
 
      public void Toggle_Menu()
     {
-
-
-        Debug.Log("click");
             menu.SetActive(true);
         
     }
