@@ -7,6 +7,7 @@ public class DisableButtons : MonoBehaviour
   public Button likeButton;
   public Button dislikeButton;
   public Button commentButton;
+    public GameObject projectImage;
 	// Use this for initialization
 	void Start () {
     likeButton.enabled = false;

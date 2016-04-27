@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -78,10 +72,12 @@
     <Compile Include="Assets\Scripts\CloseMenu.cs" />
     <Compile Include="Assets\Scripts\DisableButtons.cs" />
     <Compile Include="Assets\Scripts\OpenMenu.cs" />
+    <Compile Include="Assets\Scripts\OpenWebsite.cs" />
+    <Compile Include="Assets\Scripts\ToggleButtons.cs" />
     <Compile Include="Assets\Scripts\ToggleInfo.cs" />
     <Compile Include="Assets\Scripts\ToggleLike.cs" />
-    <Compile Include="Assets\addLike.cs" />
-    <Compile Include="Assets\btnLike.cs" />
+    <Compile Include="Assets\Scripts\addLike.cs" />
+    <Compile Include="Assets\Scripts\btnLike.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
