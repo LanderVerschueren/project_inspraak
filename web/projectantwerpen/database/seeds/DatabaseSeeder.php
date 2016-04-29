@@ -26,21 +26,21 @@ class DatabaseSeeder extends Seeder
          DB::table('projects')->delete();
          //insert some dummy records
          DB::table('projects')->insert(array(
-             array('titel' => 'Museum aan de stroom', 'categorie' => 'cultuur', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+             array('titel' => 'Museum aan de stroom', 'categorie' => 'renovatie', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'mas.jpg', 'einddatum' => 'mei 2011', 'kostprijs' => '55 miljoen euro', 'fase' => '4', 'likes' => '12345', 'aantal_bekeken' => '65432'),
-             array('titel' => 'Museum aan de stroom', 'categorie' => 'cultuur', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+             	'fotonaam' => 'mas.jpg', 'einddatum' => '2011-06-20', 'kostprijs' => '20 miljoen euro', 'fase' => '1', 'likes' => '50', 'aantal_bekeken' => '632'),
+             array('titel' => 'Meir', 'categorie' => 'heraanleg', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'mas.jpg', 'einddatum' => 'mei 2011', 'kostprijs' => '55 miljoen euro', 'fase' => '4', 'likes' => '12345', 'aantal_bekeken' => '65432'),
-             array('titel' => 'Museum aan de stroom', 'categorie' => 'cultuur', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+             	'fotonaam' => 'meir.png', 'einddatum' => '2016-04-01', 'kostprijs' => '40 miljoen euro', 'fase' => '2', 'likes' => '500', 'aantal_bekeken' => '5432'),
+             array('titel' => 'Grote Markt', 'categorie' => 'opknapwerk', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'mas.jpg', 'einddatum' => 'mei 2011', 'kostprijs' => '55 miljoen euro', 'fase' => '4', 'likes' => '12345', 'aantal_bekeken' => '65432')
+             	'fotonaam' => 'grote_markt.jpg', 'einddatum' => '2013-08-31', 'kostprijs' => '55 miljoen euro', 'fase' => '3', 'likes' => '1345', 'aantal_bekeken' => '6543')
           ));
 
 		DB::table('users_projects')->delete();
