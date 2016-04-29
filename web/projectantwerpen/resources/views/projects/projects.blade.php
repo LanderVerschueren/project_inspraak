@@ -61,11 +61,12 @@
 		<div class="row">
 			<div class="col-md-12" id="projects_list">
 				@foreach($projects as $project)
-					<section ({{$project->id}}%2 === 0) ? '' : 'class="odd"' >
+					<section >
 						<span>
 							<img class="image-responsive" src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
 						</span>
-					<p>{{$project->uitleg}}</p>
+						<p>{{$project->uitleg}}</p>
+					</section>
 				@endforeach
 			</div>
 		</div>
