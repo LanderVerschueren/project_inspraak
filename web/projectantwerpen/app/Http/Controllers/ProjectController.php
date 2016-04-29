@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
 
 class ProjectController extends Controller
 {
@@ -15,6 +16,9 @@ class ProjectController extends Controller
 	}
 
 	public function index() {
-		return view('projects/projects');
+		
+		$projects = DB::table('projects')->get();
+
+		return view('projects/projects', ['projects' => $projects]);
 	}
 }
