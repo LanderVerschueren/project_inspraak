@@ -5,7 +5,7 @@ public class OpenWebsite : MonoBehaviour {
 
     public void GoToWebsite()
     {
-        Application.OpenURL("www.antwerpen.be");
+      Application.OpenURL("http://bananas.multimediatechnology.be/");
     }
 
 }
