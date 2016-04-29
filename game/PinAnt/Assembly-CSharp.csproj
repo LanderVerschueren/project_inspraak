@@ -48,11 +48,12 @@
      <Compile Include="Assets\Scripts\CloseMenu.cs" />
      <Compile Include="Assets\Scripts\DisableButtons.cs" />
      <Compile Include="Assets\Scripts\OpenMenu.cs" />
+     <Compile Include="Assets\Scripts\OpenWebsite.cs" />
      <Compile Include="Assets\Scripts\ToggleButtons.cs" />
      <Compile Include="Assets\Scripts\ToggleInfo.cs" />
      <Compile Include="Assets\Scripts\ToggleLike.cs" />
-     <Compile Include="Assets\addLike.cs" />
-     <Compile Include="Assets\btnLike.cs" />
+     <Compile Include="Assets\Scripts\addLike.cs" />
+     <Compile Include="Assets\Scripts\btnLike.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
