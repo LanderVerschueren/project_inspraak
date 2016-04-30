@@ -75,33 +75,32 @@
             <!-- THE PANELS -->
             <article id="panels">
                 <div class="container">
-
+                <div class="panel_container">
                     <section id="panel-1">
-                        <main>
+                        <div class="main">
                             <ul>
                                 @foreach($projects->sortByDesc('einddatum') as $project)
                                     <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
                                 @endforeach
                             </ul>
-                        </main>
+                        </div>
                     </section>
                     <section id="panel-2">
-                        <main>
+                        <div class="main">
                             <ul>
                                 @foreach($projects->sortByDesc('aantal_bekeken') as $project)
                                     <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
                                 @endforeach
-                            </ul>
-                        </main>
+                        </div>
                     </section>
                     <section id="panel-3">
-                        <main>
+                        <div class="main">
                             <ul>
                                 @foreach($projects->sortByDesc('likes') as $project)
                                     <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
                                 @endforeach
                             </ul>
-                        </main>
+                        </div>
                     </section>
                 </div>
             </article>
