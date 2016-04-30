@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Project;
 use Illuminate\Http\Request;
-use DB;
 
 class HomeController extends Controller
 {
@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $projects = DB::table('projects')->get();
+        $projects = Project::all();
         return view('home', ['projects' => $projects]);
     }
 }

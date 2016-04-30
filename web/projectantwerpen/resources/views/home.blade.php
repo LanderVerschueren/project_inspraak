@@ -75,30 +75,31 @@
             <!-- THE PANELS -->
             <article id="panels">
                 <div class="container">
+
                     <section id="panel-1">
                         <main>
                             <ul>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
+                                @foreach($projects->sortByDesc('einddatum') as $project)
+                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                @endforeach
                             </ul>
                         </main>
                     </section>
                     <section id="panel-2">
                         <main>
                             <ul>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                                @foreach($projects->sortByDesc('aantal_bekeken') as $project)
+                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                @endforeach
                             </ul>
                         </main>
                     </section>
                     <section id="panel-3">
                         <main>
                             <ul>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                                @foreach($projects->sortByDesc('likes') as $project)
+                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                @endforeach
                             </ul>
                         </main>
                     </section>

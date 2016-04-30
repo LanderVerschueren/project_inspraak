@@ -30,12 +30,12 @@ class DatabaseSeeder extends Seeder
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'mas.jpg', 'einddatum' => '2011-06-20', 'kostprijs' => '20 miljoen euro', 'fase' => '1', 'likes' => '50', 'aantal_bekeken' => '632'),
+             	'fotonaam' => 'mas.jpg', 'einddatum' => '2011-06-20', 'kostprijs' => '20 miljoen euro', 'fase' => '1', 'likes' => '50', 'aantal_bekeken' => '5432'),
              array('titel' => 'Meir', 'categorie' => 'heraanleg', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'meir.png', 'einddatum' => '2016-04-01', 'kostprijs' => '40 miljoen euro', 'fase' => '2', 'likes' => '500', 'aantal_bekeken' => '5432'),
+             	'fotonaam' => 'meir.png', 'einddatum' => '2016-04-01', 'kostprijs' => '40 miljoen euro', 'fase' => '2', 'likes' => '500', 'aantal_bekeken' => '632'),
              array('titel' => 'Grote Markt', 'categorie' => 'opknapwerk', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
