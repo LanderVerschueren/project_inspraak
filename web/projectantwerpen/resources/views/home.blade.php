@@ -72,33 +72,69 @@
 
             <!-- THE PANELS -->
             <article id="panels">
-                <div class="container">
+                <div class="panel_container">
                     <section id="panel-1">
-                        <main>
+                        <div class="main">
                             <ul>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
+                                <li>
+                                    <h1>Meir</h1>
+                                    <p>Opknapwerk</p>
+                                    <img src="{{ URL::asset('images/meir.png') }}" alt="">
+                                </li>
+                                <li>
+                                    <h1>Mas</h1>
+                                    <p>Renovatie</p>
+                                    <img src="{{ URL::asset('images/mas.jpg') }}" alt="">
+                                </li>
+                                <li>
+                                    <h1>Skyline</h1>
+                                    <p>Blabla</p>
+                                    <img src="{{ URL::asset('images/skyline.png') }}" alt="">
+                                </li>
                             </ul>
-                        </main>
+                        </div>
                     </section>
                     <section id="panel-2">
-                        <main>
+                        <div class="main">
                             <ul>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                                <li>
+                                    <h1>Skyline</h1>
+                                    <p>Blabla</p>
+                                    <img src="{{ URL::asset('images/skyline.png') }}" alt="">
+                                </li>
+                                <li>
+                                    <h1>Meir</h1>
+                                    <p>Opknapwerk</p>
+                                    <img src="{{ URL::asset('images/meir.png') }}" alt="">
+                                </li>
+                                <li>
+                                    <h1>Mas</h1>
+                                    <p>Renovatie</p>
+                                    <img src="{{ URL::asset('images/mas.jpg') }}" alt="">
+                                </li>
                             </ul>
-                        </main>
+                        </div>
                     </section>
                     <section id="panel-3">
-                        <main>
+                        <div class="main">
                             <ul>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                                <li>
+                                    <h1>Meir</h1>
+                                    <p>Opknapwerk</p>
+                                    <img src="{{ URL::asset('images/meir.png') }}" alt="">
+                                </li>
+                                <li>
+                                    <h1>Mas</h1>
+                                    <p>Renovatie</p>
+                                    <img src="{{ URL::asset('images/mas.jpg') }}" alt="">
+                                </li>
+                                <li>
+                                    <h1>Skyline</h1>
+                                    <p>Blabla</p>
+                                    <img src="{{ URL::asset('images/skyline.png') }}" alt="">
+                                </li>
                             </ul>
-                        </main>
+                        </div>
                     </section>
                 </div>
             </article>

@@ -46,6 +46,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/home') }}">
+                    <i class="fa fa-home" aria-hidden="true"></i>
                     PinAnt
                 </a>
             </div>
@@ -53,7 +54,6 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     <li><a href="{{ url('/projecten') }}">Projecten</a></li>
                 </ul>
 

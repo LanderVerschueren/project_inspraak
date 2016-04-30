@@ -61,7 +61,7 @@
 		<div class="row">
 			<div class="col-md-12" id="projects_list">
 				@foreach($projects as $project)
-					<section >
+					<section class="project_section">
 						<span>
 							<img class="image-responsive" src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
 						</span>

@@ -1,6 +1,16 @@
 @font-face {
   font-family: 'antwerpen_regular';
-  src: url('../fonts/webfonts/regular/Antwerpen-Regular.ttf');
+  src: url('../fonts/webfonts/regular/Antwerpen-Regular.woff') format("woff");
+}
+
+@font-face {
+  font-family: 'antwerpen_regular';
+  src: url('../fonts/webfonts/regular/Antwerpen-Regular.eot');
+}
+
+@font-face {
+  font-family: 'antwerpen_regular';
+  src: url('../fonts/webfonts/regular/Antwerpen-Regular.svg#Antwerpen-Regular') format("svg");
 }
 
 @font-face {
@@ -15,12 +25,32 @@
 
 @font-face {
   font-family: 'antwerpen_sun500';
-  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.ttf');
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'antwerpen_sun500';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.eot');
+}
+
+@font-face {
+  font-family: 'antwerpen_sun500';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.svg#SunAntwerpen_500') format('svg');
 }
 
 @font-face {
   font-family: 'antwerpen_sun300';
-  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.ttf');
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'antwerpen_sun300';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.eot');
+}
+
+@font-face {
+  font-family: 'antwerpen_sun300';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.svg#SunAntwerpen_300') format('svg');
 }
 
 body, html {
@@ -33,7 +63,6 @@ input[type="text"] {
 
 .navbar {
   background-color: #8d9092;
-  
 }
 
 .navbar-header>.navbar-brand {
@@ -81,6 +110,19 @@ input[type="text"] {
 
   .navbar-right {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 767px) {
+
+
+  .main>ul {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .main>ul>li {
+    width: 100%;
   }
 }
 
@@ -190,6 +232,7 @@ input[type="text"] {
   background-color: #CF0039;
   font-family: 'antwerpen_regular';
   border-bottom: none;
+  border-radius: 0;
 }
 
 #filter>.panel>.panel-heading>h4 {
@@ -292,13 +335,13 @@ input[type="text"] {
   object-position: bottom;
 }
 
-#projects_list>.odd>span {
+#projects_list>.project_section:nth-child(even)>span {
   order: 2;
   margin-right: 0;
   margin-left: 10px;
 }
 
-#projects_list>.odd>p {
+.project_section:nth-child(even)>p {
   order: 1;
 }
 
@@ -307,17 +350,21 @@ input[type="text"] {
   border-radius: 0;
 }
 
-main ul {
+.main ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 } 
 
-main ul li {
+.main ul li {
   display: inline-block;
   width: 33%;
+  padding: 1px;
 }
 
-main ul img {
+.main ul img {
     object-fit: cover;
     object-position: bottom;
     width: 100%;
@@ -366,7 +413,7 @@ label.panel-label:hover {
   margin: 0 auto;
   width: 100%;
 }
-#panels section main {
+#panels section>.main {
   box-sizing: border-box;
   max-height: 0;
   opacity: 0;
@@ -375,19 +422,19 @@ label.panel-label:hover {
   overflow-y: hidden;
 }
 
-#panel-1-ctrl:checked ~ #panels #panel-1 main {
+#panel-1-ctrl:checked ~ #panels #panel-1>.main {
   max-height: initial;
   opacity: 1;
   padding: 48px 0px 48px 0px;
 }
 
-#panel-2-ctrl:checked ~ #panels #panel-2 main {
+#panel-2-ctrl:checked ~ #panels #panel-2>.main {
   max-height: initial;
   opacity: 1;
   padding: 48px 0px 48px 0px;
 }
 
-#panel-3-ctrl:checked ~ #panels #panel-3 main {
+#panel-3-ctrl:checked ~ #panels #panel-3>.main {
   max-height: initial;
   opacity: 1;
   padding: 48px 0px 48px 0px;
@@ -642,11 +689,11 @@ label.panel-label:hover {
   display: block;
 }
 
-main h1 {
+.main h1 {
   margin-top: 0;
   font-weight: 300;
   color: #c0392b;
 }
-main p {
+.main p {
   line-height: 1.8;
 }
