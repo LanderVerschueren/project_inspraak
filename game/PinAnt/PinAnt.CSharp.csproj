@@ -70,8 +70,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CloseMenu.cs" />
+    <Compile Include="Assets\Scripts\CloseTab.cs" />
     <Compile Include="Assets\Scripts\DisableButtons.cs" />
     <Compile Include="Assets\Scripts\OpenMenu.cs" />
+    <Compile Include="Assets\Scripts\OpenTab.cs" />
     <Compile Include="Assets\Scripts\OpenWebsite.cs" />
     <Compile Include="Assets\Scripts\SignIn.cs" />
     <Compile Include="Assets\Scripts\ToggleInfo.cs" />
