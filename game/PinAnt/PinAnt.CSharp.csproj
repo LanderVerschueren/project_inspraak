@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\DisableButtons.cs" />
     <Compile Include="Assets\Scripts\OpenMenu.cs" />
     <Compile Include="Assets\Scripts\OpenWebsite.cs" />
+    <Compile Include="Assets\Scripts\SignIn.cs" />
     <Compile Include="Assets\Scripts\ToggleButtons.cs" />
     <Compile Include="Assets\Scripts\ToggleInfo.cs" />
     <Compile Include="Assets\Scripts\ToggleLike.cs" />
