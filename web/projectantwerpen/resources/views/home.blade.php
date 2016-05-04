@@ -7,25 +7,27 @@
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <?php $count = 0; ?>
+                    @foreach($projects as $project)
+                            <?php if($count == 2) break; ?>
+                            <li data-target="#carousel-example-generic" data-slide-to="{{$count}}" class="{{($count === 0) ? 'active' : ''}}"></li>
+                            <?php $count++; ?>
+                    @endforeach
                 </ol>
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="{{ URL::asset('images/mas.jpg') }}" alt="Foto van het MAS (Museum aan de Stroom)">
-                        <div class="carousel-caption">
-                            <h2>Museum aan de stroom</h2>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <img src="{{ URL::asset('images/grote_markt.jpg') }}" alt="Foto van de Grote Markt te Antwerpen">
-                        <div class="carousel-caption">
-                            <h2>Grote Markt</h2>
-                        </div>
-                    </div>
+                    <?php $count = 0; ?>
+                    @foreach($projects as $project)
+                            <?php if($count == 2) break; ?>
+                            <div class="{{($count === 0) ? 'item active' : 'item'}}">
+                            <img src="{{URL::asset('images/'.$project->fotonaam)}}" class=""></li>
+                                <div class="carousel-caption">
+                                    <h2>{{$project->titel}}</h2>
+                                </div>
+                            </div>
+                            <?php $count++; ?>
+                    @endforeach
                 </div>
 
                 <!-- Controls -->
@@ -73,32 +75,32 @@
             <!-- THE PANELS -->
             <article id="panels">
                 <div class="container">
+                <div class="panel_container">
                     <section id="panel-1">
-                        <main>
+                        <div class="main">
                             <ul>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
+                                @foreach($projects->sortByDesc('einddatum') as $project)
+                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                @endforeach
                             </ul>
-                        </main>
+                        </div>
                     </section>
                     <section id="panel-2">
-                        <main>
+                        <div class="main">
                             <ul>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                            </ul>
-                        </main>
+                                @foreach($projects->sortByDesc('aantal_bekeken') as $project)
+                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                @endforeach
+                        </div>
                     </section>
                     <section id="panel-3">
-                        <main>
+                        <div class="main">
                             <ul>
-                                <li><img src="{{ URL::asset('images/mas.jpg') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
-                                <li><img src="{{ URL::asset('images/skyline.png') }}" alt=""></li>
+                                @foreach($projects->sortByDesc('likes') as $project)
+                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                @endforeach
                             </ul>
-                        </main>
+                        </div>
                     </section>
                 </div>
             </article>

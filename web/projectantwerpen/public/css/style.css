@@ -1,88 +1,137 @@
+/* ANTWERPEN REGULAR */
 @font-face {
-	font-family: 'antwerpen_regular';
-	src: url('../fonts/webfonts/regular/Antwerpen-Regular.ttf');
+  font-family: 'antwerpen_regular';
+  src: url('../fonts/webfonts/regular/Antwerpen-Regular.woff') format("woff");
 }
 
 @font-face {
-	font-family: 'antwerpen_smallCaps';
-	src: url('../fonts/webfonts/smallCaps/AntwerpenSmallCaps-Regular.ttf');
+  font-family: 'antwerpen_regular';
+  src: url('../fonts/webfonts/regular/Antwerpen-Regular.eot');
 }
 
 @font-face {
-	font-family: 'antwerpen_tall';
-	src: url('../fonts/webfonts/tall/AntwerpenTall-Tall.ttf');
+  font-family: 'antwerpen_regular';
+  src: url('../fonts/webfonts/regular/Antwerpen-Regular.svg#Antwerpen-Regular') format("svg");
+}
+
+
+/* ANTWERPEN TALL */
+@font-face {
+  font-family: 'antwerpen_tall';
+  src: url('../fonts/webfonts/tall/AntwerpenTall-Tall.ttf');
+}
+
+
+/* ANTWERPEN SUN 500 */
+@font-face {
+  font-family: 'antwerpen_sun500';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'antwerpen_sun';
-	src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.ttf');
+  font-family: 'antwerpen_sun500';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.eot');
+}
+
+@font-face {
+  font-family: 'antwerpen_sun500';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.svg#SunAntwerpen_500') format('svg');
+}
+
+
+/* ANTWERPEN SUN 300 */
+@font-face {
+  font-family: 'antwerpen_sun300';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'antwerpen_sun300';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.eot');
+}
+
+@font-face {
+  font-family: 'antwerpen_sun300';
+  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.svg#SunAntwerpen_300') format('svg');
 }
 
 body, html {
-	height: 100%;
+  height: 100%;
 }
 
 input[type="text"] {
-	font-family: 'antwerpen_sun';
+	font-family: 'antwerpen_sun500';
 }
 
 .navbar {
-	background-color: #8d9092;
-	
+  background-color: #8d9092;
 }
 
 .navbar-header>.navbar-brand {
-	color: white;
-	font-family: 'antwerpen_regular';
+  color: white;
+  font-family: 'antwerpen_regular';
 }
 
 #brand-image {
-	float: left;
-	height: 100%;
+  float: left;
+  height: 100%;
 }
 
 #div-brand-image {
-	display: block;
-	float: left;
-	padding: 0;
-	padding-right: 15px;
-	margin-left: 0;
-	height: 50px;
+  display: block;
+  float: left;
+  padding: 0;
+  padding-right: 15px;
+  margin-left: 0;
+  height: 50px;
 }
 
 .navbar-collapse>.nav>li>a {
-	color: white;
-	font-family: 'antwerpen_smallCaps';
+  color: white;
+  font-family: 'antwerpen_smallCaps';
 }
 
 .navbar-header>.navbar-toggle>.icon-bar {
-	background-color: white;
+  background-color: white;
 }
 
 @media screen and (max-width: 767px) {
-	#div-brand-image {
-		padding-right: 0px;
-		padding-left: 15px;
-	}
+  #div-brand-image {
+    padding-right: 0px;
+    padding-left: 15px;
+  }
 
-	.navbar-form {
-		width: 100%;
-		margin: 0 auto;
-	}
-	
-	.navbar-right>li>a:first-child {
-		padding-left: 15px;
-	}
+  .navbar-form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .navbar-right>li>a:first-child {
+    padding-left: 15px;
+  }
 
-	.navbar-right {
-		margin-bottom: 0;
-	}
+  .navbar-right {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 767px) {
+
+
+  .main>ul {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .main>ul>li {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 767px) and (max-width: 990px) {
-	.navbar-right>li>a:first-child {
-		padding-left: 0;
-	}
+  .navbar-right>li>a:first-child {
+    padding-left: 0;
+  }
 }
 
 /* Makes images fully responsive */
@@ -99,7 +148,7 @@ input[type="text"] {
 }
 
 #carousel-margin {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* ------------------- Carousel Styling ------------------- */
@@ -134,54 +183,128 @@ input[type="text"] {
 }
 
 .carousel-control>.fa {
-	display: block;
-	position: absolute;
-	top: 50%;
-	width: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
 }
 
 .footer {
-	background-color: #8d9092;
+  background-color: #8d9092;
 }
 
 .footer span {
-	display: block;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-bottom: 5px;
-	padding-top: 5px;
+  display: block;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .footer>.container>span.left, .footer>.container>span.right {
-	display: block;
-	float: left;
-	width: 50%;
+  display: block;
+  float: left;
+  width: 50%;
 }
 
 .footer>.container>span.right {
-	text-align: right;
+  text-align: right;
 }
 
 .footer span p {
-	margin: 0;
-	color: white;
-	font-family: 'antwerpen_smallCaps';
+  margin: 0;
+  color: white;
+  font-family: 'antwerpen_smallCaps';
 }
 
-.panel-body {
+#filter {  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#filter>.panel>.panel-body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
 
-.panel-body section {
+#filter>.panel>.panel-heading {
+  text-align: center;
+  background-color: #CF0039;
+  font-family: 'antwerpen_regular';
+  border-bottom: none;
+  border-radius: 0;
+}
+
+#filter>.panel>.panel-heading>h4 {
+  color: white;
+}
+
+#filter>.panel>.panel-body {
+  background-color: #8d9092;
+  font-family: 'antwerpen_sun300';
+}
+
+#checkbox_renovatie:checked + #label_renovatie {
+  color: white;
+}
+
+#checkbox_heraanleg:checked + #label_heraanleg {
+  color: white;
+}
+
+#checkbox_opknapwerk:checked + #label_opknapwerk {
+  color: white;
+}
+
+#checkbox_mening:checked + #label_mening {
+  color: white;
+}
+
+#checkbox_afbraak:checked + #label_afbraak {
+  color: white;
+}
+
+#checkbox_opbouw:checked + #label_opbouw {
+  color: white;
+}
+
+#checkbox_0:checked + #label_0 {
+  color: white;
+}
+
+#checkbox_100:checked + #label_100 {
+  color: white;
+}
+
+#checkbox_1000:checked + #label_1000 {
+  color: white;
+}
+
+#filter>.panel>.panel-body section {
   display: flex;
+  flex-grow: 1;
   flex-flow: column nowrap;
 }
 
-.panel-body section span {
+#filter>.panel>.panel-body section span {
   display: flex;
   flex-flow: row nowrap;
+}
+
+#filter>.panel>.panel-body section span input {
+  /*margin-left: 25%;*/
+  margin-right: 10px;
+}
+
+#filter>.panel {
+  border-radius: 0;
+}
+
+#filter>.panel>.panel-body>section>h5 {
+  font-family: 'antwerpen_tall';
+  text-transform: uppercase;
 }
 
 #projects_list {
@@ -193,7 +316,6 @@ input[type="text"] {
 #projects_list section {
   display: flex;
   flex-flow: row wrap;
-  height: 15em;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -215,35 +337,54 @@ input[type="text"] {
   object-position: bottom;
 }
 
-#projects_list>.odd>span {
+#projects_list>.project_section:nth-child(even)>span {
   order: 2;
   margin-right: 0;
   margin-left: 10px;
 }
 
-#projects_list>.odd>p {
+.project_section:nth-child(even)>p {
   order: 1;
 }
 
+#li_search>form>div>input,
+#li_search>form>div>div>button {
+  border-radius: 0;
+}
 
-
-
+<<<<<<< HEAD
 main ul {
 	list-style-type: none;
 	padding: 0;
+=======
+.main ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+>>>>>>> de8df635e88c02b800e49656e3c94ef7a5453155
 } 
 
-main ul li {
-	display: inline-block;
-	width: 33%;
+.main ul li {
+  display: inline-block;
+  width: 33%;
+  padding: 1px;
 }
 
-main ul img {
-  	object-fit: cover;
-  	object-position: bottom;
-  	width: 100%;
-  	height: 150px;
+.main ul img {
+    object-fit: cover;
+    object-position: bottom;
+    width: 100%;
+    height: 150px;
 }
+
+
+
+
+
+
+
 
 ul#tabs-list {
   list-style: none;
@@ -272,9 +413,6 @@ label.panel-label {
 label.panel-label:hover {
   color: #CF0039;
 }
-#tabs-list label {
-	margin-bottom: 0;
-}
 
 #panels {
   background-color: white;
@@ -283,7 +421,7 @@ label.panel-label:hover {
   margin: 0 auto;
   width: 100%;
 }
-#panels section main {
+#panels section>.main {
   box-sizing: border-box;
   max-height: 0;
   opacity: 0;
@@ -292,19 +430,19 @@ label.panel-label:hover {
   overflow-y: hidden;
 }
 
-#panel-1-ctrl:checked ~ #panels #panel-1 main {
+#panel-1-ctrl:checked ~ #panels #panel-1>.main {
   max-height: initial;
   opacity: 1;
   padding: 48px 0px 48px 0px;
 }
 
-#panel-2-ctrl:checked ~ #panels #panel-2 main {
+#panel-2-ctrl:checked ~ #panels #panel-2>.main {
   max-height: initial;
   opacity: 1;
   padding: 48px 0px 48px 0px;
 }
 
-#panel-3-ctrl:checked ~ #panels #panel-3 main {
+#panel-3-ctrl:checked ~ #panels #panel-3>.main {
   max-height: initial;
   opacity: 1;
   padding: 48px 0px 48px 0px;
@@ -368,7 +506,7 @@ label.panel-label:hover {
     padding: 10px 0;
   }
   #tabs-list label {
-  	margin-bottom: 0;
+    margin-bottom: 0;
   }
   #tabs-list #li-for-panel-1 {
     max-height: 0;
@@ -433,17 +571,12 @@ label.panel-label:hover {
   #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
     pointer-events: none;
     cursor: default;
-    -webkit-transform: translate3d(0, 1px, 0);
+    webkit-transform: translate3d(0, 1px, 0);
             transform: translate3d(0, 1px, 0);
     box-shadow: none;
     border-right: none;
   }
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1.last {
-    border-right: 1px solid #dfdfdf;
-  }
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 + li {
-    border-left: 1px solid #dfdfdf;
-  }
+
   #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
     background-color: white;
     color: #CF0039;
@@ -460,12 +593,6 @@ label.panel-label:hover {
             transform: translate3d(0, 1px, 0);
     box-shadow: none;
     border-right: none;
-  }
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2.last {
-    border-right: 1px solid transparent;
-  }
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 + li {
-    border-left: 1px solid #dfdfdf;
   }
   #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
     background-color: white;
@@ -484,12 +611,6 @@ label.panel-label:hover {
     box-shadow: none;
     border-right: none;
   }
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3.last {
-    border-right: 1px solid transparent;
-  }
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 + li {
-    border-left: 1px solid #dfdfdf;
-  }
   #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
     background-color: white;
     color: #CF0039;
@@ -506,7 +627,6 @@ label.panel-label:hover {
   ul#tabs-list li {
     display: inline-block;
     text-align: center;
-    font-size: 0.875em;
     width: 33%;
     box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.05);
     border-right: 1px solid #dfdfdf;
@@ -516,12 +636,6 @@ label.panel-label:hover {
     -webkit-transition: none;
     transition: none;
     border-right: none;
-  }
-  ul#tabs-list li:hover.last {
-    border-right: 1px solid transparent;
-  }
-  ul#tabs-list li:hover + li {
-    border-left: 1px solid #dfdfdf;
   }
   ul#tabs-list li label.panel-label {
     position: relative;
@@ -562,12 +676,7 @@ label.panel-label:hover {
   }
 }
 .panel-radios {
-  position: fixed;
-  left: 50%;
-  top: 10px;
-  width: 20px;
-  opacity: 0.5;
-  z-index: 99;
+  display: none;
 }
 .panel-radios:nth-child(1) {
   -webkit-transform: translateX(-50px);
@@ -588,11 +697,11 @@ label.panel-label:hover {
   display: block;
 }
 
-main h1 {
+.main h1 {
   margin-top: 0;
   font-weight: 300;
   color: #c0392b;
 }
-main p {
+.main p {
   line-height: 1.8;
 }
