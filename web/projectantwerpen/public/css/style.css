@@ -18,41 +18,67 @@
 /* ANTWERPEN TALL */
 @font-face {
   font-family: 'antwerpen_tall';
-  src: url('../fonts/webfonts/tall/AntwerpenTall-Tall.ttf');
+  src: url('../fonts/webfonts/tall/AntwerpenTall-Tall.woff') format("woff");
+}
+
+@font-face {
+  font-family: 'antwerpen_tall';
+  src: url('../fonts/webfonts/tall/AntwerpenTall-Tall.eot');
+}
+
+@font-face {
+  font-family: 'antwerpen_tall';
+  src: url('../fonts/webfonts/tall/AntwerpenTall-Tall.svg#AntwerpenTall-Tall') format("svg");
+}
+
+/* ANTWERPEN SMALLCAPS */
+@font-face {
+  font-family: 'antwerpen_smallCaps';
+  src: url('../fonts/webfonts/smallCaps/AntwerpenSmallCaps-Regular.woff') format("woff");
+}
+
+@font-face {
+  font-family: 'antwerpen_smallCaps';
+  src: url('../fonts/webfonts/smallCaps/AntwerpenSmallCaps-Regular.eot');
+}
+
+@font-face {
+  font-family: 'antwerpen_smallCaps';
+  src: url('../fonts/webfonts/smallCaps/AntwerpenSmallCaps-Regular.svg#AntwerpenSmallCaps-Regular') format("svg");
 }
 
 
 /* ANTWERPEN SUN 500 */
 @font-face {
   font-family: 'antwerpen_sun500';
-  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.woff') format('woff');
+  src: url('../fonts/webfonts/sun/SunAntwerpen_500/SunAntwerpen_500.woff') format('woff');
 }
 
 @font-face {
   font-family: 'antwerpen_sun500';
-  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.eot');
+  src: url('../fonts/webfonts/sun/SunAntwerpen_500/SunAntwerpen_500.eot');
 }
 
 @font-face {
   font-family: 'antwerpen_sun500';
-  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_500.svg#SunAntwerpen_500') format('svg');
+  src: url('../fonts/webfonts/sun/SunAntwerpen_500/SunAntwerpen_500.svg#SunAntwerpen_500') format('svg');
 }
 
 
 /* ANTWERPEN SUN 300 */
 @font-face {
   font-family: 'antwerpen_sun300';
-  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.woff') format('woff');
+  src: url('../fonts/webfonts/sun/SunAntwerpen_300/SunAntwerpen_300.woff') format('woff');
 }
 
 @font-face {
   font-family: 'antwerpen_sun300';
-  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.eot');
+  src: url('../fonts/webfonts/sun/SunAntwerpen_300/SunAntwerpen_300.eot');
 }
 
 @font-face {
   font-family: 'antwerpen_sun300';
-  src: url('../fonts/webfonts/sun/SunAntwerpenTTF/SunAntwerpen_300.svg#SunAntwerpen_300') format('svg');
+  src: url('../fonts/webfonts/sun/SunAntwerpen_300/SunAntwerpen_300.svg#SunAntwerpen_300') format('svg');
 }
 
 body, html {
@@ -352,18 +378,17 @@ input[type="text"] {
   border-radius: 0;
 }
 
-<<<<<<< HEAD
-main ul {
+.main ul {
 	list-style-type: none;
 	padding: 0;
-=======
+}
+
 .main ul {
   list-style-type: none;
   padding: 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
->>>>>>> de8df635e88c02b800e49656e3c94ef7a5453155
 } 
 
 .main ul li {
