@@ -46,12 +46,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CloseMenu.cs" />
+     <Compile Include="Assets\Scripts\CloseTab.cs" />
      <Compile Include="Assets\Scripts\DisableButtons.cs" />
+     <Compile Include="Assets\Scripts\NavigationProjectTab.cs" />
      <Compile Include="Assets\Scripts\OpenMenu.cs" />
+     <Compile Include="Assets\Scripts\OpenTab.cs" />
      <Compile Include="Assets\Scripts\OpenWebsite.cs" />
-     <Compile Include="Assets\Scripts\ToggleButtons.cs" />
+     <Compile Include="Assets\Scripts\SignIn.cs" />
      <Compile Include="Assets\Scripts\ToggleInfo.cs" />
-     <Compile Include="Assets\Scripts\ToggleLike.cs" />
+     <Compile Include="Assets\Scripts\ToggleLikeDislike.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
