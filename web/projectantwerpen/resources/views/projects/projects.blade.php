@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12" id="filter" unselectable="on">
+			<div class="col-md-12 form_general" id="filter" unselectable="on">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4>Filter</h4>

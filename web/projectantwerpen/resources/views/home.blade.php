@@ -54,22 +54,22 @@
                 <label id="open-nav-label" for="nav-ctrl"></label>
                 <li id="li-for-panel-1">
                     <label class="panel-label" for="panel-1-ctrl">
-                        Meest recent
+                        MEEST RECENT
                     </label>
                 </li>
                 <!--INLINE-BLOCK FIX-->
                 <li id="li-for-panel-2">
                     <label class="panel-label" for="panel-2-ctrl">
-                        Meest bekeken
+                        MEEST BEKEKEN
                     </label>
                 </li>
                 <!--INLINE-BLOCK FIX-->
                 <li id="li-for-panel-3">
                     <label class="panel-label" for="panel-3-ctrl">
-                        Populairst
+                        POPULAIRST
                     </label>
                 </li>
-                <label id="close-nav-label" for="nav-ctrl">Sluiten</label>
+                <label id="close-nav-label" for="nav-ctrl">SLUITEN</label>
             </ul>
 
             <!-- THE PANELS -->
