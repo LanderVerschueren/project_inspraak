@@ -6,7 +6,7 @@ public class SignIn : MonoBehaviour {
 
     public void Sign_In(int scene)
     {
-        Application.LoadLevel(scene);
+        
     }
 	
 }
