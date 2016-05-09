@@ -317,6 +317,16 @@ input[type="text"] {
   text-transform: uppercase;
 }
 
+.project>.panel>.panel-body {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.project>.panel>.panel-body>.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 #checkbox_renovatie:checked + #label_renovatie {
   color: #CF0039;
 }
