@@ -411,13 +411,13 @@ form>.form-group>.col-md-6>button {
   object-position: bottom;
 }
 
-#projects_list>.project_section:nth-child(even)>span {
+#projects_list>.project_section:nth-child(even)>.image {
   order: 2;
   margin-right: 0;
   margin-left: 10px;
 }
 
-.project_section:nth-child(even)>p {
+.project_section:nth-child(even)>.info {
   order: 1;
 }
 

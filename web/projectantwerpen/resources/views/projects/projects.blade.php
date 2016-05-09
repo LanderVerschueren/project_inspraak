@@ -62,10 +62,17 @@
 			<div class="col-md-12" id="projects_list">
 				@foreach($projects as $project)
 					<section class="project_section">
-						<span>
+						<span class="image">
 							<img class="image-responsive" src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
 						</span>
-						<p>{{$project->uitleg}}</p>
+						<span class="info">
+							<p>{{$project->uitleg}}	</p>					
+
+							<!-- Te gebruiken als backend in orde is -->
+							<!--<p><a href="{{ url('/project/'.$project->id) }}">Meer...</a></p>-->
+
+							<p><a href="{{ url('/project') }}">Meer...</a></p>
+						</span>
 					</section>
 				@endforeach
 			</div>
