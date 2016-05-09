@@ -26,8 +26,6 @@ public class ToggleLikeDislike : MonoBehaviour {
             isDisliked = false;
         }
         checkText();
-
-
     }
 
     public void ClickDislike()
@@ -41,9 +39,7 @@ public class ToggleLikeDislike : MonoBehaviour {
             isLiked = false;
             isDisliked = true;
         }
-
         checkText();
-        
     }
 
     void checkText()
