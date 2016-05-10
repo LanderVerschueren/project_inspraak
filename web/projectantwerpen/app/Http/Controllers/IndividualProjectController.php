@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Project;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -14,12 +14,11 @@ class IndividualProjectController extends Controller
 		//$this->middleware('auth');
 	}
 
-	public function index() {
+	public function index($id) {
 		
-		/*$projects = DB::table('projects')->get();
+		$project = Project::find($id);
 
-		return view('projects/projects', ['projects' => $projects]);*/
+		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 
-		return view('projects/individual_project');
 	}
 }
