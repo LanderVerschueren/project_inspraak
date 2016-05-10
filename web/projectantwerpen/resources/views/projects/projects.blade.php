@@ -68,9 +68,6 @@
 						<span class="info">
 							<p>{{$project->uitleg}}	</p>					
 
-							<!-- Te gebruiken als backend in orde is -->
-							<!--<p><a href="{{ url('/project/'.$project->id) }}">Meer...</a></p>-->
-
 							<p><a href="{{ url('/project/'.$project->id) }}">Meer...</a></p>
 						</span>
 					</section>
