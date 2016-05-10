@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 form_general" id="project">
+			<div class="col-md-12 form_general project" id="project">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4>{{$project->titel}}</h4>

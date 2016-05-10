@@ -8,7 +8,7 @@
     <title>PinAnt</title>
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('A_logo_7685_RGB_NEG_123X123.jpg') }}">
+    <link rel="shortcut icon" href="{{ asset('A_logo_200_RGB_NEG_123X123.jpg') }}">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
@@ -41,7 +41,7 @@
                 </button>
                                 
                 <a href="{{ url('/home') }}" id="div-brand-image">    
-                    <img src="{{ URL::asset('images/logo_antwerpen/Eenkleurig_A-logo_RGB_NEG/JPEG/123x123/A_logo_7685_RGB_NEG_123X123.jpg') }}" alt="" id="brand-image">
+                    <img src="{{ URL::asset('images/logo_antwerpen/Eenkleurig_A-logo_RGB_NEG/JPEG/123x123/A_logo_200_RGB_NEG_123X123.jpg') }}" alt="" id="brand-image">
                     <!--<img src="{{ URL::asset('images/logo_antwerpen/Tweekleurig_A-LOGO/sRGB/JPEG/A_logo_RGB_123x123.jpg') }}" alt="" id="brand-image">-->
                 </a>
 
