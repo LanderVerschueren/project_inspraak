@@ -271,7 +271,7 @@ input[type="text"] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  background-color: #8d9092;
+  background-color: white;
   font-family: 'antwerpen_sun300';
 }
 
@@ -284,8 +284,9 @@ input[type="text"] {
   justify-content: center;
 }
 
-.form_general>.panel>.panel-body>ul>li {
-  color: white;
+.form_general>.panel>.panel-body>form>div>label,
+.form_general>.panel>.panel-body>form>div>div>.checkbox>label {
+  color: black;
 }
 
 .form_general>.panel>.panel-body>ul>li>a {
@@ -325,6 +326,43 @@ input[type="text"] {
 .project>.panel>.panel-body>.wrapper {
   display: flex;
   flex-flow: row wrap;
+}
+
+.project>.panel>.panel-body>.wrapper>.image {
+  display: flex;
+  flex: 1;
+  margin-right: 15px;
+}
+
+.project>.panel>.panel-body>.wrapper>.info {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.project>.panel>.panel-body>.wrapper>section img {
+  min-width: 400px;
+  width: 100%;
+  margin-bottom: 10px;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.project>.panel>.panel-body>.wrapper>.info ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+}
+
+.project>.panel>.panel-body>.wrapper>.info ul li label {
+  min-width: 100px;
+}
+
+.project>.panel>.panel-body>.wrapper>.info ul li input {
+  background:rgba(0,0,0,0);
+  border:none;
 }
 
 #checkbox_renovatie:checked + #label_renovatie {
@@ -427,7 +465,7 @@ form>.form-group>.col-md-6>button {
   margin-left: 10px;
 }
 
-.project_section:nth-child(even)>.info {
+.project_section:nth-child(even)>.explanation {
   order: 1;
 }
 
