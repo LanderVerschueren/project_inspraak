@@ -349,6 +349,30 @@ input[type="text"] {
   object-position: bottom;
 }
 
+@media screen and (max-width: 625px) {
+  .project>.panel>.panel-body>.wrapper {
+    flex-direction: column;
+  }
+  .project>.panel>.panel-body>.wrapper>.image {
+    margin-right: 0;
+  }
+  .project>.panel>.panel-body>.wrapper>.image img {
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  #filter>.panel>.panel-body {
+    flex-direction: column;
+  }
+  #filter>.panel>.panel-body>section:first-child {
+    margin-bottom: 10px;
+  }
+  #filter>.panel>.panel-body>section:last-child {
+    margin-top: 10px; 
+  }
+}
+
 .project>.panel>.panel-body>.wrapper>.info ul {
   list-style-type: none;
   display: flex;
