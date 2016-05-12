@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Login.cs" />
+    <Compile Include="Assets\PlayerLogic.cs" />
     <Compile Include="Assets\Scripts\CloseMenu.cs" />
     <Compile Include="Assets\Scripts\CloseTab.cs" />
     <Compile Include="Assets\Scripts\DisableButtons.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Assets\Scripts\PlaySounds.cs" />
     <Compile Include="Assets\Scripts\ToggleInfo.cs" />
     <Compile Include="Assets\Scripts\ToggleLikeDislike.cs" />
-    <Compile Include="Assets\getplayersettings.cs" />
     <Compile Include="Assets\numberOfSteps.cs" />
     <Compile Include="Assets\projectPosition.cs" />
   </ItemGroup>
