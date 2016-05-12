@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System;
 
 public class AddReaction : MonoBehaviour {
 
@@ -14,11 +16,12 @@ public class AddReaction : MonoBehaviour {
   private RectTransform newReactionRect;
   string reaction;
   public static int nrOfReactions;
-  private GameObject[] reactionsArray;
+  public List<GameObject> reactionList;
 
 	// Use this for initialization
 	void Start () {
 
+    reactionList = new List<GameObject>();
     
 	}
 	
@@ -29,20 +32,27 @@ public class AddReaction : MonoBehaviour {
 
   public void PlaceReaction()
   {
+    
     GameObject newReaction = GameObject.Instantiate(originalPanel) as GameObject;
     newReaction.name = "Reaction"+ nrOfReactions;
 
 
+    //afmetingen instellen + onder elkaar schikken
     newReaction.GetComponent<RectTransform>().parent = reactionParent.transform;
     newReaction.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
     newReaction.GetComponent<RectTransform>().sizeDelta = new Vector2(oldReactionRect.rect.width, oldReactionRect.rect.height);
     newReaction.GetComponent<RectTransform>().localPosition = new Vector2(0, -370 * (nrOfReactions));
-
     newReaction.GetComponentInChildren<Text>().text = addReactionField.text;
     addReactionField.text = "";
 
+    reactionList.Add(newReaction);
+
+    printReactions();
+
     newReaction.SetActive(true);
     nrOfReactions++;
+
+    Debug.Log(reactionList);
 
     updateContent();
   }
@@ -51,6 +61,14 @@ public class AddReaction : MonoBehaviour {
     if (nrOfReactions > 1)
     {
     content.GetComponent<RectTransform>().offsetMax = new Vector2(content.GetComponent<RectTransform>().offsetMax.x, (content.GetComponent<RectTransform>().offsetMax.y + 370));
+    }
+  }
+
+  public void printReactions()
+  {
+    foreach (GameObject reaction in reactionList)
+    {
+      print(reaction.name + " " + reaction.GetComponentInChildren<Text>().text);
     }
   }
 }
