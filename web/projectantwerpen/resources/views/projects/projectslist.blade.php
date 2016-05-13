@@ -10,7 +10,8 @@
 						<img src="{{ URL::asset('images/' . $project->fotonaam) }}" alt="">
 					</section>
 					<section class="titel">
-						<p>{{ $project->titel }}</p>
+						<h4>{{ $project->titel }}</h4>
+						<h5>{{ ucfirst( $project->categorie ) }}</h5>
 					</section>
 					<section class="btn_aanpassen">
 						<a href="{{ url('/project/'.$project->id) }}" class="btn btn-primary" role="button">Aanpassen</a>
