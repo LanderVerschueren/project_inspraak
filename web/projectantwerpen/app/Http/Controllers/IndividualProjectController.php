@@ -29,7 +29,7 @@ class IndividualProjectController extends Controller
 		$user_id = Auth::user()->id;
 		DB::insert('insert into users_projects (fk_user, fk_project) values (?, ?)',[$user_id, $id]);
 
-		index();
+		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 
 	}
 }

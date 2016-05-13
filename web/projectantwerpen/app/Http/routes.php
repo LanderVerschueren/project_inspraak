@@ -25,3 +25,7 @@ Route::get('/projecten', 'ProjectController@index');
 Route::get('/project/{id}', 'IndividualProjectController@index');
 Route::get('/projectslist', 'AdminController@index');
 Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
+
+Route::group(['prefix' => 'api'], function() {
+	Route::get('api' , 'APIController@request');
+});
