@@ -16,7 +16,7 @@
                             <label class="col-md-4 control-label">Naam</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" name="name"  placeholder="Naam" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -31,7 +31,7 @@
                             <label class="col-md-4 control-label">E-Mail Adres</label>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="email" class="form-control" name="email"  placeholder="E-Mail Adres" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -46,7 +46,7 @@
                             <label class="col-md-4 control-label">Paswoord</label>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" name="password" placeholder="Paswoord">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -61,7 +61,7 @@
                             <label class="col-md-4 control-label">Paswoord Bevestigen</label>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password_confirmation">
+                                <input type="password" class="form-control" name="password_confirmation" placeholder="Paswoord Bevestigen">
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">

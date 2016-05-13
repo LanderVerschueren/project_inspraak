@@ -10,17 +10,60 @@
 					</div>
 					<div class="panel-body">
 						<section class='wrapper'>
-					    	<section>
+					    	<section class="image">
 					    		<img src="{{ URL::asset('images/'.$project->fotonaam) }}" alt="">
 					    	</section>
-					    	<section>
-					    		<label>{{$project->einddatum}}</label>
-					    		<label>{{$project->kostprijs}}</label>
-					    		<label>{{$project->categorie}}</label>
+					    	<section class="info">
+					    		<ul>
+					    			<li>
+					    				<label for="einddatum">Einddatum:</label>
+					    			</li>
+					    			<li>
+					    				<input type="text" value="{{$project->einddatum}}" disabled>
+					    			</li>
+					    		</ul>
+					    		<ul>
+					    			<li>
+					    				<label>Kostprijs:</label>
+					    			</li>
+					    			<li>
+					    				<input type="text" value="&euro; {{$project->kostprijs}}" disabled>
+					    			</li>
+					    		</ul>
+					    		<ul>
+					    			<li>
+					    				<label>Categorie:</label>
+					    			</li>
+					    			<li>
+					    				<input type="text" value="<?= ucfirst($project->categorie) ?>" disabled>
+					    			</li>
+					    		</ul>
 					    	</section>
 				    	</section>
-				    	<section class="timeline">{{$project->fase}}</section>
-				    	<section class="info">
+				    	<section id="Steps" class="timeline steps-section">						    <div class="steps-timeline">
+				    			<div class="steps-one">
+						        	<i class="fa fa-comments steps-img <?= $project->fase <= 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
+						        	<h3 class="steps-name">
+						          		Mening
+						        	</h3>
+						      	</div>
+
+						      	<div class="steps-two">
+						        	<i class="fa fa-exclamation-triangle steps-img <?= $project->fase > 1 && $project->fase <= 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
+						        	<h3 class="steps-name">
+						          		Afbraak
+						        	</h3>
+						      	</div>
+
+						      	<div class="steps-three">
+						        	<i class="fa fa-cog steps-img <?= $project->fase === 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
+						        	<h3 class="steps-name">
+						         		Opbouw
+						        	</h3>
+						      	</div>
+						    </div>
+						</section>
+				    	<section class="explanation">
 				    		<p>{{$project->uitleg}}</p>
 				    	</section>
 				    	@if(Auth::User())
