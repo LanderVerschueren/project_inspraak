@@ -5,11 +5,17 @@
 		<div class="row">
 			<div class="col-md-12">
 				@foreach( $projects as $project )
-				<section class="admin_list">
-					<img src="{{ URL::asset('images/' . $project->fotonaam) }}" alt="">
-					<p>{{ $project->titel }}</p>
-					<a href="{{ url('/project/'.$project->id) }}" class="btn btn-primary" role="button">Aanpassen</a>
-				</section>
+				<div class="admin_list">
+					<section class="image">
+						<img src="{{ URL::asset('images/' . $project->fotonaam) }}" alt="">
+					</section>
+					<section class="titel">
+						<p>{{ $project->titel }}</p>
+					</section>
+					<section class="btn_aanpassen">
+						<a href="{{ url('/project/'.$project->id) }}" class="btn btn-primary" role="button">Aanpassen</a>
+					</section>
+				</div>
 				@endforeach
 			</div>
 		</div>
