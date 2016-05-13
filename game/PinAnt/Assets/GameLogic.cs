@@ -81,21 +81,6 @@ public class GameLogic : MonoBehaviour {
         
   //juiste ranking bepalen....zucht 
 
-        for(int i = 0; i < 10; i++)
-        {
-            if (xp > xpNeeded[i] && xp < xpNeeded[i + 1])
-            {
-                level = i + 1;
-            }
-            else if (xp < xpNeeded[i])
-            {
-                level = i + 1;
-                break;
-            }
-        }
-        rank = ranks[level - 1];
-        multiplier = CoinMultipliers[level - 1];
-
             switch(level)
             {
                 case 1:

@@ -50,7 +50,6 @@
      <Compile Include="Assets\Login.cs" />
      <Compile Include="Assets\MakeTestProjects.cs" />
      <Compile Include="Assets\PlayerLogic.cs" />
-     <Compile Include="Assets\ReadJson.cs" />
      <Compile Include="Assets\Scripts\CloseMenu.cs" />
      <Compile Include="Assets\Scripts\CloseTab.cs" />
      <Compile Include="Assets\Scripts\DisableButtons.cs" />
