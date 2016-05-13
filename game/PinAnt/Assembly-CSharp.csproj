@@ -38,13 +38,16 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AddReaction.cs" />
+     <Compile Include="Assets\Login.cs" />
+     <Compile Include="Assets\MakeTestProjects.cs" />
      <Compile Include="Assets\Scripts\CloseMenu.cs" />
      <Compile Include="Assets\Scripts\CloseTab.cs" />
      <Compile Include="Assets\Scripts\DisableButtons.cs" />
@@ -54,16 +57,18 @@
      <Compile Include="Assets\Scripts\OpenMenu.cs" />
      <Compile Include="Assets\Scripts\OpenTab.cs" />
      <Compile Include="Assets\Scripts\OpenWebsite.cs" />
-     <Compile Include="Assets\Scripts\SignIn.cs" />
+     <Compile Include="Assets\Scripts\PlaySounds.cs" />
      <Compile Include="Assets\Scripts\ToggleInfo.cs" />
      <Compile Include="Assets\Scripts\ToggleLikeDislike.cs" />
+     <Compile Include="Assets\UpdateContactProjects.cs" />
      <Compile Include="Assets\numberOfSteps.cs" />
      <Compile Include="Assets\projectPosition.cs" />
+     <Compile Include="Assets\updateReactionContect.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
