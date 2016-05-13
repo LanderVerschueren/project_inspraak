@@ -27,7 +27,7 @@ public class UpdateContactProjects : MonoBehaviour {
   {
     foreach (GameObject project in projectList)
     {
-    content.GetComponent<RectTransform>().offsetMax = new Vector2(content.GetComponent<RectTransform>().offsetMax.x +804, (content.GetComponent<RectTransform>().offsetMax.y));
+    content.GetComponent<RectTransform>().offsetMax = new Vector2(content.GetComponent<RectTransform>().offsetMax.x +800, (content.GetComponent<RectTransform>().offsetMax.y));
     }
   }
 }
