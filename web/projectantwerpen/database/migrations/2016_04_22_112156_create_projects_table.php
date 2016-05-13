@@ -18,11 +18,14 @@ class CreateProjectsTable extends Migration
             $table->string('categorie');
             $table->text('uitleg');
             $table->text('fotonaam');
+            $table->text('locatie');
             $table->date('einddatum');
             $table->double('kostprijs');
             $table->integer('fase');
             $table->integer('likes');
+            $table->integer('dislikes');
             $table->integer('aantal_bekeken');
+            $table->text('vraag');
             $table->timestamps();
         });
     }

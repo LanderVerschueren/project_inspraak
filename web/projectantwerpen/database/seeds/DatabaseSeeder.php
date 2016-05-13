@@ -30,17 +30,17 @@ class DatabaseSeeder extends Seeder
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'mas.jpg', 'einddatum' => '2011-06-20', 'kostprijs' => '20 miljoen euro', 'fase' => '1', 'likes' => '50', 'aantal_bekeken' => '5432'),
+             	'fotonaam' => 'mas.jpg', 'locatie' => 'Het Eilandje','einddatum' => '2011-06-20', 'kostprijs' => '20 miljoen euro', 'fase' => '1', 'likes' => '50','dislikes' => '2', 'aantal_bekeken' => '5432', 'vraag' => 'Wilt u meer banken rond het MAS?'),
              array('titel' => 'Meir', 'categorie' => 'heraanleg', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'meir.png', 'einddatum' => '2016-04-01', 'kostprijs' => '40 miljoen euro', 'fase' => '2', 'likes' => '500', 'aantal_bekeken' => '632'),
+             	'fotonaam' => 'meir.png', 'locatie' => 'meir', 'einddatum' => '2016-04-01', 'kostprijs' => '40 miljoen euro', 'fase' => '2', 'likes' => '500', 'dislikes' => '20', 'aantal_bekeken' => '632', 'vraag' => 'Wilt u meer vuilbakken op de meir?'),
              array('titel' => 'Grote Markt', 'categorie' => 'opknapwerk', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'grote_markt.jpg', 'einddatum' => '2013-08-31', 'kostprijs' => '55 miljoen euro', 'fase' => '3', 'likes' => '1345', 'aantal_bekeken' => '6543')
+             	'fotonaam' => 'grote_markt.jpg', 'locatie' => 'Grote Markt', 'einddatum' => '2013-08-31', 'kostprijs' => '55 miljoen euro', 'fase' => '3', 'likes' => '1345', 'dislikes' => '150','aantal_bekeken' => '6543', 'vraag' => 'Wilt u meer groen op de Grote Markt?')
           ));
 
 		DB::table('users_projects')->delete();
