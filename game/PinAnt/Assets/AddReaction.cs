@@ -41,7 +41,7 @@ public class AddReaction : MonoBehaviour {
     newReaction.GetComponent<RectTransform>().parent = reactionParent.transform;
     newReaction.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
     newReaction.GetComponent<RectTransform>().sizeDelta = new Vector2(oldReactionRect.rect.width, oldReactionRect.rect.height);
-    newReaction.GetComponent<RectTransform>().localPosition = new Vector2(0, -250 * (nrOfReactions));
+    newReaction.GetComponent<RectTransform>().localPosition = new Vector2(0, -300 * (nrOfReactions));
     newReaction.GetComponentInChildren<Text>().text = addReactionField.text;
     addReactionField.text = "";
 
