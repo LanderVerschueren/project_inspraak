@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ToggleLikeDislike : MonoBehaviour {
 
-
+    public GameObject GameLogic;
 
     public Text likeButtonText;
     public Text dislikeButtonText;
@@ -19,12 +19,16 @@ public class ToggleLikeDislike : MonoBehaviour {
         if(isLiked == false && isDisliked == false)
         {
             isLiked = true;
+            
         }
         if(isLiked == false && isDisliked == true)
         {
             isLiked = true;
             isDisliked = false;
         }
+
+        GameLogic.GetComponent<GameLogic>().GainCoins();
+        GameLogic.GetComponent<GameLogic>().GainExp();
         checkText();
     }
 

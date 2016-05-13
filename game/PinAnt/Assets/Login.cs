@@ -6,6 +6,8 @@ public class Login : MonoBehaviour {
 
 
     public GameObject Player;
+    public GameObject GameLogic;
+
 
     public InputField inputUsername;
     public InputField inputPassword;
@@ -13,7 +15,11 @@ public class Login : MonoBehaviour {
     public string playerUsername;
     public string playerPassword;
     
-
+    void Start()
+    {
+        Player = GameObject.Find("Player");
+        GameLogic = GameObject.Find("GameLogic");
+    }
 	
 
     public void Player_Login()
@@ -21,10 +27,9 @@ public class Login : MonoBehaviour {
         playerUsername = inputUsername.text;
         playerPassword = inputPassword.text;
 
-        Player.GetComponent("PlayerLogic").SendMessage("pName." + playerUsername);
+        Player.GetComponent<PlayerLogic>().playerName = playerUsername;
+        Player.GetComponent<PlayerLogic>().playerPassword = playerPassword;
 
-
-        Debug.Log(playerUsername);
-        Debug.Log(playerPassword);
+        GameLogic.GetComponent<GameLogic>().InitializePlayerSettings();
     }
 }
