@@ -46,8 +46,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AddReaction.cs" />
+     <Compile Include="Assets\GameLogic.cs" />
      <Compile Include="Assets\Login.cs" />
      <Compile Include="Assets\MakeTestProjects.cs" />
+     <Compile Include="Assets\PlayerLogic.cs" />
      <Compile Include="Assets\Scripts\CloseMenu.cs" />
      <Compile Include="Assets\Scripts\CloseTab.cs" />
      <Compile Include="Assets\Scripts\DisableButtons.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\Scripts\ToggleInfo.cs" />
      <Compile Include="Assets\Scripts\ToggleLikeDislike.cs" />
      <Compile Include="Assets\UpdateContactProjects.cs" />
+     <Compile Include="Assets\UpdateProfileUI.cs" />
      <Compile Include="Assets\numberOfSteps.cs" />
      <Compile Include="Assets\projectPosition.cs" />
      <Compile Include="Assets\updateReactionContect.cs" />
