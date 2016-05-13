@@ -66,8 +66,7 @@
 							<img class="image-responsive" src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
 						</span>
 						<span class="explanation">
-							<p>{{$project->uitleg}}	</p>					
-
+							<p>{{$project->uitleg}}	</p>
 							<p><a href="{{ url('/project/'.$project->id) }}">Meer...</a></p>
 						</span>
 					</section>

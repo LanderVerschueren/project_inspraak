@@ -24,3 +24,4 @@ Route::get('/projecten', 'ProjectController@index');
 
 Route::get('/project/{id}', 'IndividualProjectController@index');
 Route::get('/projectslist', 'AdminController@index');
+Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
