@@ -23,3 +23,4 @@ Route::get('/', 'HomeController@index');
 Route::get('/projecten', 'ProjectController@index');
 
 Route::get('/project/{id}', 'IndividualProjectController@index');
+Route::get('/projectslist', 'AdminController@index');
