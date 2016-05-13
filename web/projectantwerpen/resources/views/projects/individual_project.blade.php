@@ -23,6 +23,14 @@
 				    	<section class="info">
 				    		<p>{{$project->uitleg}}</p>
 				    	</section>
+				    	@if(Auth::User())
+				    		<a href="{{ url('/project/follow/'.$project->id) }}" class="btn btn-primary" role="button">
+                                <i class="fa fa-btn fa-user"></i>Volgen
+                            </a>
+                        @endif
+                        @if(!Auth::User())
+							Je moet ingelogd zijn om dit project te kunnen volgen!
+                        @endif
 				  	</div>
 			  	</div>
 			</div>

@@ -22,8 +22,4 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/projecten', 'ProjectController@index');
 
-//tijdelijke route
 Route::get('/project/{id}', 'IndividualProjectController@index');
-
-//Gebruiken als back-end in orde is!!
-//Route::get('/project/{project}', 'IndividualProjectController@index');
