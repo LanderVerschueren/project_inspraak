@@ -80,7 +80,7 @@
                         <div class="main">
                             <ul>
                                 @foreach($projects->sortByDesc('einddatum') as $project)
-                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                    <li><a href="{{ url('/project/'.$project->id) }}"><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -89,7 +89,7 @@
                         <div class="main">
                             <ul>
                                 @foreach($projects->sortByDesc('aantal_bekeken') as $project)
-                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                    <li><a href="{{ url('/project/'.$project->id) }}"><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></a></li>
                                 @endforeach
                         </div>
                     </section>
@@ -97,7 +97,7 @@
                         <div class="main">
                             <ul>
                                 @foreach($projects->sortByDesc('likes') as $project)
-                                    <li><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></li>
+                                    <li><a href="{{ url('/project/'.$project->id) }}"><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></a></li>
                                 @endforeach
                             </ul>
                         </div>
