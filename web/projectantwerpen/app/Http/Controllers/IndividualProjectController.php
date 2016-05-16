@@ -32,4 +32,13 @@ class IndividualProjectController extends Controller
 		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 
 	}
+	public function unfollow($id) {
+		
+		$project = Project::find($id);
+		$user_id = Auth::user()->id;
+		DB::table('users_projects')->where('fk_user','=',$user_id)->where('fk_project','=',$id)->delete();
+
+		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
+
+	}
 }

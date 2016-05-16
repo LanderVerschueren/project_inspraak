@@ -80,7 +80,7 @@
                     @endif
 
                     <li id="li_search">
-                        <form class="navbar-form" role="search">
+                        <form class="navbar-form" action="/search" method="get" role="search">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Wat zoekt u?" name="q">
                                 <div class="input-group-btn">
