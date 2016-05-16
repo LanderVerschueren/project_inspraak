@@ -17,14 +17,18 @@
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/', 'HomeController@index');
 
-Route::get('/projecten', 'ProjectController@index');
 
-Route::get('/project/{id}', 'IndividualProjectController@index');
-Route::get('/projectslist', 'AdminController@index');
-Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
+
+Route::group([ 'middleware' => [ 'web' ] ], function() {
+	Route::get('/home', 'HomeController@index');
+	Route::get('/', 'HomeController@index');
+
+	Route::get('/projecten', 'ProjectController@index');
+	Route::get('/project/{id}', 'IndividualProjectController@index');
+	Route::get('/projectslist', 'AdminController@index');
+	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
+});
 
 Route::group(['prefix' => 'api'], function() {
 	Route::get('api' , 'APIController@request');
