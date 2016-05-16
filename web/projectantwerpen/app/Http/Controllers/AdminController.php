@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
     public function __construct() {
 		//Only when someone needs to be authenticated to acces the page
-		$this->middleware('admin');
+		$this->middleware(['auth', 'admin']);
 	}
 
 	public function index() {
