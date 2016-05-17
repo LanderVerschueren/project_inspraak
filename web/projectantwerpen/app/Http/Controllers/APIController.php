@@ -56,7 +56,7 @@ class APIController extends Controller
   		$credentials = $request->only('email', 'password');
 
    		try {
-       		$user = User::create($credentials);
+       		$user = User::create(array('email' => $credentials->, 'type_of_user' => 'regular'));
    		} catch (Exception $e) {
        		return response()->json(['error' => 'User already exists.'], HttpResponse::HTTP_CONFLICT);
    		}
