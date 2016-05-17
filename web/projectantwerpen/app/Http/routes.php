@@ -14,13 +14,9 @@
 Route::auth();
 
 Route::group([ 'middleware' => 'web' ], function() {
-	
-
 	Route::get('/home', 'HomeController@index');
 	Route::get('/', 'HomeController@index');
-
 	Route::get('/projecten', 'ProjectController@index');
-
 	Route::get('/project/{id}', 'IndividualProjectController@index');
 	Route::get('/projectslist', 'AdminController@index');
 	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
@@ -28,14 +24,11 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/search', 'SearchController@index');
 });
 
-Route::group(['prefix' => 'api'], function() {
-	
-});
 
 Route::group(['prefix' =>'api'], function()
 {
-		Route::post('/login', 'APIController@login');
-		Route::post('register' , 'APIController@register');
+	Route::post('/login', 'APIController@login');
+	Route::post('register' , 'APIController@register');
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
         
         

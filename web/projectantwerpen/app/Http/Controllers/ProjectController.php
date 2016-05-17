@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Project;
 use App\Http\Controllers\Controller;
+use Request;
 
 class ProjectController extends Controller
 {
@@ -15,8 +15,26 @@ class ProjectController extends Controller
 	}
 
 	public function index() {
-		
-		$projects = Project::all();
+		$projects = Project::where(function($query){
+			$types = Request::input('type');
+			$fases = Request::input('fase');
+			$likes = Request::input('likes');
+			if(isset($types)){
+				foreach($types as $type){
+					$query->orWhere('categorie', '=', $type);
+				}
+			}
+			if(isset($fases)){
+				foreach($fases as $fase){
+					$query->orWhere('fase', '=', $fase);
+				}
+			}
+			if(isset($likes)){
+				foreach($likes as $like){
+					$query->orWhere('likes', '=', $like);
+				}
+			}
+		})->get();
 
 		return view('projects/projects', ['projects' => $projects]);
 	}

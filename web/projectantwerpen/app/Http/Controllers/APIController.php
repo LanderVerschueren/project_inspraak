@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Project;
 use App\User;
-use Log;
+use Hash;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
@@ -56,7 +56,7 @@ class APIController extends Controller
   		$credentials = $request->only('email', 'password');
 
    		try {
-       		$user = User::create(array('email' => $credentials->, 'type_of_user' => 'regular'));
+       		$user = User::create(array('email' => $credentials['email'], 'password' => Hash::make($credentials['password']), 'type_of_user' => 'regular'));
    		} catch (Exception $e) {
        		return response()->json(['error' => 'User already exists.'], HttpResponse::HTTP_CONFLICT);
    		}
