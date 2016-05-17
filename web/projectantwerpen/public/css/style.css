@@ -547,7 +547,7 @@ form>.form-group>.col-md-6>a {
 
 .admin_list {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   width: 100%;
   align-items: center;
   padding: 10px;
@@ -573,7 +573,9 @@ form>.form-group>.col-md-6>a {
 }
 
 .admin_list>.btn_aanpassen {
+  display: flex;
   flex: 1;
+  justify-content: flex-end;
 }
 
 .admin_list>.btn_aanpassen a {
@@ -588,6 +590,18 @@ form>.form-group>.col-md-6>a {
 .admin_list>.btn_aanpassen a:hover {
   background-color: #CF0039;
   color: white;
+}
+
+@media screen and (max-width: 625px) {
+  .admin_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .admin_list>.btn_aanpassen {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 

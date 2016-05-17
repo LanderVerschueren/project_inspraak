@@ -74,6 +74,9 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                @if ( Auth::user()->isAdmin() ) 
+                                    <li><a href="{{ url('/projectslist') }}">Projectlist</a></li>
+                                @endif
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
                             </ul>
                         </li>
