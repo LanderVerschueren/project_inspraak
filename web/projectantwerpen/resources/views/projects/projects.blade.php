@@ -13,30 +13,30 @@
 							<section>
 								<h5>Type</h5>
 								<span>
-									<input id="checkbox_renovatie" type="checkbox" name="type" value="renovatie" >
+									<input id="checkbox_renovatie" type="checkbox" name="type[]" value="renovatie" >
 									<label id="label_renovatie" for="checkbox_renovatie">Renovatie</label>
 								</span>
 								<span>
-									<input id="checkbox_heraanleg" type="checkbox" name="type" value="heraanleg" >
+									<input id="checkbox_heraanleg" type="checkbox" name="type[]" value="heraanleg" >
 									<label id="label_heraanleg" for="checkbox_heraanleg">Heraanleg</label>
 								</span>
 								<span>
-									<input id="checkbox_opknapwerk" type="checkbox" name="type" value="opknapwerk">
+									<input id="checkbox_opknapwerk" type="checkbox" name="type[]" value="opknapwerk">
 									<label id="label_opknapwerk" for="checkbox_opknapwerk">Opknapwerk</label>
 								</span>
 							</section>
 							<section>
 								<h5>Fase</h5>
 								<span>
-									<input id="checkbox_mening" type="checkbox" name="fase" value="1" >
+									<input id="checkbox_mening" type="checkbox" name="fase[]" value="1" >
 									<label id="label_mening" for="checkbox_mening">Meningen verzamelen</label>
 								</span>
 								<span>
-									<input id="checkbox_afbraak" type="checkbox" name="fase" value="2" >
+									<input id="checkbox_afbraak" type="checkbox" name="fase[]" value="2" >
 									<label id="label_afbraak" for="checkbox_afbraak">Afbraak</label>
 								</span>
 								<span>
-									<input id="checkbox_opbouw" type="checkbox" name="fase" value="3" >
+									<input id="checkbox_opbouw" type="checkbox" name="fase[]" value="3" >
 									<label id="label_opbouw" for="checkbox_opbouw">Opbouw</label>
 								</span>
 							</section> 
