@@ -20,6 +20,8 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/', 'HomeController@index');
 
 	Route::get('/projecten', 'ProjectController@index');
+	
+	Route::get('/project/addproject', 'AdminController@addProject');
 
 	Route::get('/project/{id}', 'IndividualProjectController@index');
 	Route::get('/projectslist', 'AdminController@index');

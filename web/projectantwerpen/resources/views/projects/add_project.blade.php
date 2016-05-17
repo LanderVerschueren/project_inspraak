@@ -6,21 +6,21 @@
 			<div class="col-md-12" id="project">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4>{{$project->titel}}</h4>
+						<h4>Titel</h4>
 					</div>
 					<div class="panel-body">
 						<form action="">
 							<section class="main_info">							
 								<section class="image">
-									<img src="{{ URL::asset('images/'.$project->fotonaam) }}" alt="">
+									<img src="" alt="">
 								</section>
-								<section class="info">
+								<section class="info admin">
 									<ul>
 										<li>
 											<label for="einddatum">Einddatum:</label>
 										</li>
 										<li>
-											<input type="text" value="{{$project->einddatum}}" disabled>
+											<input type="text" id="datepicker">
 										</li>
 									</ul>
 									<ul>
@@ -28,9 +28,7 @@
 											<label>Kostprijs:</label>
 										</li>
 										<li>
-											@if (Auth::user()->isAdmin())
-											<input type="text" value="&euro; {{$project->kostprijs}}" disabled>
-											@endif
+											<input type="text">
 										</li>
 									</ul>
 									<ul>
@@ -38,7 +36,7 @@
 											<label>Categorie:</label>
 										</li>
 										<li>
-											<input type="text" value="<?= ucfirst($project->categorie) ?>" disabled>
+											<input type="text">
 										</li>
 									</ul>
 								</section>
@@ -47,21 +45,21 @@
 						    	<section id="Steps" class="timeline steps-section">						    
 						    		<div class="steps-timeline">
 						    			<div class="steps-one">
-								        	<i class="fa fa-comments steps-img <?= $project->fase <= 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
+								        	<i class="fa fa-comments steps-img" aria-hidden="true"></i>
 								        	<h3 class="steps-name">
 								          		Mening
 								        	</h3>
 								      	</div>
 
 								      	<div class="steps-two">
-								        	<i class="fa fa-exclamation-triangle steps-img <?= $project->fase > 1 && $project->fase <= 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
+								        	<i class="fa fa-exclamation-triangle steps-img" aria-hidden="true"></i>
 								        	<h3 class="steps-name">
 								          		Afbraak
 								        	</h3>
 								      	</div>
 
 								      	<div class="steps-three">
-								        	<i class="fa fa-cog steps-img <?= $project->fase === 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
+								        	<i class="fa fa-cog steps-img" aria-hidden="true"></i>
 								        	<h3 class="steps-name">
 								         		Opbouw
 								        	</h3>
@@ -69,7 +67,7 @@
 								    </div>
 								</section>
 						    	<section class="explanation">
-						    		<p>{{$project->uitleg}}</p>
+						    		<p>uitleg</p>
 						    	</section>
 					    	</section>
 				    	</form>

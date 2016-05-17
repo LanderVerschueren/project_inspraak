@@ -4,5 +4,7 @@ $(document).ready(function() {
 	});  
 	$("#carousel-example-generic").swipeleft(function() {  
 	   	$(this).carousel('next');  
-	});  
+	});
+
+	$('#datepicker').datepicker();  
 });

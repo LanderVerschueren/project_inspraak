@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-6 form_general">
+        <div class="col-md-6" id="login">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Login</h4>
@@ -20,6 +20,7 @@
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
+                                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -34,6 +35,7 @@
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
+                                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
@@ -63,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 form_general">
+        <div class="col-md-6" id="login_register">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Profiel aanmaken</h4>

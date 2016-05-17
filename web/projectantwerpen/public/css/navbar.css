@@ -1,0 +1,66 @@
+.navbar {
+  background-color: #8d9092;
+}
+
+.navbar-header>.navbar-brand {
+  color: white;
+  font-family: 'antwerpen_regular';
+}
+
+#brand-image {
+  float: left;
+  height: 100%;
+}
+
+#div-brand-image {
+  display: block;
+  float: left;
+  padding: 0;
+  padding-right: 15px;
+  margin-left: 0;
+  height: 50px;
+}
+
+.navbar-collapse>.nav>li>a {
+  color: white;
+  font-family: 'antwerpen_smallCaps';
+}
+
+.navbar-header>.navbar-toggle>.icon-bar {
+  background-color: white;
+}
+
+.navbar-header>button {
+  border-radius: 0;
+}
+
+#li_search>form>div>input,
+#li_search>form>div>div>button {
+  border-radius: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #div-brand-image {
+    padding-right: 0px;
+    padding-left: 15px;
+  }
+
+  .navbar-form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .navbar-right>li>a:first-child {
+    padding-left: 15px;
+  }
+
+  .navbar-right {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 990px) {
+  .navbar-right>li>a:first-child {
+    padding-left: 0;
+  }
+}
