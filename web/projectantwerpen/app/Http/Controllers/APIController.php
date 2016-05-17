@@ -14,7 +14,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 class APIController extends Controller
 {
-    public function request(){
+    public function requestProjects(){
     	$projects = Project::all();
     	return response()->json($projects);
     }
