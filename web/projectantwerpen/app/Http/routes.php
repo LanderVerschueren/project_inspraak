@@ -17,8 +17,10 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/home', 'HomeController@index');
 	Route::get('/', 'HomeController@index');
 	Route::get('/projecten', 'ProjectController@index');
-	Route::get('/project/{id}', 'IndividualProjectController@index');
+	
 	Route::get('/projectslist', 'AdminController@index');
+	Route::get('/project/addproject', 'AdminController@addProject');
+	Route::get('/project/{id}', 'IndividualProjectController@index');
 	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
 	Route::get('/project/unfollow/{id}', 'IndividualProjectController@unfollow');
 	Route::get('/search', 'SearchController@index');

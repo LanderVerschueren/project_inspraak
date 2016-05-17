@@ -1,0 +1,27 @@
+.footer {
+  background-color: #8d9092;
+}
+
+.footer span {
+  display: block;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.footer>.container>span.left, .footer>.container>span.right {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.footer>.container>span.right {
+  text-align: right;
+}
+
+.footer span p {
+  margin: 0;
+  color: white;
+  font-family: 'antwerpen_smallCaps';
+}

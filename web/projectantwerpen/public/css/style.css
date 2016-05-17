@@ -31,6 +31,7 @@
   src: url('../fonts/webfonts/tall/AntwerpenTall-Tall.svg#AntwerpenTall-Tall') format("svg");
 }
 
+
 /* ANTWERPEN SMALLCAPS */
 @font-face {
   font-family: 'antwerpen_smallCaps';
@@ -81,6 +82,11 @@
   src: url('../fonts/webfonts/sun/SunAntwerpen_300/SunAntwerpen_300.svg#SunAntwerpen_300') format('svg');
 }
 
+
+
+
+
+/* ------------------- General ------------------- */
 body, html {
   height: 100%;
 }
@@ -89,313 +95,143 @@ input[type="text"] {
   font-family: 'antwerpen_sun500';
 }
 
-.navbar {
-  background-color: #8d9092;
-}
-
-.navbar-header>.navbar-brand {
-  color: white;
-  font-family: 'antwerpen_regular';
-}
-
-#brand-image {
-  float: left;
-  height: 100%;
-}
-
-#div-brand-image {
-  display: block;
-  float: left;
-  padding: 0;
-  padding-right: 15px;
-  margin-left: 0;
-  height: 50px;
-}
-
-.navbar-collapse>.nav>li>a {
-  color: white;
-  font-family: 'antwerpen_smallCaps';
-}
-
-.navbar-header>.navbar-toggle>.icon-bar {
-  background-color: white;
-}
-
-@media screen and (max-width: 767px) {
-  #div-brand-image {
-    padding-right: 0px;
-    padding-left: 15px;
-  }
-
-  .navbar-form {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .navbar-right>li>a:first-child {
-    padding-left: 15px;
-  }
-
-  .navbar-right {
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (min-width: 767px) {
-
-
-  .main>ul {
-    display: flex;
-    flex-flow: column nowrap;
-  }
-
-  .main>ul>li {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 767px) and (max-width: 990px) {
-  .navbar-right>li>a:first-child {
-    padding-left: 0;
-  }
-}
-
-/* Makes images fully responsive */
-.img-responsive,
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  display: block;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  object-position: bottom;
-}
-
-#carousel-margin {
-  margin-bottom: 20px;
-}
-
-/* ------------------- Carousel Styling ------------------- */
-.carousel-caption {
-  background-color: rgba(0,0,0,.5);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 0 0 10px 25px;
-  color: #fff;
-  text-align: left;
-  font-family: 'antwerpen_tall';
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 15;
-  margin: 0;
-  padding: 0 25px 25px 0;
-  text-align: right;
-}
-
-.carousel-control.left,
-.carousel-control.right {
-  background-image: none;
-}
-
-.carousel-control>.fa {
-  display: block;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-}
-
-.footer {
-  background-color: #8d9092;
-}
-
-.footer span {
-  display: block;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-
-.footer>.container>span.left, .footer>.container>span.right {
-  display: block;
-  float: left;
-  width: 50%;
-}
-
-.footer>.container>span.right {
-  text-align: right;
-}
-
-.footer span p {
-  margin: 0;
-  color: white;
-  font-family: 'antwerpen_smallCaps';
-}
-
-.form_general {  
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.form_general>.panel {
-  border: none;
+.panel {
   border-radius: 0;
+  border-left: none;
+  border-right: none;
   border-bottom: 1px solid #CF0039;
 }
 
-.form_general>.panel>.panel-heading {
-  text-align: center;
-  background-color: #CF0039;
+.panel-heading {
+  display: flex;
+  justify-content: center;
+
+  border-radius: 0;
+
+  background-color: #CF0039!important;
+  color: white!important;
+}
+
+.panel-heading h4 {
   font-family: 'antwerpen_regular';
-  border-bottom: none;
+}
+
+label, input, p {
+  font-family: 'antwerpen_sun300';
+  font-size: 16px;
+  border-radius: 0!important;
+}
+
+
+
+
+
+/* ------------------- Login page ------------------- */
+#login button {
+  font-family: 'antwerpen_sun';
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 1px solid #CF0039;
+  transition: all 0.3s ease 0s;
   border-radius: 0;
 }
 
-.form_general>.panel>.panel-heading>h4 {
-  color: white;
-}
-
-.form_general>.panel>.panel-body {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  background-color: white;
-  font-family: 'antwerpen_sun300';
-}
-
-.form_general>.panel>.panel-body>ul {
-  width: 80%;
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-}
-
-.form_general>.panel>.panel-body>form>div>label,
-.form_general>.panel>.panel-body>form>div>div>.checkbox>label {
-  color: black;
-}
-
-.form_general>.panel>.panel-body>ul>li>a {
-  background-color: white;
-  border: 1px solid #CF0039;
-  color: black;
-  margin-top: 15px;
-  transition: all 0.3s ease 0s;
-}
-
-.form_general>.panel>.panel-body>ul>li>a:hover {
+#login button:hover {
   background-color: #CF0039;
   color: white;
+  border-color: #CF0039;
 }
 
-.form_general>.panel>.panel-body form {
-  width: 80%;
+#login_register ul {
+  padding: 0;
+  list-style-type: none;
 }
 
-.form_general>.panel>.panel-body section {
+#login_register ul li {
+  font-family: 'antwerpen_sun300';
+  font-size: 16px;
+}
+
+#login_register ul li a {
+  font-family: 'antwerpen_sun';
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 1px solid #CF0039;
+  transition: all 0.3s ease 0s;
+  border-radius: 0;
+  margin-top: 15px;
+}
+
+#login_register ul li a:hover {
+  background-color: #CF0039;
+  color: white;
+  border-color: #CF0039;
+}
+
+
+
+
+
+/* ------------------- Login page ------------------- */
+#register button {
+  font-family: 'antwerpen_sun';
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 1px solid #CF0039;
+  transition: all 0.3s ease 0s;
+  border-radius: 0;
+}
+
+#register button:hover {
+  background-color: #CF0039;
+  color: white;
+  border-color: #CF0039;
+}
+
+
+
+
+
+/* ------------------- Filters on project page ------------------- */
+#filter form {
   display: flex;
-  flex-grow: 1;
+  display: row nowrap;
+  justify-content: space-around;
+}
+
+#filter form section {
+  display: flex;
   flex-flow: column nowrap;
 }
 
-.form_general>.panel>.panel-body section span {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.form_general>.panel>.panel-body section span input {
-  /*margin-left: 25%;*/
-  margin-right: 10px;
-}
-
-.form_general>.panel>.panel-body>section>h5 {
+#filter form section h5 {
   font-family: 'antwerpen_tall';
   text-transform: uppercase;
 }
 
-.project>.panel>.panel-body {
-  display: flex;
-  flex-flow: column wrap;
+#filter form section span input {
+  margin-right: 10px!important;
 }
 
-.project>.panel>.panel-body>.wrapper {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.project>.panel>.panel-body>.wrapper>.image {
-  display: flex;
-  flex: 1;
-  margin-right: 15px;
-}
-
-.project>.panel>.panel-body>.wrapper>.info {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-}
-
-.project>.panel>.panel-body>.wrapper>section img {
-  min-width: 400px;
-  width: 100%;
-  margin-bottom: 10px;
-  height: auto;
-  object-fit: cover;
-  object-position: bottom;
+#filter form section span label {
+  color: black;
+  font-family: 'antwerpen_sun300'; 
+  font-weight: 500;
 }
 
 @media screen and (max-width: 625px) {
-  .project>.panel>.panel-body>.wrapper {
+  #filter form {
     flex-direction: column;
   }
-  .project>.panel>.panel-body>.wrapper>.image {
-    margin-right: 0;
-  }
-  .project>.panel>.panel-body>.wrapper>.image img {
-    min-width: 0;
-  }
-}
-
-@media screen and (max-width: 625px) {
-  #filter>.panel>.panel-body {
-    flex-direction: column;
-  }
-  #filter>.panel>.panel-body>section:first-child {
+  #filter form section:first-child {
     margin-bottom: 10px;
   }
-  #filter>.panel>.panel-body>section:last-child {
+  #filter form section:last-child {
     margin-top: 10px; 
   }
-}
-
-.project>.panel>.panel-body>.wrapper>.info ul {
-  list-style-type: none;
-  display: flex;
-  flex-flow: row wrap;
-  padding: 0;
-}
-
-.project>.panel>.panel-body>.wrapper>.info ul li label {
-  min-width: 100px;
-}
-
-.project>.panel>.panel-body>.wrapper>.info ul li input {
-  background:rgba(0,0,0,0);
-  border:none;
 }
 
 #checkbox_renovatie:checked + #label_renovatie {
@@ -434,46 +270,11 @@ input[type="text"] {
   color: #CF0039;
 }
 
-form label{
-  color: white;
-  font-weight: normal;
-}
 
-form>.form-group>.col-md-6>button {
-  background-color: white;
-  color: black;
-  border-color: #CF0039;
-  transition: all 0.3s ease 0s;
-}
 
-form>.form-group>.col-md-6>a {
-  color: #CF0039;
-}
 
-form>.form-group>.col-md-6>button:hover {
-  background-color: #CF0039;
-  color: white;
-}
 
-form>.form-group>.col-md-6>a {
-    padding-left: 0;
-}
-
-.has-error .control-label,
-.has-error .help-block,
-.has-error .form-control-feedback {
-  color: black;
-  border-color: #CF0039;
-}
-
-.has-error .help-block strong {
-  font-weight: normal;
-}
-
-.fa-exclamation-triangle {
-  color: #CF0039;
-}
-
+/* ------------------- Projects on project page ------------------- */
 #projects_list {
   height: 100%;
   display: flex;
@@ -506,45 +307,94 @@ form>.form-group>.col-md-6>a {
 
 #projects_list>.project_section:nth-child(even)>.image {
   order: 2;
-  margin-right: 0;
-  margin-left: 10px;
 }
 
-.project_section:nth-child(even)>.explanation {
+#projects_list>.project_section:nth-child(even)>.explanation {
   order: 1;
 }
 
-#li_search>form>div>input,
-#li_search>form>div>div>button {
-  border-radius: 0;
+@media screen and (max-width: 625px) {
+  #projects_list section {
+    flex-flow: column nowrap;
+    border-bottom: 1px solid lightgrey;
+  }
+
+  #projects_list>.project_section:nth-child(even)>.image {
+    order: 1;
+  }
+
+  #projects_list>.project_section:nth-child(even)>.explanation {
+    order: 2;
+  }
 }
 
-.main ul {
-  list-style-type: none;
-  padding: 0;
+
+
+
+
+/* ------------------- Project on individual project page ------------------- */
+/* ------------------- Project on admin project page ------------------- */
+#project form {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
-.main ul {
-  list-style-type: none;
-  padding: 0;
+#project form .main_info {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-} 
-
-.main ul li {
-  display: inline-block;
-  width: 33%;
-  padding: 1px;
+  align-items: center;
 }
 
-.main ul img {
-    object-fit: cover;
-    object-position: bottom;
-    width: 100%;
-    height: 150px;
+#project form .main_info .image {
+  flex: 1;
 }
 
+#project form .main_info .image img {
+  width: 100%;
+  min-width: 350px;
+}
+
+#project form .main_info .info {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1;
+}
+
+#project form .main_info .info ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+}
+
+#project form .main_info .info ul li input {
+  border: none;
+  background-color: inherit;
+}
+
+#project form .main_info .info ul li:first-child {
+  min-width: 145px;
+}
+
+@media screen and (max-width: 604px) {
+  #project form .main_info .image {
+    margin-bottom: 10px;
+  }
+  #project form .main_info .info ul {
+    padding-left: 0;
+  }
+}
+
+/* Input fields add page */
+#project form .main_info .admin ul li input {
+  border: 1px solid grey;
+  max-width: 150px;
+}
+
+
+
+
+
+/* ------------------- Admin list page ------------------- */
 .admin_list {
   display: flex;
   flex-flow: row wrap;
@@ -578,18 +428,22 @@ form>.form-group>.col-md-6>a {
   justify-content: flex-end;
 }
 
-.admin_list>.btn_aanpassen a {
+.admin_list>.btn_aanpassen a,
+.addProject a {
   font-family: 'antwerpen_sun';
   font-size: 16px;
   background-color: white;
   color: black;
   border: 1px solid #CF0039;
   transition: all 0.3s ease 0s;
+  border-radius: 0;
 }
 
-.admin_list>.btn_aanpassen a:hover {
+.admin_list>.btn_aanpassen a:hover,
+.addProject a:hover {
   background-color: #CF0039;
   color: white;
+  border-color: #CF0039;
 }
 
 @media screen and (max-width: 625px) {
@@ -607,331 +461,27 @@ form>.form-group>.col-md-6>a {
   }
 }
 
-
-
-#tabs-list {
-  list-style: none;
-  text-align: center;
-  border-bottom: 1px solid #CF0039;
-  margin: 0;
-  padding: 0;
+.addProject {
+  display: flex;
+  justify-content: center;
 }
 
-#tabs-list label {
-  font-family: 'antwerpen_sun300';
-  font-weight: normal;
-  font-size: 14px;
+
+
+
+
+/* ------------------- Errors when loggin in ------------------- */
+.has-error .control-label,
+.has-error .help-block,
+.has-error .form-control-feedback {
+  color: black;
+  border-color: #CF0039;
 }
 
-label.panel-label {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  display: block;
-  width: 100%;
-  color: #bdc3c7;
-  cursor: pointer;
-  background-color: #dfdfdf;
-  -webkit-transition-property: background-color, color;
-  transition-property: background-color, color;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-  font-family: 'antwerpen_sun';
+.has-error .help-block strong {
   font-weight: normal;
 }
-label.panel-label:hover {
+
+.fa-exclamation-triangle {
   color: #CF0039;
-}
-
-#panels {
-  background-color: white;
-}
-#panels .container {
-  margin: 0 auto;
-  width: 100%;
-}
-#panels section>.main {
-  box-sizing: border-box;
-  max-height: 0;
-  opacity: 0;
-  -webkit-transition: opacity 600ms;
-  transition: opacity 600ms;
-  overflow-y: hidden;
-}
-
-#panel-1-ctrl:checked ~ #panels #panel-1>.main {
-  max-height: initial;
-  opacity: 1;
-  padding: 48px 0px 48px 0px;
-}
-
-#panel-2-ctrl:checked ~ #panels #panel-2>.main {
-  max-height: initial;
-  opacity: 1;
-  padding: 48px 0px 48px 0px;
-}
-
-#panel-3-ctrl:checked ~ #panels #panel-3>.main {
-  max-height: initial;
-  opacity: 1;
-  padding: 48px 0px 48px 0px;
-}
-@media all and (max-width: 767px) {
-  #nav-ctrl:checked ~ #tabs-list #li-for-panel-1 {
-    max-height: 46px;
-    opacity: 1;
-  }
-
-  #nav-ctrl:checked ~ #tabs-list #li-for-panel-2 {
-    max-height: 46px;
-    opacity: 1;
-  }
-
-  #nav-ctrl:checked ~ #tabs-list #li-for-panel-3 {
-    max-height: 46px;
-    opacity: 1;
-  }
-
-  #open-nav-label {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    cursor: pointer;
-  }
-
-  #nav-ctrl:checked ~ #tabs-list #open-nav-label {
-    display: none;
-  }
-
-  #close-nav-label {
-    display: block;
-    max-height: 0;
-    overflow-y: hidden;
-    background-color: #444444;
-    color: #ecf0f1;
-    padding: 0px;
-    -webkit-transition: max-height 200ms;
-    transition: max-height 200ms;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 10px;
-    letter-spacing: 1px;
-  }
-
-  #nav-ctrl:checked ~ #tabs-list #close-nav-label {
-    max-height: 36px;
-    opacity: 1;
-    padding: 12px 24px;
-  }
-
-  #tabs-list {
-    position: relative;
-  }
-  #tabs-list label.panel-label {
-    padding: 10px 0;
-  }
-  #tabs-list label {
-    margin-bottom: 0;
-  }
-  #tabs-list #li-for-panel-1 {
-    max-height: 0;
-    overflow-y: hidden;
-    -webkit-transition: max-height 200ms;
-    transition: max-height 200ms;
-  }
-  #tabs-list #li-for-panel-2 {
-    max-height: 0;
-    overflow-y: hidden;
-    -webkit-transition: max-height 200ms;
-    transition: max-height 200ms;
-  }
-  #tabs-list #li-for-panel-3 {
-    max-height: 0;
-    overflow-y: hidden;
-    -webkit-transition: max-height 200ms;
-    transition: max-height 200ms;
-  }
-
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
-    max-height: 46px;
-    opacity: 1;
-  }
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
-    background-color: white;
-    color: #c0392b;
-    background-color: #CF0039;
-    color: white;
-  }
-
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 {
-    max-height: 46px;
-    opacity: 1;
-  }
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
-    background-color: white;
-    color: #c0392b;
-    background-color: #CF0039;
-    color: white;
-  }
-
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 {
-    max-height: 46px;
-    opacity: 1;
-  }
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
-    background-color: white;
-    color: #c0392b;
-    background-color: #CF0039;
-    color: white;
-  }
-
-  #panels .container {
-    width: 100%;
-  }
-  #panels section header {
-    display: block;
-  }
-}
-@media all and (min-width: 768px) {
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
-    pointer-events: none;
-    cursor: default;
-    webkit-transform: translate3d(0, 1px, 0);
-            transform: translate3d(0, 1px, 0);
-    box-shadow: none;
-    border-right: none;
-  }
-
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
-    background-color: white;
-    color: #CF0039;
-    padding-top: 26px;
-  }
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label::after {
-    height: 6px;
-  }
-
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 {
-    pointer-events: none;
-    cursor: default;
-    -webkit-transform: translate3d(0, 1px, 0);
-            transform: translate3d(0, 1px, 0);
-    box-shadow: none;
-    border-right: none;
-  }
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
-    background-color: white;
-    color: #CF0039;
-    padding-top: 26px;
-  }
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label::after {
-    height: 6px;
-  }
-
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 {
-    pointer-events: none;
-    cursor: default;
-    -webkit-transform: translate3d(0, 1px, 0);
-            transform: translate3d(0, 1px, 0);
-    box-shadow: none;
-    border-right: none;
-  }
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
-    background-color: white;
-    color: #CF0039;
-    padding-top: 26px;
-  }
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label::after {
-    height: 6px;
-  }
-
-  ul#tabs-list {
-    text-align: center;
-    border-bottom: 1px solid #dfdfdf;
-  }
-  ul#tabs-list li {
-    display: inline-block;
-    text-align: center;
-    width: 33%;
-    box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.05);
-    border-right: 1px solid #dfdfdf;
-    position: relative;
-  }
-  ul#tabs-list li:hover {
-    -webkit-transition: none;
-    transition: none;
-    border-right: none;
-  }
-  ul#tabs-list li label.panel-label {
-    position: relative;
-    padding: 24px 0;
-  }
-  ul#tabs-list li label.panel-label::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 100%;
-    background-color: #CF0039;
-    height: 0;
-    -webkit-transition-property: height;
-    transition-property: height;
-    -webkit-transition-duration: 200ms;
-            transition-duration: 200ms;
-  }
-  ul#tabs-list li label.panel-label:hover {
-    padding-top: 25px;
-  }
-  ul#tabs-list li label.panel-label:hover::after {
-    height: 6px;
-  }
-
-  #open-nav-label,
-  #close-nav-label {
-    display: none;
-  }
-
-  #nav-ctrl {
-    display: none;
-  }
-}
-@media all and (min-width: 900px) {
-  main {
-    width: 100%;
-  }
-}
-.panel-radios {
-  display: none;
-}
-.panel-radios:nth-child(1) {
-  -webkit-transform: translateX(-50px);
-          transform: translateX(-50px);
-}
-.panel-radios:nth-child(2) {
-  -webkit-transform: translateX(-30px);
-          transform: translateX(-30px);
-}
-.panel-radios:nth-child(3) {
-  -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
-}
-.panel-radios:nth-child(6) {
-  top: 30px;
-  -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
-  display: block;
-}
-
-.main h1 {
-  margin-top: 0;
-  font-weight: 300;
-  color: #c0392b;
-}
-.main p {
-  line-height: 1.8;
 }

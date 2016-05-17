@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
-use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -19,6 +18,10 @@ class AdminController extends Controller
 		
 		$projects = Project::all();
 
-		return view('projects/projectslist', ['projects' => $projects]);
+		return view('projects.projectslist', ['projects' => $projects]);
+	}
+
+	public function addProject() {
+		return view('projects.add_project');
 	}
 }
