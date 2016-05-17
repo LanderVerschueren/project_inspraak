@@ -6,5 +6,9 @@ $(document).ready(function() {
 	   	$(this).carousel('next');  
 	});
 
-	$('#datepicker').datepicker();  
-});
+	$('#datepicker').datepicker(); 
+
+    /*$("#form_filter").on("change", "input:checkbox", function(){
+        $("#form_filter").submit();
+    });*/
+}); 

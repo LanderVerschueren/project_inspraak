@@ -116,7 +116,7 @@ input[type="text"] {
   font-family: 'antwerpen_regular';
 }
 
-label, input {
+label, input, p {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
   border-radius: 0!important;

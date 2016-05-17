@@ -9,7 +9,7 @@
 						<h4>Filter</h4>
 					</div>
 					<div class="panel-body">
-						<form action="">
+						<form id="form_filter" action="/projecten" method="GET">
 							<section>
 								<h5>Type</h5>
 								<span>
@@ -54,6 +54,8 @@
 									<input id="checkbox_1000" type="checkbox" name="likes" value="meer_dan_1000" >
 									<label id="label_1000" for="checkbox_1000">> 1000</label>
 								</span>
+
+								<button type="submit"> GO </button>
 							</section>
 						</form>
 					</div>
