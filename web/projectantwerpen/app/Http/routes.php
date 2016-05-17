@@ -33,4 +33,4 @@ Route::group(['prefix' =>'api'], function()
         Route::post('/logout', 'APIController@logout');
     });
     Route::get('/projects' , 'APIController@requestProjects');
-}
+});
