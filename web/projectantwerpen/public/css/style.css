@@ -86,7 +86,7 @@ body, html {
 }
 
 input[type="text"] {
-	font-family: 'antwerpen_sun500';
+  font-family: 'antwerpen_sun500';
 }
 
 .navbar {
@@ -520,8 +520,8 @@ form>.form-group>.col-md-6>a {
 }
 
 .main ul {
-	list-style-type: none;
-	padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .main ul {
@@ -601,6 +601,9 @@ form>.form-group>.col-md-6>a {
   .admin_list>.btn_aanpassen {
     display: flex;
     justify-content: flex-start;
+  }
+  .admin_list>.titel {
+    padding: 0;
   }
 }
 

@@ -14,16 +14,9 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 class APIController extends Controller
 {
-	public function _construct()
-	{
-		if ((\App::environment() == 'testing') && array_key_exists("HTTP_AUTHORIZATION",  \Request::server())) {
-        	JWTAuth::setRequest(\Route::getCurrentRequest());
-    	}
-	}
-    public function requestProjects(){
-    	$json_projects = Project::all()->toJson();
-    	$json = preg_replace('/([{,])(\s*)([A-Za-z0-9_\-]+?)\s*:/','$1"$3":', $json_projects);
-    	return $json;
+    public function request(){
+    	$projects = Project::all();
+    	return response()->json($projects);
     }
 
     public function login(Request $request){
@@ -66,4 +59,3 @@ class APIController extends Controller
    		return response()->json(compact('token'));
   	}
 }
-
