@@ -28,9 +28,7 @@
 											<label>Kostprijs:</label>
 										</li>
 										<li>
-											@if (Auth::user()->isAdmin())
 											<input type="text" value="&euro; {{$project->kostprijs}}" disabled>
-											@endif
 										</li>
 									</ul>
 									<ul>

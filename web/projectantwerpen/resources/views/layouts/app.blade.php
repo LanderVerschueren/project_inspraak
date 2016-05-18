@@ -49,7 +49,6 @@
                                 
                 <a href="{{ url('/home') }}" id="div-brand-image">    
                     <img src="{{ URL::asset('images/logo_antwerpen/Eenkleurig_A-logo_RGB_NEG/JPEG/123x123/A_logo_200_RGB_NEG_123X123.jpg') }}" alt="" id="brand-image">
-                    <!--<img src="{{ URL::asset('images/logo_antwerpen/Tweekleurig_A-LOGO/sRGB/JPEG/A_logo_RGB_123x123.jpg') }}" alt="" id="brand-image">-->
                 </a>
 
                 <!-- Branding Image -->

@@ -20,13 +20,11 @@
 /* Carousel Styling */
 .carousel-caption {
   background-color: rgba(0,0,0,.5);
-  position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 10;
-  padding: 0 0 10px 25px;
-  color: #fff;
+  padding: 0 0 0px 25px;
   text-align: left;
   font-family: 'antwerpen_tall';
 }
@@ -39,7 +37,7 @@
   width: 100%;
   z-index: 15;
   margin: 0;
-  padding: 0 25px 25px 0;
+  padding: 0 25px 20px 0;
   text-align: right;
 }
 
@@ -55,366 +53,117 @@
   width: 100%;
 }
 
-#tabs-list {
+@media screen and (max-width: 500px) {
+  .img-responsive,
+  .thumbnail > img,
+  .thumbnail a > img,
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    height: 200px;
+  }
+  .carousel-indicators {
+    padding-bottom: 10px;
+  }
+  .carousel-caption {
+    padding-left: 5px;
+  }
+  .carousel-caption h2 {
+    font-size: 20px;
+  }
+}
+
+
+
+.tabs {
+  font-family: 'antwerpen_sun300';
+  font-size: 16px;
+  padding: 0;
+  width: 100%;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  display: flex;
+  flex-flow: row nowrap;
+  border-bottom: 1px solid #CF0036
+}
+.tabs > li {
+  transition-duration: .25s;
   list-style: none;
   text-align: center;
-  border-bottom: 1px solid #CF0039;
-  margin: 0;
-  padding: 0;
-}
-
-#tabs-list label {
-  font-family: 'antwerpen_sun300';
-  font-weight: normal;
-  font-size: 14px;
-}
-
-label.panel-label {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  display: block;
-  width: 100%;
-  color: #bdc3c7;
+  padding: 20px 20px 25px 20px;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
-  background-color: #dfdfdf;
-  -webkit-transition-property: background-color, color;
-  transition-property: background-color, color;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-  font-family: 'antwerpen_sun';
-  font-weight: normal;
+  color: black;
+  flex: 1;
 }
-label.panel-label:hover {
-  color: #CF0039;
-}
-
-#panels {
-  background-color: white;
-}
-#panels .container {
-  margin: 0 auto;
+.tabs > li:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
   width: 100%;
+  height: 120%;
+  top: 0;
+  left: 0;
+  background-color: #CF0036;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  transition-duration: .25s;
+  border-radius: 5px 5px 0 0;
 }
-#panels section>.main {
-  box-sizing: border-box;
-  max-height: 0;
-  opacity: 0;
-  -webkit-transition: opacity 600ms;
-  transition: opacity 600ms;
-  overflow-y: hidden;
+.tabs > li:hover:before {
+  border-radius: 0;
+  -webkit-transform: translateY(70%);
+  transform: translateY(70%);
+}
+.tabs > li.active {
+  color: white;
+}
+.tabs > li.active:before {
+  border-radius: 0;
+  transition-duration: .5s;
+  background-color: #CF0036;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
 
-#panel-1-ctrl:checked ~ #panels #panel-1>.main {
-  max-height: initial;
-  opacity: 1;
-  padding: 48px 0px 48px 0px;
+.tab__content {
+  padding: 0;
 }
-
-#panel-2-ctrl:checked ~ #panels #panel-2>.main {
-  max-height: initial;
-  opacity: 1;
-  padding: 48px 0px 48px 0px;
-}
-
-#panel-3-ctrl:checked ~ #panels #panel-3>.main {
-  max-height: initial;
-  opacity: 1;
-  padding: 48px 0px 48px 0px;
-}
-@media all and (max-width: 767px) {
-  #nav-ctrl:checked ~ #tabs-list #li-for-panel-1 {
-    max-height: 46px;
-    opacity: 1;
-  }
-
-  #nav-ctrl:checked ~ #tabs-list #li-for-panel-2 {
-    max-height: 46px;
-    opacity: 1;
-  }
-
-  #nav-ctrl:checked ~ #tabs-list #li-for-panel-3 {
-    max-height: 46px;
-    opacity: 1;
-  }
-
-  #open-nav-label {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    cursor: pointer;
-  }
-
-  #nav-ctrl:checked ~ #tabs-list #open-nav-label {
-    display: none;
-  }
-
-  #close-nav-label {
-    display: block;
-    max-height: 0;
-    overflow-y: hidden;
-    background-color: #444444;
-    color: #ecf0f1;
-    padding: 0px;
-    -webkit-transition: max-height 200ms;
-    transition: max-height 200ms;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 10px;
-    letter-spacing: 1px;
-  }
-
-  #nav-ctrl:checked ~ #tabs-list #close-nav-label {
-    max-height: 36px;
-    opacity: 1;
-    padding: 12px 24px;
-  }
-
-  #tabs-list {
-    position: relative;
-  }
-  #tabs-list label.panel-label {
-    padding: 10px 0;
-  }
-  #tabs-list label {
-    margin-bottom: 0;
-  }
-  #tabs-list #li-for-panel-1 {
-    max-height: 0;
-    overflow-y: hidden;
-    -webkit-transition: max-height 200ms;
-    transition: max-height 200ms;
-  }
-  #tabs-list #li-for-panel-2 {
-    max-height: 0;
-    overflow-y: hidden;
-    -webkit-transition: max-height 200ms;
-    transition: max-height 200ms;
-  }
-  #tabs-list #li-for-panel-3 {
-    max-height: 0;
-    overflow-y: hidden;
-    -webkit-transition: max-height 200ms;
-    transition: max-height 200ms;
-  }
-
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
-    max-height: 46px;
-    opacity: 1;
-  }
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
-    background-color: white;
-    color: #c0392b;
-    background-color: #CF0039;
-    color: white;
-  }
-
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 {
-    max-height: 46px;
-    opacity: 1;
-  }
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
-    background-color: white;
-    color: #c0392b;
-    background-color: #CF0039;
-    color: white;
-  }
-
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 {
-    max-height: 46px;
-    opacity: 1;
-  }
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
-    background-color: white;
-    color: #c0392b;
-    background-color: #CF0039;
-    color: white;
-  }
-
-  #panels .container {
-    width: 100%;
-  }
-  #panels section header {
-    display: block;
-  }
-}
-@media all and (min-width: 768px) {
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
-    pointer-events: none;
-    cursor: default;
-    webkit-transform: translate3d(0, 1px, 0);
-            transform: translate3d(0, 1px, 0);
-    box-shadow: none;
-    border-right: none;
-  }
-
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
-    background-color: white;
-    color: #CF0039;
-    padding-top: 26px;
-  }
-  #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label::after {
-    height: 6px;
-  }
-
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 {
-    pointer-events: none;
-    cursor: default;
-    -webkit-transform: translate3d(0, 1px, 0);
-            transform: translate3d(0, 1px, 0);
-    box-shadow: none;
-    border-right: none;
-  }
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
-    background-color: white;
-    color: #CF0039;
-    padding-top: 26px;
-  }
-  #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label::after {
-    height: 6px;
-  }
-
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 {
-    pointer-events: none;
-    cursor: default;
-    -webkit-transform: translate3d(0, 1px, 0);
-            transform: translate3d(0, 1px, 0);
-    box-shadow: none;
-    border-right: none;
-  }
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
-    background-color: white;
-    color: #CF0039;
-    padding-top: 26px;
-  }
-  #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label::after {
-    height: 6px;
-  }
-
-  ul#tabs-list {
-    text-align: center;
-    border-bottom: 1px solid #dfdfdf;
-  }
-  ul#tabs-list li {
-    display: inline-block;
-    text-align: center;
-    width: 33%;
-    box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.05);
-    border-right: 1px solid #dfdfdf;
-    position: relative;
-  }
-  ul#tabs-list li:hover {
-    -webkit-transition: none;
-    transition: none;
-    border-right: none;
-  }
-  ul#tabs-list li label.panel-label {
-    position: relative;
-    padding: 24px 0;
-  }
-  ul#tabs-list li label.panel-label::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 100%;
-    background-color: #CF0039;
-    height: 0;
-    -webkit-transition-property: height;
-    transition-property: height;
-    -webkit-transition-duration: 200ms;
-            transition-duration: 200ms;
-  }
-  ul#tabs-list li label.panel-label:hover {
-    padding-top: 25px;
-  }
-  ul#tabs-list li label.panel-label:hover::after {
-    height: 6px;
-  }
-
-  #open-nav-label,
-  #close-nav-label {
-    display: none;
-  }
-
-  #nav-ctrl {
-    display: none;
-  }
-}
-@media all and (min-width: 900px) {
-  main {
-    width: 100%;
-  }
-}
-.panel-radios {
+.tab__content > li {
   display: none;
+  list-style: none;
 }
-.panel-radios:nth-child(1) {
-  -webkit-transform: translateX(-50px);
-          transform: translateX(-50px);
-}
-.panel-radios:nth-child(2) {
-  -webkit-transform: translateX(-30px);
-          transform: translateX(-30px);
-}
-.panel-radios:nth-child(3) {
-  -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
-}
-.panel-radios:nth-child(6) {
-  top: 30px;
-  -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
-  display: block;
-}
-
-.main h1 {
-  margin-top: 0;
-  font-weight: 300;
-  color: #c0392b;
-}
-.main p {
-  line-height: 1.8;
-}
-
-.main ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.main ul {
-  list-style-type: none;
-  padding: 0;
+.content__wrapper {
+  padding-top: 15px;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-} 
-
-.main ul li {
-  display: inline-block;
-  width: 33%;
-  padding: 1px;
+  flex-flow: row nowrap;
+}
+.content__wrapper h4 {
+  font-family: 'antwerpen_regular';
+}
+.content__wrapper a {
+  flex: 1;
+  color: black;
+}
+.content__wrapper a:hover {
+  text-decoration: none;
+}
+.content__wrapper a img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: bottom;
 }
 
-.main ul img {
-    object-fit: cover;
-    object-position: bottom;
-    width: 100%;
-    height: 150px;
-}
-
-@media screen and (min-width: 767px) {
-  .main>ul {
-    display: flex;
+@media screen and (max-width: 767px) {
+  .content__wrapper {
     flex-flow: column nowrap;
   }
+  .content__wrapper a {
+    padding-bottom: 15px;
+  }
 
-  .main>ul>li {
-    width: 100%;
+  .tabs {
+    flex-flow: column nowrap;
   }
 }

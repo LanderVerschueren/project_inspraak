@@ -42,68 +42,44 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <!-- TAB CONTROLLERS -->
-            <input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios" checked>
-            <input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
-            <input id="panel-3-ctrl" class="panel-radios" type="radio" name="tab-radios">
-            <input id="nav-ctrl" class="panel-radios" type="checkbox" name="nav-checkbox">
+                <section class="wrapper">
+                    <ul class="tabs">
+                        <li class="active">Meest recent</li>
+                        <li>Meest bekeken</li>
+                        <li>Meeste likes</li>
+                    </ul>
 
-            <!-- TABS LIST -->
-            <ul id="tabs-list">
-                <!-- MENU TOGGLE -->
-                <label id="open-nav-label" for="nav-ctrl"></label>
-                <li id="li-for-panel-1">
-                    <label class="panel-label" for="panel-1-ctrl">
-                        MEEST RECENT
-                    </label>
-                </li>
-                <!--INLINE-BLOCK FIX-->
-                <li id="li-for-panel-2">
-                    <label class="panel-label" for="panel-2-ctrl">
-                        MEEST BEKEKEN
-                    </label>
-                </li>
-                <!--INLINE-BLOCK FIX-->
-                <li id="li-for-panel-3">
-                    <label class="panel-label" for="panel-3-ctrl">
-                        POPULAIRST
-                    </label>
-                </li>
-                <label id="close-nav-label" for="nav-ctrl">SLUITEN</label>
-            </ul>
-
-            <!-- THE PANELS -->
-            <article id="panels">
-                <div class="container">
-                <div class="panel_container">
-                    <section id="panel-1">
-                        <div class="main">
-                            <ul>
-                                @foreach($projects->sortByDesc('einddatum') as $project)
-                                    <li><a href="{{ url('/project/'.$project->id) }}"><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></a></li>
+                    <ul class="tab__content">
+                        <li class="active">
+                            <div class="content__wrapper">
+                                @foreach($projects->sortByDesc('einddatum') as $project)                                    
+                                    <a href="{{ url('/project/'.$project->id) }}">
+                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
+                                        <img src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
+                                    </a>
                                 @endforeach
-                            </ul>
-                        </div>
-                    </section>
-                    <section id="panel-2">
-                        <div class="main">
-                            <ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content__wrapper">
                                 @foreach($projects->sortByDesc('aantal_bekeken') as $project)
-                                    <li><a href="{{ url('/project/'.$project->id) }}"><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></a></li>
+                                    <a href="{{ url('/project/'.$project->id) }}">
+                                        <img src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
+                                    </a>
                                 @endforeach
-                        </div>
-                    </section>
-                    <section id="panel-3">
-                        <div class="main">
-                            <ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content__wrapper">
                                 @foreach($projects->sortByDesc('likes') as $project)
-                                    <li><a href="{{ url('/project/'.$project->id) }}"><img src="{{URL::asset('images/'.$project->fotonaam)}}" alt=""></a></li>
+                                    <a href="{{ url('/project/'.$project->id) }}">
+                                        <img src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
+                                    </a>
                                 @endforeach
-                            </ul>
-                        </div>
-                    </section>
-                </div>
-            </article>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
         </div>
     </div>
 </div>
