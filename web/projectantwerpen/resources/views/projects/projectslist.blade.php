@@ -4,6 +4,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+				<div class="addProject">
+					<a href="{{ url('/project/addproject') }}" class="btn btn-primary" role="button">Project toevoegen</a>
+				</div>
+
 				@foreach( $projects as $project )
 				<div class="admin_list">
 					<section class="image">
