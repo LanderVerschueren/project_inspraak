@@ -67,15 +67,12 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
-    <Reference Include="LitJson">
-      <HintPath>Assets\LitJson.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AddReaction.cs" />
+    <Compile Include="Assets\LoadProjectSettings.cs" />
     <Compile Include="Assets\MakeTestProjects.cs" />
-    <Compile Include="Assets\ProjectCollection.cs" />
-    <Compile Include="Assets\ProjectSettings.cs" />
+    <Compile Include="Assets\ReadJson.cs" />
     <Compile Include="Assets\Scripts\Game\GameLogic.cs" />
     <Compile Include="Assets\Scripts\Game\LikeLogic.cs" />
     <Compile Include="Assets\Scripts\Game\PlaySounds.cs" />
@@ -85,7 +82,7 @@
     <Compile Include="Assets\Scripts\Navigation\UILogic.cs" />
     <Compile Include="Assets\Scripts\PlayerSettings.cs" />
     <Compile Include="Assets\Scripts\ToggleInfo.cs" />
-    <Compile Include="Assets\UpdateContentProjects.cs" />
+    <Compile Include="Assets\UpdateContactProjects.cs" />
     <Compile Include="Assets\numberOfSteps.cs" />
     <Compile Include="Assets\projectPosition.cs" />
     <Compile Include="Assets\updateReactionContect.cs" />
