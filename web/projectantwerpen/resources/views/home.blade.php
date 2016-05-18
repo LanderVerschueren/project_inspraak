@@ -64,6 +64,7 @@
                             <div class="content__wrapper">
                                 @foreach($projects->sortByDesc('aantal_bekeken') as $project)
                                     <a href="{{ url('/project/'.$project->id) }}">
+                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
                                         <img src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
                                     </a>
                                 @endforeach
@@ -73,6 +74,7 @@
                             <div class="content__wrapper">
                                 @foreach($projects->sortByDesc('likes') as $project)
                                     <a href="{{ url('/project/'.$project->id) }}">
+                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
                                         <img src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
                                     </a>
                                 @endforeach
