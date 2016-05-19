@@ -41,31 +41,37 @@
 									</ul>
 								</section>
 							</section>
-							<section class="timeline">
-						    	<section id="Steps" class="timeline steps-section">						    
-						    		<div class="steps-timeline">
-						    			<div class="steps-one">
-								        	<i class="fa fa-comments steps-img <?= $project->fase <= 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								          		Mening
-								        	</h3>
-								      	</div>
+							<section class="timeline_explanation">
+						    	<section class="timeline">
+										<div id="timeline">
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-comment-o" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Mening</h4>
+												</div>
+											</div>
 
-								      	<div class="steps-two">
-								        	<i class="fa fa-exclamation-triangle steps-img <?= $project->fase > 1 && $project->fase <= 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								          		Afbraak
-								        	</h3>
-								      	</div>
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Afbraak</h4>
+												</div>
+											</div>
 
-								      	<div class="steps-three">
-								        	<i class="fa fa-cog steps-img <?= $project->fase === 3 ? 'completed' : '' ?>" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								         		Opbouw
-								        	</h3>
-								      	</div>
-								    </div>
-								</section>
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-cog" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Opbouw</h4>
+												</div>
+											</div>
+										</div>
+						    	</section>
 						    	<section class="explanation">
 						    		<p>{{$project->uitleg}}</p>
 						    	</section>

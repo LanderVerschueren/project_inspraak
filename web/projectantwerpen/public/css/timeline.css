@@ -1,120 +1,121 @@
-.steps-timeline {
-  outline: 1px dashed rgba(255, 0, 0, 0);
-}
-@media screen and (max-width: 500px) {
-  .steps-timeline {
-    border-left: 2px solid #8D9092;
-    margin-left: 25px;
-  }
-}
-@media screen and (min-width: 500px) {
-  .steps-timeline {
-    border-top: 2px solid #8D9092;
-    padding-top: 20px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    margin-left: 16.65%;
-    margin-right: 16.65%;
-  }
-}
-.steps-timeline:after {
-  content: "";
-  display: table;
+#timeline .timeline-item:after,
+#timeline .timeline-item:before {
+  content: '';
+  display: block;
+  width: 100%;
   clear: both;
 }
 
-.steps-one,
-.steps-two,
-.steps-three {
-  outline: 1px dashed rgba(0, 128, 0, 0);
-}
-@media screen and (max-width: 500px) {
-  .steps-one,
-  .steps-two,
-  .steps-three,
-  .completed {
-    margin-left: -26px;
-  }
-  .steps-timeline>div>h3 {
-    min-height: 65px;
-    padding-top: 10px;
-  }
-}
-@media screen and (min-width: 500px) {
-  .steps-one,
-  .steps-two,
-  .steps-three {
-    float: left;
-    width: 33%;
-    margin-top: -46px;
-  }
+#timeline {
+  margin: 0 0 0 15px;
+  position: relative;
+  padding: 0 10px;
+  padding-right: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-@media screen and (max-width: 500px) {
-  .steps-one,
-  .steps-two {
-    padding-bottom: 40px;
-  }
+#timeline:before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #CF0036;
+  top: 0;
+  position: absolute;
 }
 
-@media screen and (min-width: 500px) {
-  .steps-one {
-    margin-left: -16.65%;
-    margin-right: 16.65%;
-  }
+#timeline:after {
+  content: "";
+  clear: both;
+  display: table;
+  width: 100%;
 }
 
-@media screen and (max-width: 500px) {
-  .steps-three {
-    margin-bottom: -100%;
-  }
-}
-@media screen and (min-width: 500px) {
-  .steps-three {
-    margin-left: 16.65%;
-    margin-right: -16.65%;
-  }
+#timeline .timeline-item {
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.steps-img {
+#timeline .timeline-item .timeline-icon {
+  background: #CF0036;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  margin-left: -23px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: white;
-  color: #CF0039!important;
-  border: 1px solid #CF0039;
 }
-.steps-img.completed {
-  background-color: #CF0039;
-  color: white!important;
+
+#timeline .timeline-item .timeline-icon .fa {
+  font-size: 25px;
+  color: white;
 }
-@media screen and (max-width: 500px) {
-  .steps-img {
-    float: left;
-    margin-right: 20px;
+
+#timeline .timeline-item .timeline-content h4 {
+  padding: 15px;
+  background: #CF0036;
+  color: white;
+  margin: -20px -20px 0 -20px;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  font-family: 'antwerpen_regular';
+}
+
+#timeline .timeline-item .timeline-content.right {
+  margin-left: 11%;
+  padding: 20px;
+  padding-bottom: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#timeline .timeline-item .timeline-content.right:before {
+  content: '';  
+  position: absolute;
+  left: 10%;  
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-left: 0;
+  border-right: 7px solid #CF0036;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+@media screen and (max-width: 768px) {
+  #timeline {
+    margin: 30px;
+    padding: 0px;
+    width: 90%;
   }
-}
-
-.steps-name,
-.steps-description {
-  margin: 0;
-}
-
-@media screen and (min-width: 500px) {
-  .steps-name {
-    text-align: center;
+  #timeline:before {
+    left: 0;
   }
-}
-
-.steps-description {
-  overflow: hidden;
-}
-@media screen and (min-width: 500px) {
-  .steps-description {
-    text-align: center;
+  #timeline .timeline-item .timeline-content {
+    width: 88%;
+    float: right;
+  }
+  #timeline .timeline-item .timeline-content:before,
+  #timeline .timeline-item .timeline-content.right:before {
+    left: 12%;
+    margin-left: -6px;
+    border-left: 0;
+    border-right: 7px solid #CF0036;
+  }
+  #timeline .timeline-item .timeline-icon {
+    left: 0;
   }
 }

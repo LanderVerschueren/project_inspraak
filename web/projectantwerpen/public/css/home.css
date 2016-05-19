@@ -53,13 +53,23 @@
   width: 100%;
 }
 
+@media screen and (max-width: 767px) and (min-width: 501px) {
+  .img-responsive,
+  .thumbnail > img,
+  .thumbnail a > img,
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    height: 300px;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .img-responsive,
   .thumbnail > img,
   .thumbnail a > img,
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-    height: 200px;
+    height: 250px;
   }
   .carousel-indicators {
     padding-bottom: 10px;
@@ -69,6 +79,10 @@
   }
   .carousel-caption h2 {
     font-size: 20px;
+  }
+
+  .carousel-control fa {
+    top: 44%;
   }
 }
 
@@ -165,5 +179,8 @@
 
   .tabs {
     flex-flow: column nowrap;
+  }
+  .tabs li {
+    padding: 5px 20px 5px 20px;
   }
 }

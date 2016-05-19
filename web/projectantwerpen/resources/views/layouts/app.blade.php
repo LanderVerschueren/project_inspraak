@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="{{ URL::asset('css/navbar.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/forms.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
