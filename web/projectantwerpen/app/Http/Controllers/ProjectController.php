@@ -31,7 +31,15 @@ class ProjectController extends Controller
 			}
 			if(isset($likes)){
 				foreach($likes as $like){
-					$query->orWhere('likes', '=', $like);
+					if($like == '<100'){
+						$query->where('likes', '=<', 100);
+					}
+					if($like == '100_1000'){
+						$query->whereBetween('likes', array(100,1000));
+					}
+					if($like == '>1000'){
+						$query->where('likes', '>=', 1000);
+					}
 				}
 			}
 		})->get();

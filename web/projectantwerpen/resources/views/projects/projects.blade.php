@@ -43,7 +43,7 @@
 							<section>
 								<h5>Aantal likes</h5>
 								<span>
-									<input id="checkbox_0" type="checkbox" name="likes[]" value="minder_dan_100" >
+									<input id="checkbox_0" type="checkbox" name="likes[]" value="<100" >
 									<label id="label_0" for="checkbox_0">< 100</label>
 								</span>
 								<span>
@@ -51,7 +51,7 @@
 									<label id="label_100" for="checkbox_100">100 - 1000</label>
 								</span>
 								<span>
-									<input id="checkbox_1000" type="checkbox" name="likes[]" value="meer_dan_1000" >
+									<input id="checkbox_1000" type="checkbox" name="likes[]" value=">1000" >
 									<label id="label_1000" for="checkbox_1000">> 1000</label>
 								</span>
 
