@@ -65,10 +65,7 @@
   background: #CF0036;
   color: white;
   margin: -20px -20px 0 -20px;
-  -webkit-border-radius: 3px 3px 0 0;
-  -moz-border-radius: 3px 3px 0 0;
-  -ms-border-radius: 3px 3px 0 0;
-  border-radius: 3px 3px 0 0;
+
   font-family: 'antwerpen_regular';
 }
 
@@ -95,11 +92,10 @@
   border-bottom: 7px solid transparent;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #timeline {
-    margin: 30px;
+    margin-left: 25px;
     padding: 0px;
-    width: 90%;
   }
   #timeline:before {
     left: 0;

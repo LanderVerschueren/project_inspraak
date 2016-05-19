@@ -56,6 +56,7 @@
 								</span>
 
 								<button type="submit"> Verzend </button>
+								
 							</section>
 						</form>
 					</div>

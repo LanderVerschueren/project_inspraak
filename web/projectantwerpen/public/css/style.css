@@ -91,6 +91,10 @@ body, html {
   height: 100%;
 }
 
+body {
+  position: relative;
+}
+
 input[type="text"] {
   font-family: 'antwerpen_sun500';
 }
@@ -222,6 +226,18 @@ label, input, p {
   font-weight: 500;
 }
 
+#filter button {
+  font-family: 'antwerpen_sun500';
+  font-size: 16px;
+  background-color: white;
+  border: 1px solid #CF0036;
+}
+
+#filter button:hover {
+  background-color: #CF0036;
+  color: white;
+}
+
 @media screen and (max-width: 625px) {
   #filter form {
     flex-direction: column;
@@ -348,6 +364,8 @@ label, input, p {
   flex-flow: row wrap;
   align-items: center;
   margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid lightgrey;
 }
 
 #project form .main_info .image {
@@ -356,7 +374,6 @@ label, input, p {
 
 #project form .main_info .image img {
   width: 100%;
-  min-width: 350px;
 }
 
 #project form .main_info .info {
@@ -401,12 +418,12 @@ label, input, p {
   margin-left: 40px;
 }
 
-@media screen and (max-width: 604px) {
+@media screen and (max-width: 767px) {
   #project form .main_info .image {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   #project form .main_info .info ul {
-    padding-left: 0;
+    padding: 0;
   }
 }
 
@@ -426,6 +443,13 @@ label, input, p {
   }
   #project form .timeline_explanation {
     flex-flow: column nowrap;
+  }
+  #project form .timeline_explanation .timeline{
+    margin-bottom: 15px;
+  }
+
+  #project form .timeline_explanation .explanation p {
+    margin-left: 0;
   }
 }
 

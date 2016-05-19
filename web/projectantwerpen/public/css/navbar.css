@@ -24,6 +24,7 @@
 .navbar-collapse>.nav>li>a {
   color: white;
   font-family: 'antwerpen_smallCaps';
+  font-size: 16px;
 }
 
 .navbar-header>.navbar-toggle>.icon-bar {
@@ -37,6 +38,25 @@
 #li_search>form>div>input,
 #li_search>form>div>div>button {
   border-radius: 0;
+}
+
+.dropdown.open a {
+  background-color: white;
+  color: black!important;
+}
+
+.dropdown-menu {
+  left: 0!important;
+  padding: 0;
+}
+
+.dropdown-menu a {
+  font-family: 'antwerpen_sun300';
+  font-size: 16px;
+}
+
+.dropdown-menu li:hover {
+  background-color: lightgrey;
 }
 
 @media screen and (max-width: 767px) {
@@ -56,11 +76,5 @@
 
   .navbar-right {
     margin-bottom: 0;
-  }
-}
-
-@media screen and (min-width: 767px) and (max-width: 990px) {
-  .navbar-right>li>a:first-child {
-    padding-left: 0;
   }
 }
