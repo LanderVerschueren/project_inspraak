@@ -9,7 +9,7 @@
 						<h4>{{$project->titel}}</h4>
 					</div>
 					<div class="panel-body">
-						<form action="">
+						<form action="/vote" method="GET">
 							<section class="main_info">							
 								<section class="image">
 									<img src="{{ URL::asset('images/'.$project->fotonaam) }}" alt="">

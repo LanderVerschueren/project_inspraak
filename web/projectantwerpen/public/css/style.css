@@ -421,9 +421,11 @@ label, input, p {
   border-bottom: 1px solid lightgrey;
 }
 
+#project form .question .button {
+  text-align: center;
+}
+
 #project form .question .button button {
-  display: block;
-  margin: 0 auto;
   border: 1px solid #CF0036;
   background-color: white;
   width: 20%;
