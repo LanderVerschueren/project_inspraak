@@ -421,8 +421,18 @@ label, input, p {
   border-bottom: 1px solid lightgrey;
 }
 
-#project form .question {
-  
+#project form .question .button button {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #CF0036;
+  background-color: white;
+  width: 20%;
+  font-size: 20px;
+}
+
+#project form .question .button button:hover {
+  background-color: #CF0036;
+  color: white;
 }
 
 #project form .question p {
