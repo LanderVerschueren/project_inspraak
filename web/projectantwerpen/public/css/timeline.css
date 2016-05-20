@@ -39,7 +39,7 @@
 }
 
 #timeline .timeline-item .timeline-icon {
-  background: #CF0036;
+  background: white;
   width: 50px;
   height: 50px;
   position: absolute;
@@ -53,24 +53,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #CF0036;
 }
 
 #timeline .timeline-item .timeline-icon .fa {
   font-size: 25px;
-  color: white;
+  color: black;
 }
 
 #timeline .timeline-item .timeline-content h4 {
-  padding: 15px;
-  background: #CF0036;
-  color: white;
+  padding: 15px 15px 15px 50px;
+  background: white;
+  color: black;
   margin: -20px -20px 0 -20px;
-
   font-family: 'antwerpen_regular';
+  border-top: 1px solid #CF0036;
+  border-right: 1px solid #CF0036;
+  border-bottom: 1px solid #CF0036;
 }
 
 #timeline .timeline-item .timeline-content.right {
-  margin-left: 11%;
   padding: 20px;
   padding-bottom: 0;
   -webkit-transition: all 0.3s ease;
@@ -79,17 +81,16 @@
   transition: all 0.3s ease;
 }
 
-#timeline .timeline-item .timeline-content.right:before {
-  content: '';  
-  position: absolute;
-  left: 10%;  
-  top: 20px;
-  width: 0;
-  height: 0;
-  border-left: 0;
-  border-right: 7px solid #CF0036;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
+#timeline .timeline-item.selected .timeline-icon {
+  background-color: #CF0036;
+}
+#timeline .timeline-item.selected .timeline-icon .fa {
+  background-color: #CF0036;
+  color: white;
+}
+#timeline .timeline-item.selected .timeline-content h4 {
+  background-color: #CF0036;
+  color: white;
 }
 
 @media screen and (max-width: 767px) {
@@ -99,10 +100,6 @@
   }
   #timeline:before {
     left: 0;
-  }
-  #timeline .timeline-item .timeline-content {
-    width: 88%;
-    float: right;
   }
   #timeline .timeline-item .timeline-content:before,
   #timeline .timeline-item .timeline-content.right:before {

@@ -397,13 +397,13 @@ label, input, p {
   background-color: inherit;
 }
 
-#project form .main_info .info ul li:first-child {
+/*#project form .main_info .info ul li:first-child {
   min-width: 145px;
-}
+}*/
 
 #project form .timeline_explanation {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 #project form .timeline_explanation .timeline {
@@ -424,6 +424,10 @@ label, input, p {
   }
   #project form .main_info .info ul {
     padding: 0;
+    flex-direction: column;
+  }
+  #project form .main_info .info ul li {
+    min-width: 0px;
   }
 }
 
