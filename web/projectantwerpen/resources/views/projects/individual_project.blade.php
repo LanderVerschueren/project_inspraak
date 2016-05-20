@@ -20,7 +20,7 @@
 											<label for="einddatum">Einddatum:</label>
 										</li>
 										<li>
-											<input type="text" value="{{$project->einddatum}}" disabled>
+											<label> {{$project->einddatum}} </label>
 										</li>
 									</ul>
 									<ul>
@@ -28,7 +28,7 @@
 											<label>Kostprijs:</label>
 										</li>
 										<li>
-											<input type="text" value="&euro; {{$project->kostprijs}}" disabled>
+											<label> {{$project->kostprijs}} </label>
 										</li>
 									</ul>
 									<ul>
@@ -36,15 +36,24 @@
 											<label>Categorie:</label>
 										</li>
 										<li>
-											<input type="text" value="<?= ucfirst($project->categorie) ?>" disabled>
+											<label> <?= ucfirst($project->categorie) ?> </label>
 										</li>
 									</ul>
+								</section>
+							</section>
+							<section class="question">
+								<section>
+									<p> {{ $project->vraag }} </p>
+								</section>
+								<section class="button">
+									<button type="submit"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+									<button type="submit"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
 								</section>
 							</section>
 							<section class="timeline_explanation">
 						    	<section class="timeline">
 										<div id="timeline">
-											<div class="timeline-item">
+											<div class="timeline-item <?= ($project->fase >= 1) ? 'selected' : '' ?>">
 												<div class="timeline-icon">
 													<i class="fa fa-comment-o" aria-hidden="true"></i>
 												</div>
@@ -53,7 +62,7 @@
 												</div>
 											</div>
 
-											<div class="timeline-item">
+											<div class="timeline-item <?= ($project->fase >= 2) ? 'selected' : '' ?>">
 												<div class="timeline-icon">
 													<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 												</div>
@@ -62,12 +71,20 @@
 												</div>
 											</div>
 
-											<div class="timeline-item">
+											<div class="timeline-item <?= ($project->fase == 3) ? 'selected' : '' ?>">
 												<div class="timeline-icon">
 													<i class="fa fa-cog" aria-hidden="true"></i>
 												</div>
 												<div class="timeline-content right">
 													<h4>Opbouw</h4>
+												</div>
+											</div>
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-check" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													
 												</div>
 											</div>
 										</div>

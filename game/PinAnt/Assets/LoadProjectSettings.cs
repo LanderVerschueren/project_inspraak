@@ -25,12 +25,27 @@ public class LoadProjectSettings : MonoBehaviour {
   
 
 	// Use this for initialization
-	void Start () {
-    jsonString = File.ReadAllText(Application.dataPath + "/Resources/bananas.json");
-    itemData = JsonMapper.ToObject(jsonString);
+	IEnumerator Start () {
+    string url = "http://bananas.multimediatechnology.be/api/projects";
+
+    WWW www = new WWW(url);
+    yield return www;
+    Debug.Log(url);
+    if (www.error == null)
+    {
+      itemData = JsonMapper.ToObject(www.text);
+    }
+    else
+    {
+      Debug.Log("ERROR: " + www.error);
+    }
+    //itemData = JsonMapper.ToObject(jsonString);
+
+    /*jsonString = File.ReadAllText(Application.dataPath + "/Resources/bananas2.json");
+    itemData = JsonMapper.ToObject(jsonString);*/
 
     projectsCreated = 0;
-
+    Debug.Log(itemData.Count);
     totalProjects = itemData[0].Count; //tel totaal aantal projecten
     Debug.Log("totalprojects = " + totalProjects);
 
@@ -45,7 +60,7 @@ public class LoadProjectSettings : MonoBehaviour {
     UpdateContent();
     /*Debug.Log(jsonString);
     Debug.Log(itemData[0][0]["titel"]);
-    Debug.Log("total projects =" + itemData[0].Count);*/
+    Debug.Log("total projects =" + itemData.Count);*/
 
     createProjectPanel();
 
@@ -83,7 +98,7 @@ public class LoadProjectSettings : MonoBehaviour {
     project.views = itemData[0][projectnr]["aantal_bekeken"].ToString();
     project.created_at = null; // itemData[0][projectnr]["created_at"].ToString();
     project.updated_at = null; // itemData[0][projectnr]["updated_at"].ToString();
-    project.question = itemData[0][projectnr]["question"].ToString();
+    project.question = itemData[0][projectnr]["vraag"].ToString();
 
     projectList.Add(project);
 
@@ -142,6 +157,8 @@ public class LoadProjectSettings : MonoBehaviour {
       newProject.GetComponent<RectTransform>().SetParent(projectCollection.transform);
       newProject.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
       newProject.GetComponent<RectTransform>().sizeDelta = new Vector2(originelRectTrans.rect.width, originelRectTrans.rect.height);    // origin.rect.width, oldReactionRect.rect.height);
+      newProject.GetComponent<RectTransform>().offsetMin = new Vector2(originelRectTrans.offsetMin.x, 0);
+      newProject.GetComponent<RectTransform>().offsetMax = new Vector2(originelRectTrans.offsetMax.x, 0);
       newProject.GetComponent<RectTransform>().localPosition = new Vector2(0 + 800 * (projectsCreated), 0);
 
       newProject.SetActive(true);
