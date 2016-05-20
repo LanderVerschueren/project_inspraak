@@ -41,8 +41,8 @@ public class LoadProjectSettings : MonoBehaviour {
     }
     //itemData = JsonMapper.ToObject(jsonString);
 
-    jsonString = File.ReadAllText(Application.dataPath + "/Resources/bananas2.json");
-    itemData = JsonMapper.ToObject(jsonString);
+    /*jsonString = File.ReadAllText(Application.dataPath + "/Resources/bananas2.json");
+    itemData = JsonMapper.ToObject(jsonString);*/
 
     projectsCreated = 0;
     Debug.Log(itemData.Count);
