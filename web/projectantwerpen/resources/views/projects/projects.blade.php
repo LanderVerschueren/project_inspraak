@@ -13,7 +13,7 @@
 							<section>
 								<h5>Type</h5>
 								<span>
-									<input id="checkbox_renovatie" type="checkbox" name="type[]" value="renovatie" >
+									<input id="checkbox_renovatie" type="checkbox" name="type[]" value="renovatie" <?php if(isset($GET['type[]'])) echo "checked='checked'"; ?>>
 									<label id="label_renovatie" for="checkbox_renovatie">Renovatie</label>
 								</span>
 								<span>
