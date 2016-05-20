@@ -17,7 +17,6 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/home', 'HomeController@index');
 	Route::get('/', 'HomeController@index');
 	Route::get('/projecten', 'ProjectController@index');
-	
 	Route::get('/projectslist', 'AdminController@index');
 	Route::get('/project/addproject', 'AdminController@addProject');
 	Route::get('/project/{id}', 'IndividualProjectController@index');
@@ -29,10 +28,12 @@ Route::group([ 'middleware' => 'web' ], function() {
 
 Route::group(['prefix' =>'api'], function()
 {
+	Route::get('/projects' , 'APIController@requestProjects');
 	Route::post('/login', 'APIController@login');
 	Route::post('/register' , 'APIController@register');
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
+
         Route::post('/logout', 'APIController@logout');
     });
-    Route::get('/projects' , 'APIController@requestProjects');
+    
 });

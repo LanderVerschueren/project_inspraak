@@ -16,7 +16,9 @@ class APIController extends Controller
 {
     public function requestProjects(){
     	$projects = Project::all();
-    	return response()->json($projects);
+      $all = array('projects' => $projects );
+
+    	return response()->json($all);
     }
 
     public function login(Request $request){
@@ -46,10 +48,10 @@ class APIController extends Controller
 
     public function register(Request $request)
   	{	
-  		$credentials = $request->only('email', 'password');
+  		$credentials = $request->only('name','email', 'password','type_of_user');
 
    		try {
-       		$user = User::create(array('email' => $credentials['email'], 'password' => Hash::make($credentials['password']), 'type_of_user' => 'regular'));
+       		$user = User::create(array('name' => $credentials['name'], 'email' => $credentials['email'], 'password' => Hash::make($credentials['password']), 'type_of_user' => $credentials['type_of_user']));
    		} catch (Exception $e) {
        		return response()->json(['error' => 'User already exists.'], HttpResponse::HTTP_CONFLICT);
    		}
