@@ -9,7 +9,7 @@
 						<h4>{{$project->titel}}</h4>
 					</div>
 					<div class="panel-body">
-						<form action="">
+						<form>
 							<section class="main_info">							
 								<section class="image">
 									<img src="{{ URL::asset('images/'.$project->fotonaam) }}" alt="">
@@ -20,7 +20,7 @@
 											<label for="einddatum">Einddatum:</label>
 										</li>
 										<li>
-											<input type="text" value="{{$project->einddatum}}" disabled>
+											<label> {{$project->einddatum}} </label>
 										</li>
 									</ul>
 									<ul>
@@ -28,7 +28,7 @@
 											<label>Kostprijs:</label>
 										</li>
 										<li>
-											<input type="text" value="&euro; {{$project->kostprijs}}" disabled>
+											<label> {{$project->kostprijs}} </label>
 										</li>
 									</ul>
 									<ul>
@@ -36,9 +36,20 @@
 											<label>Categorie:</label>
 										</li>
 										<li>
-											<input type="text" value="<?= ucfirst($project->categorie) ?>" disabled>
+											<label> <?= ucfirst($project->categorie) ?> </label>
 										</li>
 									</ul>
+								</section>
+							</section>
+							<section class="question">
+								<section>
+									<p> {{ $project->vraag }} </p>
+								</section>
+								<section class="button">
+									<form action="/vote" method="GET">
+										<button type="submit"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+										<button type="submit"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
+									</form>
 								</section>
 							</section>
 							<section class="timeline_explanation">

@@ -41,4 +41,12 @@ class IndividualProjectController extends Controller
 		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 
 	}
+
+	public function voting($id) {
+		var_dump($id);
+		$project = Project::find($id);
+		DB::table('projects')->increment('likes');
+
+		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);		
+	}
 }
