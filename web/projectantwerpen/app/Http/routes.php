@@ -14,6 +14,7 @@
 Route::auth();
 
 Route::group([ 'middleware' => 'web' ], function() {
+	Route::get('/vote', 'IndividualProjectController@voten');
 	Route::get('/home', 'HomeController@index');
 	Route::get('/', 'HomeController@index');
 	Route::get('/projecten', 'ProjectController@index');
@@ -23,7 +24,6 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
 	Route::get('/project/unfollow/{id}', 'IndividualProjectController@unfollow');
 	Route::get('/search', 'SearchController@index');
-	Route::get('/vote', 'IndividualProjectController@voten');
 });
 
 

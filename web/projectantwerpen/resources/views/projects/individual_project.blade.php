@@ -17,26 +17,16 @@
 								<section class="info">
 									<ul>
 										<li>
-											<label for="einddatum">Einddatum:</label>
-										</li>
-										<li>
+											<label>Einddatum:</label>
 											<label> {{$project->einddatum}} </label>
 										</li>
-									</ul>
-									<ul>
 										<li>
 											<label>Kostprijs:</label>
-										</li>
-										<li>
 											<label> {{$project->kostprijs}} </label>
 										</li>
-									</ul>
-									<ul>
 										<li>
-											<label>Categorie:</label>
-										</li>
-										<li>
-											<label> <?= ucfirst($project->categorie) ?> </label>
+											<label>Categorie</label>
+											<label> {{ ucfirst( $project->categorie) }} </label>
 										</li>
 									</ul>
 								</section>
