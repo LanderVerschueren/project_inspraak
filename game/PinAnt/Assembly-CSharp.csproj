@@ -46,8 +46,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AddReaction.cs" />
+     <Compile Include="Assets\LoadPlayerSettings.cs" />
      <Compile Include="Assets\LoadProjectSettings.cs" />
      <Compile Include="Assets\LoadProjectTitle.cs" />
+     <Compile Include="Assets\PostPlayerSettings.cs" />
      <Compile Include="Assets\ProjectCollection.cs" />
      <Compile Include="Assets\Scripts\Game\GameLogic.cs" />
      <Compile Include="Assets\Scripts\Game\LikeLogic.cs" />
