@@ -96,8 +96,9 @@
 
     							{{$comment->comment}}
 							@endforeach
-						<form>
-							
+						<form action="{{ url('/reactie/'.$project->id) }}" method="post" >
+							<input type="textarea" name="comment">
+							<button type="submit">Reactie plaatsen</button>
 						</form>
 				  	</div>
 			  	</div>
