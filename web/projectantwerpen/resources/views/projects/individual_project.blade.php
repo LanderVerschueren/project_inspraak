@@ -42,6 +42,7 @@
 									</form>
 								</section>
 							</section>
+							
 							<section class="timeline_explanation">
 						    	<section class="timeline">
 										<div id="timeline">
@@ -86,6 +87,18 @@
 						    	</section>
 					    	</section>
 				    	</form>
+				    	@foreach ($comments as $comment)
+				    			@if($comment->fk_user == null)
+									Anoniem
+								@else
+									{{$comment->user->name}}
+				    			@endif
+
+    							{{$comment->comment}}
+							@endforeach
+						<form>
+							
+						</form>
 				  	</div>
 			  	</div>
 			</div>

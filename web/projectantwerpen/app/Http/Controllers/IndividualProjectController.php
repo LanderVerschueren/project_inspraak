@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Users_project;
+use App\Comment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
@@ -19,15 +21,17 @@ class IndividualProjectController extends Controller
 	public function index($id) {
 		
 		$project = Project::find($id);
-
-		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
+		$comments = Project::comments($id)->with('user')->get();
+		$data = array('comments' => $comments , 'project' => $project);
+		return view('projects.individual_project', ['id' => $project->id])->with($data);
 
 	}
 	public function follow($id) {
-		
 		$project = Project::find($id);
-		$user_id = Auth::user()->id;
-		DB::insert('insert into users_projects (fk_user, fk_project) values (?, ?)',[$user_id, $id]);
+		if(Auth::user()){
+			$user_id = Auth::user()->id;
+			$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id]);
+		}
 
 		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 
@@ -35,16 +39,17 @@ class IndividualProjectController extends Controller
 	public function unfollow($id) {
 		
 		$project = Project::find($id);
-		$user_id = Auth::user()->id;
-		DB::table('users_projects')->where('fk_user','=',$user_id)->where('fk_project','=',$id)->delete();
-
+		if(Auth::user()){
+			$user_id = Auth::user()->id;
+			$users_project = Users_project::where('fk_project', $id)->where('fk_user', $user_id)->delete();
+		}
 		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 
 	}
 
 	public function voten($id) {
 		$project = Project::find($id);
-		DB::table('projects')->increment('likes');
+		$project->increment('likes');
 
 		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 	}
