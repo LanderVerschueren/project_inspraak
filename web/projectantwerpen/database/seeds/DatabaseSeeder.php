@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -51,6 +50,17 @@ class DatabaseSeeder extends Seeder
              array('fk_user' => '4', 'fk_project' => '3'),
              array('fk_user' => '4', 'fk_project' => '2'),
              array('fk_user' => '3', 'fk_project' => '1')
+          ));
+
+         DB::table('comments')->delete();
+         //insert some dummy records
+         DB::table('comments')->insert(array(
+             array('fk_user' => '3', 'fk_project' => '1', "comment" => "ik vind dit een heel mmoi project"),
+             array('fk_user' => '5', 'fk_project' => '2', "comment" => "Wauw zo een mooie website!"),
+             array('fk_user' => '4', 'fk_project' => '3', "comment" => "Team Bananas zijn de knapste!!"),
+             array('fk_user' => '4', 'fk_project' => '2', "comment" => "Woef"),
+             array('fk_user' => '3', 'fk_project' => '1', "comment" => "Goed idee"),
+             array('fk_user' => null, 'fk_project' => '1', "comment" => "Goed idee")
           ));
     }
 }

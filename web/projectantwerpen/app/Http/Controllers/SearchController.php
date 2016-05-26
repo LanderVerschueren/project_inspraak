@@ -20,7 +20,6 @@ class SearchController extends Controller
 
         $search = Request::input('q');
         $projects = Project::SearchByKeyword($search)->get();
-        return view('projects/projects', ['projects' => $projects]);              
-
+        return view('projects/projects', ['projects' => $projects]);
     }
 }

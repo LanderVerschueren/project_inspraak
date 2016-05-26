@@ -1,9 +1,8 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
-
+use App\Comment;
 class Project extends Model
 {
     protected $table = "projects";
@@ -18,6 +17,11 @@ class Project extends Model
                     ->orWhere("uitleg", "LIKE", "%$keyword%");
             });
         }
+        
         return $query;
     }
+    public static function comments($id)
+        {
+        	return Comment::where('fk_project', $id);
+        }
 }
