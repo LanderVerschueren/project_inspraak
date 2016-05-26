@@ -87,12 +87,13 @@
 
 
 /* ------------------- General ------------------- */
-body, html {
-  height: 100%;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-  position: relative;
+  margin-bottom: 60px;
 }
 
 input[type="text"] {
@@ -469,38 +470,49 @@ label, input, p {
   list-style-type: none;
   margin-bottom: 15px;
 }
+#project form .main_info .info ul li:last-child {
+  margin-bottom: 0px;
+}
 
 #project form .main_info .info ul li input {
   border: none;
   background-color: inherit;
 }
 
+#project form .main_info .info ul li label {
+  margin: 0;
+}
+
 #project form .main_info .info ul li label:first-child {
   min-width: 145px;
 }
 
-#project form .timeline_explanation {
+#project .timeline_explanation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid lightgrey;
 }
 
-#project form .timeline_explanation .timeline {
-  -webkit-box-flex: 6;
-      -ms-flex: 6;
-          flex: 6;
+#project .timeline_explanation .timeline {
+  -webkit-box-flex: 12;
+      -ms-flex: 12;
+          flex: 12;
 }
 
-#project form .timeline_explanation .explanation {
-  -webkit-box-flex: 6;
-      -ms-flex: 6;
-          flex: 6;
+#project .timeline_explanation .explanation {
+  -webkit-box-flex: 12;
+      -ms-flex: 12;
+          flex: 12;
 }
 
-#project form .timeline_explanation .explanation p {
+#project .timeline_explanation .explanation p {
   margin-left: 40px;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -531,16 +543,47 @@ label, input, p {
   #project form .main_info .image img {
     min-width: 0;
   }
-  #project form .timeline_explanation {
+  #project .timeline_explanation {
     flex-flow: column nowrap;
   }
-  #project form .timeline_explanation .timeline{
+  #project .timeline_explanation .timeline{
     margin-bottom: 15px;
   }
 
-  #project form .timeline_explanation .explanation p {
+  #project .timeline_explanation .explanation p {
     margin-left: 0;
   }
+}
+
+#project .comments {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;  
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
+#project .comments h4 {
+  font-family: 'antwerpen_regular';
+  color: white;
+  background-color: #CF0036;
+  padding: 15px;
+  margin-top: 0;
+}
+
+#project .comments .comment_section {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#project .comments .comment_section h5 {
+  font-family: 'antwerpen_tall';
+  font-size: 15px;
+}
+
+#project .comments .comment_section p {
+  margin-left: 15px;
 }
 
 

@@ -87,18 +87,22 @@
 						    	</section>
 					    	</section>
 				    	</form>
-				    	@foreach ($comments as $comment)
-				    			@if($comment->fk_user == null)
-									Anoniem
-								@else
-									{{$comment->user->name}}
-				    			@endif
-
-    							{{$comment->comment}}
-							@endforeach
 						<form action="{{ url('/reactie/'.$project->id) }}" method="post" >
 							<input type="textarea" name="comment">
 							<button type="submit">Reactie plaatsen</button>
+					    	<section class="comments">
+					    		<h4>Reacties</h4>
+				    			@foreach ($comments as $comment)
+				    				<section class="comment_section">
+					    				@if($comment->fk_user == null)
+											<h5>Anoniem</h5>
+										@else
+											<h5>{{$comment->user->name}}</h5>
+					    				@endif
+	    								<p>{{ucfirst( $comment->comment )}}</p>
+    								</section>
+								@endforeach
+							</section>
 						</form>
 				  	</div>
 			  	</div>

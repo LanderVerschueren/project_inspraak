@@ -106,7 +106,7 @@
 
     @yield('content')
 
-    <div class="footer navbar-fixed-bottom">
+    <footer class="footer">
         <div class="container">
             <span class="left">
                 <p>Team Bananas</p>
@@ -115,7 +115,7 @@
                 <p>Project Antwerpen</p>
             </span>
         </div>
-    </div>
+    </footer>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
