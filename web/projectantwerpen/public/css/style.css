@@ -308,42 +308,43 @@ label, input, p {
 
 /* ------------------- Projects on project page ------------------- */
 #projects_list {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: column wrap;
-      flex-flow: column wrap;
+  flex-flow: row wrap;
+  justify-content: space-around
 }
 
 #projects_list section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 20px;
+  width: 280px;
+  height: 280px;
+  margin-bottom: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 4px 6px rgba(0,0,0,0.23);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 #projects_list section .image {
-  -webkit-box-flex: 6;
-      -ms-flex: 6;
-          flex: 6;
-  height: 100%;
-  margin-right: 10px;
+  position: relative;
+  width: 100%;
 }
 
-#projects_list section .explanation {
-  -webkit-box-flex: 6;
-      -ms-flex: 6;
-          flex: 6;
+#projects_list section .image h4 {
+  position: absolute;
+  top: 85px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0px 10px 10px;  
+  background: rgb(0, 0, 0); /* fallback color */
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
-#projects_list section p:last-child {
-  margin-bottom: 0; 
+#projects_list section .image h4 span {
+  color: white;
+  font-family: 'antwerpen_sun500';
+  font-size: 25px;
 }
 
 #projects_list section img {
@@ -353,37 +354,35 @@ label, input, p {
      object-fit: cover;
   -o-object-position: bottom;
      object-position: bottom;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
-#projects_list>.project_section:nth-child(even)>.image {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+#projects_list section:hover img,
+#projects_list section:hover .image h4 {
+  -webkit-transform: scale(0.99);
+  transform: scale(0.99);
 }
 
-#projects_list>.project_section:nth-child(even)>.explanation {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+#projects_list section:hover {
+  box-shadow: none;
 }
 
 @media screen and (max-width: 625px) {
+  #projects_list {
+    flex-flow: column nowrap;
+    align-items: center;
+  } 
   #projects_list section {
-    -ms-flex-flow: column nowrap;
-        flex-flow: column nowrap;
-    border-bottom: 1px solid lightgrey;
+    width: 100%;
   }
+}
 
-  #projects_list>.project_section:nth-child(even)>.image {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-
-  #projects_list>.project_section:nth-child(even)>.explanation {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+@media screen and (max-width: 991px) {
+  #projects_list {
+    justify-content: space-between;
   }
 }
 
@@ -421,9 +420,11 @@ label, input, p {
   border-bottom: 1px solid lightgrey;
 }
 
+#project form .question .button {
+  text-align: center;
+}
+
 #project form .question .button button {
-  display: block;
-  margin: 0 auto;
   border: 1px solid #CF0036;
   background-color: white;
   width: 20%;
@@ -453,29 +454,20 @@ label, input, p {
 }
 
 #project form .main_info .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
           flex: 1;
 }
 
 #project form .main_info .info ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  list-style-type: none;
+  margin: 0;
 }
 
-#project form .main_info .info ul:last-child {
-  margin: 0;
+#project form .main_info .info ul li {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  margin-bottom: 15px;
 }
 
 #project form .main_info .info ul li input {
@@ -483,9 +475,9 @@ label, input, p {
   background-color: inherit;
 }
 
-/*#project form .main_info .info ul li:first-child {
+#project form .main_info .info ul li label:first-child {
   min-width: 145px;
-}*/
+}
 
 #project form .timeline_explanation {
   display: -webkit-box;
@@ -517,13 +509,11 @@ label, input, p {
   }
   #project form .main_info .info ul {
     padding: 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
-  #project form .main_info .info ul li {
-    min-width: 0px;
+  #project form .main_info .info ul li label {
+    min-width: 50px;
   }
 }
 
@@ -535,21 +525,14 @@ label, input, p {
 
 @media screen and (max-width: 767px) {
   #project form .main_info {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-                -ms-grid-row-align: flex-start;
-            align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
   #project form .main_info .image img {
     min-width: 0;
   }
   #project form .timeline_explanation {
-    -ms-flex-flow: column nowrap;
-        flex-flow: column nowrap;
+    flex-flow: column nowrap;
   }
   #project form .timeline_explanation .timeline{
     margin-bottom: 15px;

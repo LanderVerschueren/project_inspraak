@@ -68,11 +68,12 @@
 				@foreach($projects as $project)
 					<section class="project_section" >
 						<span class="image">
-							<img class="image-responsive" src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
-						</span>
-						<span class="explanation">
-							<p>{{$project->uitleg}}	</p>	
-							<p><a href="{{ url('/project/'.$project->id) }}">Meer...</a></p>
+							<a href="{{ url('/project/'.$project->id) }}">
+								<img src="{{URL::asset('images/'.$project->fotonaam)}}" alt="">
+								<h4>
+									<span>{{ $project->titel }}</span>
+								</h4>
+							</a>
 						</span>
 					</section>
 				@endforeach

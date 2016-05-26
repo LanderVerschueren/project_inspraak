@@ -14,6 +14,7 @@
 Route::auth();
 
 Route::group([ 'middleware' => 'web' ], function() {
+	Route::get('/vote', 'IndividualProjectController@voten');
 	Route::get('/home', 'HomeController@index');
 	Route::get('/', 'HomeController@index');
 	Route::get('/projecten', 'ProjectController@index');
@@ -32,8 +33,6 @@ Route::group(['prefix' =>'api'], function()
 	Route::post('/login', 'APIController@login');
 	Route::post('/register' , 'APIController@register');
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
-
-        Route::post('/logout', 'APIController@logout');
-    });
-    
+    	Route::post('/logout', 'APIController@logout');
+    });    
 });

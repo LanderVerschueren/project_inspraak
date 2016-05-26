@@ -9,7 +9,7 @@
 						<h4>{{$project->titel}}</h4>
 					</div>
 					<div class="panel-body">
-						<form action="">
+						<form>
 							<section class="main_info">							
 								<section class="image">
 									<img src="{{ URL::asset('images/'.$project->fotonaam) }}" alt="">
@@ -17,26 +17,16 @@
 								<section class="info">
 									<ul>
 										<li>
-											<label for="einddatum">Einddatum:</label>
-										</li>
-										<li>
+											<label>Einddatum:</label>
 											<label> {{$project->einddatum}} </label>
 										</li>
-									</ul>
-									<ul>
 										<li>
 											<label>Kostprijs:</label>
-										</li>
-										<li>
 											<label> {{$project->kostprijs}} </label>
 										</li>
-									</ul>
-									<ul>
 										<li>
-											<label>Categorie:</label>
-										</li>
-										<li>
-											<label> <?= ucfirst($project->categorie) ?> </label>
+											<label>Categorie</label>
+											<label> {{ ucfirst( $project->categorie) }} </label>
 										</li>
 									</ul>
 								</section>
@@ -46,8 +36,10 @@
 									<p> {{ $project->vraag }} </p>
 								</section>
 								<section class="button">
-									<button type="submit"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
-									<button type="submit"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
+									<form action="/vote" method="GET">
+										<button type="submit"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+										<button type="submit"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
+									</form>
 								</section>
 							</section>
 							<section class="timeline_explanation">
