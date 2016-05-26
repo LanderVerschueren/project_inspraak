@@ -42,6 +42,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            <div class="panel panel-default">
                 <section class="wrapper">
                     <ul class="tabs">
                         <li class="active">Meest recent</li>
@@ -82,6 +83,7 @@
                         </li>
                     </ul>
                 </section>
+            </div>
         </div>
     </div>
 </div>

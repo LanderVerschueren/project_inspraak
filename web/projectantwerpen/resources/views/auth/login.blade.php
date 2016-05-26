@@ -58,7 +58,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i>Inloggen
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Paswoord vergeten?</a>
+                                <a class="btn btn-raised btn-link" href="{{ url('/password/reset') }}">Paswoord vergeten?</a>
                             </div>
                         </div>
                     </form>

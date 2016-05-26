@@ -40,14 +40,10 @@
   border-radius: 0;
 }
 
-.dropdown.open a {
-  background-color: white;
-  color: black!important;
-}
-
-.dropdown-menu {
-  left: 0!important;
-  padding: 0;
+#li_search>form>div>div>button {
+  margin: 0;
+  padding: 6px 0 10px 0;
+  color: white;
 }
 
 .dropdown-menu a {
@@ -57,6 +53,10 @@
 
 .dropdown-menu li:hover {
   background-color: lightgrey;
+}
+
+.navbar-form {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 767px) {

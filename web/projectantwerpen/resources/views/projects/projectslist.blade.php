@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="addProject">
-					<a href="{{ url('/project/addproject') }}" class="btn btn-primary" role="button">Project toevoegen</a>
+					<a href="{{ url('/project/addproject') }}" class="btn btn-raised btn-default" role="button">Project toevoegen</a>
 				</div>
 
 				@foreach( $projects as $project )
@@ -18,7 +18,7 @@
 						<h5>{{ ucfirst( $project->categorie ) }}</h5>
 					</section>
 					<section class="btn_aanpassen">
-						<a href="{{ url('/project/'.$project->id) }}" class="btn btn-primary" role="button">Aanpassen</a>
+						<a href="{{ url('/project/'.$project->id) }}" class="btn btn-raised btn-default" role="button">Aanpassen</a>
 					</section>
 				</div>
 				@endforeach

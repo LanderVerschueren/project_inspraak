@@ -125,7 +125,7 @@ input[type="text"] {
   font-family: 'antwerpen_regular';
 }
 
-label, input, p {
+label, input, p, a {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
   border-radius: 0!important;
@@ -137,19 +137,17 @@ label, input, p {
 
 /* ------------------- Login page ------------------- */
 #login button {
-  font-family: 'antwerpen_sun';
+  font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: white;
-  color: black;
+  background-color: #CF0036;
+  color: white;
   border: 1px solid #CF0039;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
   border-radius: 0;
 }
 
 #login button:hover {
-  background-color: #CF0039;
-  color: white;
+  background-color: white;
+  color: black;
   border-color: #CF0039;
 }
 
@@ -164,20 +162,18 @@ label, input, p {
 }
 
 #login_register ul li a {
-  font-family: 'antwerpen_sun';
+  font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: white;
-  color: black;
+  background-color: #CF0036;
+  color: white;
   border: 1px solid #CF0039;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
   border-radius: 0;
   margin-top: 15px;
 }
 
 #login_register ul li a:hover {
-  background-color: #CF0039;
-  color: white;
+  background-color: white;
+  color: black;
   border-color: #CF0039;
 }
 
@@ -187,19 +183,17 @@ label, input, p {
 
 /* ------------------- Login page ------------------- */
 #register button {
-  font-family: 'antwerpen_sun';
+  font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: white;
-  color: black;
+  background-color: #CF0036;
+  color: white;
   border: 1px solid #CF0039;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
   border-radius: 0;
 }
 
 #register button:hover {
-  background-color: #CF0039;
-  color: white;
+  background-color: white;
+  color: black;
   border-color: #CF0039;
 }
 
@@ -234,7 +228,7 @@ label, input, p {
   margin-right: 10px!important;
 }
 
-#filter form section span label {
+#filter form section div label {
   color: black;
   font-family: 'antwerpen_sun300'; 
   font-weight: 500;
@@ -243,13 +237,14 @@ label, input, p {
 #filter button {
   font-family: 'antwerpen_sun500';
   font-size: 16px;
-  background-color: white;
+  background-color: #CF0036;
   border: 1px solid #CF0036;
+  color: white;
 }
 
 #filter button:hover {
-  background-color: #CF0036;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 @media screen and (max-width: 625px) {
@@ -265,42 +260,6 @@ label, input, p {
   #filter form section:last-child {
     margin-top: 10px; 
   }
-}
-
-#checkbox_renovatie:checked + #label_renovatie {
-  color: #CF0039;
-}
-
-#checkbox_heraanleg:checked + #label_heraanleg {
-  color: #CF0039;
-}
-
-#checkbox_opknapwerk:checked + #label_opknapwerk {
-  color: #CF0039;
-}
-
-#checkbox_mening:checked + #label_mening {
-  color: #CF0039;
-}
-
-#checkbox_afbraak:checked + #label_afbraak {
-  color: #CF0039;
-}
-
-#checkbox_opbouw:checked + #label_opbouw {
-  color: #CF0039;
-}
-
-#checkbox_0:checked + #label_0 {
-  color: #CF0039;
-}
-
-#checkbox_100:checked + #label_100 {
-  color: #CF0039;
-}
-
-#checkbox_1000:checked + #label_1000 {
-  color: #CF0039;
 }
 
 
@@ -427,14 +386,16 @@ label, input, p {
 
 #project form .question .button button {
   border: 1px solid #CF0036;
-  background-color: white;
+  background-color: #CF0036;
+  color: white;
   width: 20%;
   font-size: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 #project form .question .button button:hover {
-  background-color: #CF0036;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 #project form .question p {
@@ -643,18 +604,16 @@ label, input, p {
 .addProject a {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: white;
-  color: black;
+  background-color: #CF0036!important;
+  color: white!important;
   border: 1px solid #CF0039;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
   border-radius: 0;
 }
 
 .admin_list>.btn_aanpassen a:hover,
 .addProject a:hover {
-  background-color: #CF0039;
-  color: white;
+  background-color: white!important;
+  color: black!important;
   border-color: #CF0039;
 }
 
