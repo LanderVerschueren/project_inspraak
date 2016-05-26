@@ -46,6 +46,21 @@ class IndividualProjectController extends Controller
 		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 
 	}
+	public function placeComment($id, Request $request)
+	{
+		$text = $request->input('comment');
+		if(Auth::User()){
+			$user_id = Auth::User()->id;
+		}
+		else{
+			$user_id = null;
+		}
+		$comment = Comment::create(array('fk_project' => $id,'fk_user' => $user_id, 'comment' => $text ));
+		$project = Project::find($id);
+		$comments = Project::comments($id)->with('user')->get();
+		$data = array('comments' => $comments , 'project' => $project);
+		return view('projects.individual_project', ['id' => $project->id])->with($data);
+	}
 
 	public function voten($id) {
 		$project = Project::find($id);

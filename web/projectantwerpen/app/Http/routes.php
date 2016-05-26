@@ -23,6 +23,7 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/project/{id}', 'IndividualProjectController@index');
 	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
 	Route::get('/project/unfollow/{id}', 'IndividualProjectController@unfollow');
+	Route::post('/reactie/{id}', 'IndividualProjectController@placeComment');
 	Route::get('/search', 'SearchController@index');
 });
 
