@@ -1,5 +1,9 @@
 .footer {
   background-color: #8d9092;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }
 
 .footer span {

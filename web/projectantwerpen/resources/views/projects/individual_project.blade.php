@@ -86,17 +86,19 @@
 						    		<p>{{$project->uitleg}}</p>
 						    	</section>
 					    	</section>
-				    	</form>
-				    	@foreach ($comments as $comment)
-				    			@if($comment->fk_user == null)
-									Anoniem
-								@else
-									{{$comment->user->name}}
-				    			@endif
-
-    							{{$comment->comment}}
-							@endforeach
-						<form>
+					    	<section class="comments">
+					    		<h4>Reacties</h4>
+				    			@foreach ($comments as $comment)
+				    				<section class="comment_section">
+					    				@if($comment->fk_user == null)
+											<h5>Anoniem</h5>
+										@else
+											<h5>{{$comment->user->name}}</h5>
+					    				@endif
+	    								<p>{{ucfirst( $comment->comment )}}</p>
+    								</section>
+								@endforeach
+							</section>
 							
 						</form>
 				  	</div>
