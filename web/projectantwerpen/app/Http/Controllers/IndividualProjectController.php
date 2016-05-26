@@ -44,7 +44,7 @@ class IndividualProjectController extends Controller
 
 	public function voten($id) {
 		$project = Project::find($id);
-		DB::table('projects')->increment('likes');
+		DB::update('update projects set likes = 100');
 
 		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
 	}
