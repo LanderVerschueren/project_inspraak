@@ -9,18 +9,26 @@
 						<h4>Titel</h4>
 					</div>
 					<div class="panel-body">
-						<form action="">
+						<form action="post">
 							<section class="main_info">							
 								<section class="image">
-									<img src="" alt="">
+									<input type="file" name="pic" accept="image/*">
 								</section>
 								<section class="info admin">
+									<ul>
+										<li>
+											<label for="einddatum">Naam:</label>
+										</li>
+										<li>
+											<input type="text" name="title">
+										</li>
+									</ul>
 									<ul>
 										<li>
 											<label for="einddatum">Einddatum:</label>
 										</li>
 										<li>
-											<input type="text" id="datepicker">
+											<input type="text" id="datepicker" name="date">
 										</li>
 									</ul>
 									<ul>
@@ -28,7 +36,7 @@
 											<label>Kostprijs:</label>
 										</li>
 										<li>
-											<input type="text">
+											<input type="text" name="cost">
 										</li>
 									</ul>
 									<ul>
@@ -36,7 +44,7 @@
 											<label>Categorie:</label>
 										</li>
 										<li>
-											<input type="text">
+											<input type="text" name="category">
 										</li>
 									</ul>
 								</section>
@@ -50,14 +58,14 @@
 								          		Mening
 								        	</h3>
 								      	</div>
-
+										<input type="checkbox" class="checkbox">
 								      	<div class="steps-two">
 								        	<i class="fa fa-exclamation-triangle steps-img" aria-hidden="true"></i>
 								        	<h3 class="steps-name">
 								          		Afbraak
 								        	</h3>
 								      	</div>
-
+										<input type="checkbox" class="checkbox">
 								      	<div class="steps-three">
 								        	<i class="fa fa-cog steps-img" aria-hidden="true"></i>
 								        	<h3 class="steps-name">
@@ -65,9 +73,10 @@
 								        	</h3>
 								      	</div>
 								    </div>
+								    <input type="checkbox" class="checkbox">
 								</section>
 						    	<section class="explanation">
-						    		<p>uitleg</p>
+						    		<textarea name="description"></textarea>
 						    	</section>
 					    	</section>
 				    	</form>
@@ -76,4 +85,10 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	    $('.checkbox').on('change', function() {
+	    	console.log('miauw');
+		    $('.checkbox').not(this).prop('checked', false);  
+		});
+    </script>
 @endsection

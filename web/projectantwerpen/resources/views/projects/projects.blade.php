@@ -9,12 +9,12 @@
 						<h4>Filter</h4>
 					</div>
 					<div class="panel-body">
-						<form id="form_filter" action="/projecten" method="GET">
+						<form id="form_filter" action="/projecten/filter" method="POST">
 							<section>
 								<h5>Type</h5>
 								<div class="checkbox">
 									<label>
-                                        <input id="checkbox_renovatie" type="checkbox" name="type[]" value="renovatie">
+                                        <input id="checkbox_renovatie" type="checkbox" name="type[]" value="renovatie" >
                                         <label id="label_renovatie" for="checkbox_renovatie">Renovatie</label>
                                     </label>
 								</div>
