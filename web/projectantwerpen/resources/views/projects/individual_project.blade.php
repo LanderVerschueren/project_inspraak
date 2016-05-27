@@ -88,8 +88,6 @@
 					    	</section>
 				    	</form>
 						<form action="{{ url('/reactie/'.$project->id) }}" method="post" >
-							<input type="textarea" name="comment">
-							<button type="submit">Reactie plaatsen</button>
 					    	<section class="comments">
 					    		<h4>Reacties</h4>
 				    			@foreach ($comments as $comment)
@@ -102,6 +100,9 @@
 	    								<p>{{ucfirst( $comment->comment )}}</p>
     								</section>
 								@endforeach
+
+								<textarea name="comment" id="" cols="30" rows="5"></textarea>
+								<button type="submit">Reactie plaatsen</button>
 							</section>
 						</form>
 				  	</div>

@@ -547,6 +547,27 @@ label, input, p, a {
   margin-left: 15px;
 }
 
+#project .comments textarea {
+  font-family: 'antwerpen_sun300';
+  font-size: 16px;
+}
+
+#project .comments button {
+  font-family: 'antwerpen_sun300';
+  border: 1px solid #CF0036;
+  background-color: #CF0036;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+#project .comments button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
 
 
 
