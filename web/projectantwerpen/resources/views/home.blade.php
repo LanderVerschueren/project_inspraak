@@ -23,7 +23,8 @@
                             <div class="{{($count === 0) ? 'item active' : 'item'}}">
                             <img src="{{URL::asset('images/'.$project->fotonaam)}}" class=""></li>
                                 <div class="carousel-caption">
-                                    <h2>{{$project->titel}}</h2>
+                                    <h2>{{ $project->titel }}</h2>
+                                    <p>Dit project kreeg al {{ $project->likes }} likes</p>
                                 </div>
                             </div>
                             <?php $count++; ?>

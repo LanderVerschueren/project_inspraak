@@ -161,6 +161,7 @@
   font-family: 'antwerpen_regular';
 }
 .content__wrapper a {
+  padding: 2px;
   flex: 1;
   color: black;
 }
