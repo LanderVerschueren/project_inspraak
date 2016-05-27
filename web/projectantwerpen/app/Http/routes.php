@@ -14,7 +14,8 @@
 Route::auth();
 
 Route::group([ 'middleware' => 'web' ], function() {
-	Route::get('/vote', 'IndividualProjectController@voten');
+	Route::get('/vote/like/{id}', 'IndividualProjectController@vote_like');
+	Route::get('/vote/dislike/{id}', 'IndividualProjectController@vote_dislike');
 	Route::get('/home', 'HomeController@index');
 	Route::get('/', 'HomeController@index');
 	Route::get('/projecten', 'ProjectController@index');

@@ -64,9 +64,25 @@ class IndividualProjectController extends Controller
 		return Redirect::back();
 	}
 
-	public function voten($id) {
+	public function vote_like($id) {
 		$project = Project::find($id);
-		$project->update('projects')->increment('likes');
+		$comments = Project::comments($id)->with('user')->get();
+		$data = array('comments' => $comments , 'project' => $project);
+			
+		$project->increment('likes');
+		$project->save();
+
+		return Redirect::back();
+	}
+	
+	public function vote_dislike($id) {
+		$project = Project::find($id);
+
+		$comments = Project::comments($id)->with('user')->get();
+		$data = array('comments' => $comments , 'project' => $project);
+			
+		$project->increment('dislikes');
+		$project->save();
 
 		return Redirect::back();
 	}

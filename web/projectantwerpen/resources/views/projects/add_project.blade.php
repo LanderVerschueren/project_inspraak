@@ -6,77 +6,78 @@
 			<div class="col-md-12" id="project">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4>Titel</h4>
+						<h4> Titel </h4>
 					</div>
 					<div class="panel-body">
-						<form action="post">
+						<form>
 							<section class="main_info">							
 								<section class="image">
-									<input type="file" name="pic" accept="image/*">
+									<img src="" alt="">
 								</section>
-								<section class="info admin">
+								<section class="info">
 									<ul>
 										<li>
-											<label for="einddatum">Naam:</label>
+											<label>Einddatum:</label>
+											<label>  </label>
 										</li>
-										<li>
-											<input type="text" name="title">
-										</li>
-									</ul>
-									<ul>
-										<li>
-											<label for="einddatum">Einddatum:</label>
-										</li>
-										<li>
-											<input type="text" id="datepicker" name="date">
-										</li>
-									</ul>
-									<ul>
 										<li>
 											<label>Kostprijs:</label>
+											<label>  </label>
 										</li>
 										<li>
-											<input type="text" name="cost">
-										</li>
-									</ul>
-									<ul>
-										<li>
-											<label>Categorie:</label>
-										</li>
-										<li>
-											<input type="text" name="category">
+											<label>Categorie</label>
+											<label>  </label>
 										</li>
 									</ul>
 								</section>
 							</section>
-							<section class="timeline">
-						    	<section id="Steps" class="timeline steps-section">						    
-						    		<div class="steps-timeline">
-						    			<div class="steps-one">
-								        	<i class="fa fa-comments steps-img" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								          		Mening
-								        	</h3>
-								      	</div>
-										<input type="checkbox" class="checkbox">
-								      	<div class="steps-two">
-								        	<i class="fa fa-exclamation-triangle steps-img" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								          		Afbraak
-								        	</h3>
-								      	</div>
-										<input type="checkbox" class="checkbox">
-								      	<div class="steps-three">
-								        	<i class="fa fa-cog steps-img" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								         		Opbouw
-								        	</h3>
-								      	</div>
-								    </div>
-								    <input type="checkbox" class="checkbox">
+							<section class="question">
+								<section>
+									<p> Vraag </p>
 								</section>
+							</section>
+							
+							<section class="timeline_explanation">
+						    	<section class="timeline">
+										<div id="timeline">
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-comment-o" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Mening</h4>
+												</div>
+											</div>
+
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Afbraak</h4>
+												</div>
+											</div>
+
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-cog" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Opbouw</h4>
+												</div>
+											</div>
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-check" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													
+												</div>
+											</div>
+										</div>
+						    	</section>
 						    	<section class="explanation">
-						    		<textarea name="description"></textarea>
+						    		<p> Uitleg </p>
 						    	</section>
 					    	</section>
 				    	</form>
@@ -85,10 +86,4 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-	    $('.checkbox').on('change', function() {
-	    	console.log('miauw');
-		    $('.checkbox').not(this).prop('checked', false);  
-		});
-    </script>
 @endsection
