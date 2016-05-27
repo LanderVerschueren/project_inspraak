@@ -15,6 +15,7 @@ class VerifyCsrfToken extends BaseVerifier
         '/api/register',
         '/api/login',
         '/api/logout',
-        '/reactie/*'
+        '/reactie/*',
+        '/projecten/filter'
     ];
 }

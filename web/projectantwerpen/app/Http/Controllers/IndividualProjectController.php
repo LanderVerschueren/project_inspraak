@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Users_project;
 use App\Comment;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Auth;
@@ -34,7 +33,7 @@ class IndividualProjectController extends Controller
 			$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id]);
 		}
 
-		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
+		return Redirect::back();
 	}
 
 	public function unfollow($id) {
@@ -44,7 +43,7 @@ class IndividualProjectController extends Controller
 			$user_id = Auth::user()->id;
 			$users_project = Users_project::where('fk_project', $id)->where('fk_user', $user_id)->delete();
 		}
-		return view('projects.individual_project', ['id' => $project->id])->with('project', $project);
+		return Redirect::back();
 	}
 
 	public function placeComment($id, Request $request)
@@ -67,14 +66,13 @@ class IndividualProjectController extends Controller
 
 	public function vote_like($id) {
 		$project = Project::find($id);
-
 		$comments = Project::comments($id)->with('user')->get();
 		$data = array('comments' => $comments , 'project' => $project);
 			
 		$project->increment('likes');
 		$project->save();
 
-		return view('projects.individual_project', ['id' => $project->id])->with($data);
+		return Redirect::back();
 	}
 	
 	public function vote_dislike($id) {
@@ -86,6 +84,6 @@ class IndividualProjectController extends Controller
 		$project->increment('dislikes');
 		$project->save();
 
-		return view('projects.individual_project', ['id' => $project->id])->with($data);
+		return Redirect::back();
 	}
 }

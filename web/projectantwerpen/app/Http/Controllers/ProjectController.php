@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use App\Project;
 use App\Http\Controllers\Controller;
-use Request;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -14,14 +13,22 @@ class ProjectController extends Controller
 		//$this->middleware('auth');
 	}
 
-	public function index() {
-		$projects = Project::where(function($query){
-			$types = Request::input('type');
-			$fases = Request::input('fase');
-			$likes = Request::input('likes');
+	public function index(){
+		$projects = Project::all();
+		return view('projects/projects', ['projects' => $projects]);
+	}
+
+	public function filter(Request $request) {
+		
+		$projects = Project::where(function($query) use($request){
+			
+			$types = $request->input('type');
+			$fases = $request->input('fase');
+			$likes = $request->input('likes');
 			if(isset($types)){
 				foreach($types as $type){
-					$query->orWhere('categorie', '=', $type);			}
+					$query->orWhere('categorie', '=', $type);			
+				}
 			}
 			if(isset($fases)){
 				foreach($fases as $fase){
@@ -42,6 +49,8 @@ class ProjectController extends Controller
 				}
 			}
 		})->get();
-		return view('projects/projects', ['projects' => $projects]);
+		$data = array('types' => $request->input('type'), 'fases' => $request->input('fase'), 'likes' => $request->input('likes') );
+		var_dump($data);
+		return view('projects/projects', ['projects' => $projects])->with($data);
 	}
 }
