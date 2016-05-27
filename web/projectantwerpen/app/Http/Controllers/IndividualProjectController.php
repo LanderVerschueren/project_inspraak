@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Auth;
+use Redirect;
 
 class IndividualProjectController extends Controller
 {
@@ -55,13 +56,13 @@ class IndividualProjectController extends Controller
 		else{
 			$user_id = null;
 		}
-		
+
 		$comment = Comment::create(array('fk_project' => $id,'fk_user' => $user_id, 'comment' => $text ));
 		$project = Project::find($id);
 		$comments = Project::comments($id)->with('user')->get();
 		$data = array('comments' => $comments , 'project' => $project);
 
-		return view('projects.individual_project', ['id' => $project->id])->with($data);
+		return Redirect::back();
 	}
 
 	public function vote_like($id) {
