@@ -22,8 +22,21 @@ class APIController extends Controller
     	return response()->json($all);
     }
 
-    public function getComments(){
-      $comments = Comment::all();
+    public function getComments($id){
+      $comments = Comment::where(function($query) use($id){
+        $query->where('fk_project', '=', $id);
+      })->get();
+
+      
+      foreach($comments as $comment){
+          if($comment->fk_user != null){
+            $comment->push(['username' => $comment->user->name]);
+          }
+          else{
+            $comment->push(['username' => "Anoniem"]);
+          }
+      }
+
       $all = array('comments' => $comments);
 
       return response()->json($all);
