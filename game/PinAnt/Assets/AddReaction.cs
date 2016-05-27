@@ -32,10 +32,8 @@ public class AddReaction : MonoBehaviour {
 
   public void PlaceReaction()
   {
-    
     GameObject newReaction = GameObject.Instantiate(originalPanel) as GameObject;
     newReaction.name = "Reaction"+ nrOfReactions;
-
 
     //afmetingen instellen + onder elkaar schikken
     newReaction.GetComponent<RectTransform>().parent = reactionParent.transform;
@@ -43,6 +41,7 @@ public class AddReaction : MonoBehaviour {
     newReaction.GetComponent<RectTransform>().sizeDelta = new Vector2(oldReactionRect.rect.width, oldReactionRect.rect.height);
     newReaction.GetComponent<RectTransform>().localPosition = new Vector2(0, -300 * (nrOfReactions));
     newReaction.GetComponentInChildren<Text>().text = addReactionField.text;
+
     addReactionField.text = "";
 
     reactionList.Add(newReaction);
@@ -71,4 +70,11 @@ public class AddReaction : MonoBehaviour {
       print(reaction.name + " " + reaction.GetComponentInChildren<Text>().text);
     }
   }
+}
+
+public class Reaction
+{
+  public string id { get; set; }
+  public string username { get; set; }
+  public string text { get; set; }
 }

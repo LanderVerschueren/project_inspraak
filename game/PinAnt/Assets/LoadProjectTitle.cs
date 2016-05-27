@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using LitJson;
 
 public class LoadProjectTitle : MonoBehaviour {
   public GameObject completeProjectPanel;
 
-  private int currentProject;
+  public static int currentProject;
 
   public GameObject titlePanel;
   public GameObject likePanel;
@@ -13,9 +14,11 @@ public class LoadProjectTitle : MonoBehaviour {
   public GameObject questionPanel;
   public GameObject extraInfoPanel;
 
-	// Use this for initialization
-	void Start () {
+  private JsonData commentData;
 
+	// Use this for initialization
+	void Start () 
+  {
     currentProject = int.Parse(completeProjectPanel.name.Replace("Project", "")); //haal projectnr uit naam
     Debug.Log(currentProject);
 
@@ -25,10 +28,29 @@ public class LoadProjectTitle : MonoBehaviour {
     questionPanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].question;
     extraInfoPanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].info;
 
-	}
+    LoadComments();
+  }
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+  IEnumerator LoadComments()
+  {
+    string url = "http://bananas.multimediatechnology.be/api/comments";
+
+    WWW www = new WWW(url);
+    yield return www;
+    Debug.Log(url);
+    if (www.error == null)
+    {
+      commentData = JsonMapper.ToObject(www.text);
+    }
+    else
+    {
+      Debug.Log("ERROR: " + www.error);
+    }
+
+  }
 }
