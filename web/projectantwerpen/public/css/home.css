@@ -32,6 +32,10 @@
   font-family: 'antwerpen_tall';
 }
 
+.carousel-caption p {
+  font-size: 18px;
+}
+
 .carousel-indicators {
   position: absolute;
   bottom: 0;
@@ -83,7 +87,6 @@
   .carousel-caption h2 {
     font-size: 20px;
   }
-
   .carousel-control fa {
     top: 44%;
   }
@@ -112,6 +115,8 @@
   cursor: pointer;
   color: black;
   flex: 1;
+  font-size: 20px;
+  font-weight: bold;
 }
 .tabs > li:before {
   z-index: -1;

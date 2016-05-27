@@ -24,7 +24,7 @@
                             <img src="{{URL::asset('images/'.$project->fotonaam)}}" class=""></li>
                                 <div class="carousel-caption">
                                     <h2>{{ $project->titel }}</h2>
-                                    <p>Dit project kreeg al {{ $project->likes }} likes</p>
+                                    <p>{{ $project->vraag }} - Al {{ $project->likes }} personen keurden dit goed!</p>
                                 </div>
                             </div>
                             <?php $count++; ?>

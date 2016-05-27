@@ -6,68 +6,78 @@
 			<div class="col-md-12" id="project">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4>Titel</h4>
+						<h4> Titel </h4>
 					</div>
 					<div class="panel-body">
-						<form action="">
+						<form>
 							<section class="main_info">							
 								<section class="image">
 									<img src="" alt="">
 								</section>
-								<section class="info admin">
+								<section class="info">
 									<ul>
 										<li>
-											<label for="einddatum">Einddatum:</label>
+											<label>Einddatum:</label>
+											<label>  </label>
 										</li>
-										<li>
-											<input type="text" id="datepicker">
-										</li>
-									</ul>
-									<ul>
 										<li>
 											<label>Kostprijs:</label>
+											<label>  </label>
 										</li>
 										<li>
-											<input type="text">
-										</li>
-									</ul>
-									<ul>
-										<li>
-											<label>Categorie:</label>
-										</li>
-										<li>
-											<input type="text">
+											<label>Categorie</label>
+											<label>  </label>
 										</li>
 									</ul>
 								</section>
 							</section>
-							<section class="timeline">
-						    	<section id="Steps" class="timeline steps-section">						    
-						    		<div class="steps-timeline">
-						    			<div class="steps-one">
-								        	<i class="fa fa-comments steps-img" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								          		Mening
-								        	</h3>
-								      	</div>
-
-								      	<div class="steps-two">
-								        	<i class="fa fa-exclamation-triangle steps-img" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								          		Afbraak
-								        	</h3>
-								      	</div>
-
-								      	<div class="steps-three">
-								        	<i class="fa fa-cog steps-img" aria-hidden="true"></i>
-								        	<h3 class="steps-name">
-								         		Opbouw
-								        	</h3>
-								      	</div>
-								    </div>
+							<section class="question">
+								<section>
+									<p> Vraag </p>
 								</section>
+							</section>
+							
+							<section class="timeline_explanation">
+						    	<section class="timeline">
+										<div id="timeline">
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-comment-o" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Mening</h4>
+												</div>
+											</div>
+
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Afbraak</h4>
+												</div>
+											</div>
+
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-cog" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													<h4>Opbouw</h4>
+												</div>
+											</div>
+											<div class="timeline-item">
+												<div class="timeline-icon">
+													<i class="fa fa-check" aria-hidden="true"></i>
+												</div>
+												<div class="timeline-content right">
+													
+												</div>
+											</div>
+										</div>
+						    	</section>
 						    	<section class="explanation">
-						    		<p>uitleg</p>
+						    		<p> Uitleg </p>
 						    	</section>
 					    	</section>
 				    	</form>

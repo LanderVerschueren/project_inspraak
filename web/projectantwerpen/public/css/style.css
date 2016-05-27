@@ -548,6 +548,8 @@ label, input, p, a {
 }
 
 #project .comments button {
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-family: 'antwerpen_sun300';
   border: 1px solid #CF0036;
   background-color: #CF0036;
