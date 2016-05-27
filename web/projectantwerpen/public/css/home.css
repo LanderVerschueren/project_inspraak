@@ -26,6 +26,9 @@
   z-index: 10;
   padding: 0 0 0px 25px;
   text-align: left;
+}
+
+.carousel-caption h2 {
   font-family: 'antwerpen_tall';
 }
 
@@ -149,6 +152,8 @@
 }
 .content__wrapper {
   padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   display: flex;
   flex-flow: row nowrap;
 }

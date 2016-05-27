@@ -1,4 +1,13 @@
 $(document).ready(function() {  
+	$.material.init();
+
+	$(".pagination").click(function(){  
+		$("#form").submit();
+
+		return false;  
+	});
+
+
   	$("#carousel-example-generic").swiperight(function() {  
       	$(this).carousel('prev');  
 	});  
