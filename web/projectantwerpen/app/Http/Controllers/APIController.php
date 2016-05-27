@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Project;
 use App\User;
+use App\Comment;
 use Hash;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
