@@ -58,6 +58,8 @@
      <Compile Include="Assets\Scripts\Game\UpdateProfileUI.cs" />
      <Compile Include="Assets\Scripts\GetCanvasSize.cs" />
      <Compile Include="Assets\Scripts\Login.cs" />
+     <Compile Include="Assets\Scripts\Navigation\HambugerOpen.cs" />
+     <Compile Include="Assets\Scripts\Navigation\HamburgerClose.cs" />
      <Compile Include="Assets\Scripts\Navigation\UILogic.cs" />
      <Compile Include="Assets\Scripts\PlayerSettings.cs" />
      <Compile Include="Assets\Scripts\ToggleInfo.cs" />

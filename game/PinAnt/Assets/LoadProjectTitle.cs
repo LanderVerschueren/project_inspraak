@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 using LitJson;
+using System;
+using System.Collections.Generic;
 
 public class LoadProjectTitle : MonoBehaviour {
   public GameObject completeProjectPanel;
@@ -13,6 +15,8 @@ public class LoadProjectTitle : MonoBehaviour {
   public GameObject dislikePanel;
   public GameObject questionPanel;
   public GameObject extraInfoPanel;
+
+  public AddReaction addReaction;
 
   private JsonData commentData;
 
@@ -28,7 +32,7 @@ public class LoadProjectTitle : MonoBehaviour {
     questionPanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].question;
     extraInfoPanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].info;
 
-    LoadComments();
+    StartCoroutine(LoadComments(currentProject + 1));
   }
 	
 	// Update is called once per frame
@@ -36,10 +40,9 @@ public class LoadProjectTitle : MonoBehaviour {
 	
 	}
 
-  IEnumerator LoadComments()
+  IEnumerator LoadComments(int projectnr)
   {
-    string url = "http://bananas.multimediatechnology.be/api/comments";
-
+    string url = "http://bananas.multimediatechnology.be/api/comments/"+projectnr.ToString();
     WWW www = new WWW(url);
     yield return www;
     Debug.Log(url);
@@ -51,6 +54,33 @@ public class LoadProjectTitle : MonoBehaviour {
     {
       Debug.Log("ERROR: " + www.error);
     }
+    //Debug.Log("aantal reacties = " + commentData[0].Count);
+    int reactionsToPrint = commentData[0].Count;
+    for (int i = 0; i < commentData[0].Count; i++)
+    {
+      int id = int.Parse(commentData[0][i]["id"].ToString());
+      string text = commentData[0][i]["comment"].ToString();
+      string userName = commentData[0][i]["comment"].ToString();
+      int nrOfReactions = commentData[0].Count;
 
+      try
+      {
+        userName = commentData[0][i]["user"]["name"].ToString();
+      }
+      catch(Exception exception)
+      {
+        userName = "Anoniem";
+        Debug.Log(exception);
+      }
+      Debug.Log("proberen eh " + userName);
+
+      addReaction.CreateReaction(text, id, userName, reactionsToPrint, nrOfReactions);
+      reactionsToPrint--;
+    }
+    
+    //string text = commentData[0][0]["comment"].ToString();
+    //Debug.Log("nr = " + projectnr + text);
+
+    
   }
 }
