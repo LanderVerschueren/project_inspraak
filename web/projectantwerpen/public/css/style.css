@@ -102,8 +102,6 @@ input[type="text"] {
 
 .panel {
   border-radius: 0;
-  border-left: none;
-  border-right: none;
   border-bottom: 1px solid #CF0039;
 }
 
@@ -274,9 +272,10 @@ label, input, p, a {
 }
 
 #projects_list section {
-  width: 280px;
+  margin: 5px;
+  flex: 4;
+  min-width: 280px;
   height: 280px;
-  margin-bottom: 15px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 4px 6px rgba(0,0,0,0.23);
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
@@ -384,16 +383,15 @@ label, input, p, a {
   text-align: center;
 }
 
-#project form .question .button button {
+#project form .question .button a {
   border: 1px solid #CF0036;
   background-color: #CF0036;
   color: white;
   width: 20%;
   font-size: 20px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-#project form .question .button button:hover {
+#project form .question .button a:hover {
   background-color: white;
   color: black;
 }
@@ -534,8 +532,10 @@ label, input, p, a {
 }
 
 #project .comments .comment_section {
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid lightgrey;
 }
 
 #project .comments .comment_section h5 {
@@ -543,8 +543,23 @@ label, input, p, a {
   font-size: 15px;
 }
 
-#project .comments .comment_section p {
-  margin-left: 15px;
+#project .comments .comment_section p i {
+  margin-right: 15px;
+}
+
+#project .comments button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'antwerpen_sun300';
+  border: 1px solid #CF0036;
+  background-color: #CF0036;
+  color: white;
+  font-size: 20px;
+}
+
+#project .comments button:hover {
+  background-color: white;
+  color: black;
 }
 
 #project .comments textarea {

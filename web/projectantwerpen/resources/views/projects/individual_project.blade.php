@@ -36,10 +36,9 @@
 									<p> {{ $project->vraag }} </p>
 								</section>
 								<section class="button">
-									<form action="/vote" method="GET">
-										<button type="submit"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
-										<button type="submit"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
-									</form>
+										<a href="{{ url('/vote/like/'.$project->id) }}" class="btn btn-raised"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
+										<a href="{{ url('/vote/dislike/'.$project->id) }}" class="btn btn-raised"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a>
+									
 								</section>
 							</section>
 							
@@ -97,11 +96,13 @@
 										@else
 											<h5>{{$comment->user->name}}</h5>
 					    				@endif
-	    								<p>{{ucfirst( $comment->comment )}}</p>
+	    								<p>
+	    									<i class="fa fa-comment" aria-hidden="true"></i>
+	    									{{ucfirst( $comment->comment )}}
+	    								</p>
     								</section>
 								@endforeach
-
-								<textarea name="comment" id="" cols="30" rows="5"></textarea>
+								<textarea name="comment"></textarea>
 								<button type="submit">Reactie plaatsen</button>
 							</section>
 						</form>

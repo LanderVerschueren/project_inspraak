@@ -21,7 +21,14 @@ class AdminController extends Controller
 		return view('projects.projectslist', ['projects' => $projects]);
 	}
 
-	public function addProject() {
+	public function addProject(Request $request) {
+		/*$title = $request->input('title');
+		$image = $request->input('pic');
+		$date = $request->input('date');
+		$cost = $request->input('cost');
+		$category = $request->input('category');
+		$description = $request->input('description');
+		$project = Project::create(array('titel' => $title, 'categorie' => $category, 'uitleg' => $description, 'fotonaam'));*/
 		return view('projects.add_project');
 	}
 }

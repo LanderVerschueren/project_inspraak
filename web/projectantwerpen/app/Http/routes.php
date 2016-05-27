@@ -14,12 +14,14 @@
 Route::auth();
 
 Route::group([ 'middleware' => 'web' ], function() {
-	Route::get('/vote', 'IndividualProjectController@voten');
+	Route::get('/vote/like/{id}', 'IndividualProjectController@vote_like');
+	Route::get('/vote/dislike/{id}', 'IndividualProjectController@vote_dislike');
 	Route::get('/home', 'HomeController@index');
 	Route::get('/', 'HomeController@index');
 	Route::get('/projecten', 'ProjectController@index');
+	Route::post('/projecten/filter', 'ProjectController@filter');
 	Route::get('/projectslist', 'AdminController@index');
-	Route::get('/project/addproject', 'AdminController@addProject');
+	Route::post('/projectslist/addproject', 'AdminController@addProject');
 	Route::get('/project/{id}', 'IndividualProjectController@index');
 	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
 	Route::get('/project/unfollow/{id}', 'IndividualProjectController@unfollow');
@@ -33,6 +35,7 @@ Route::group(['prefix' =>'api'], function()
 	Route::get('/projects' , 'APIController@requestProjects');
 	Route::post('/login', 'APIController@login');
 	Route::post('/register' , 'APIController@register');
+	Route::get('/comments/{id}', 'APIController@getComments');
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
     	Route::post('/logout', 'APIController@logout');
     });    
