@@ -13,11 +13,11 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->delete();
          //insert some dummy records
          DB::table('users')->insert(array(
-             array('name'=>'Piotr Mazurek','email'=>'mazurek.piotr@student.kdg.be', 'password' => Hash::make( 'projectant' ), 'type_of_user'=>'admin'),
-             array('name'=>'Lander Verschueren','email'=>'lander.verschueren@student.kdg.be', 'password' => Hash::make( 'projectant' ), 'type_of_user'=>'admin'),
-             array('name'=>'John','email'=>'john@test.be', 'password' => Hash::make( 'password' ), 'type_of_user'=>'regular'),
-             array('name'=>'Alexander','email'=>'alexander@test.be', 'password' => Hash::make( 'password' ), 'type_of_user'=>'regular'),
-             array('name'=>'Ronny','email'=>'ronny@test.be', 'password' => Hash::make( 'password' ), 'type_of_user'=>'regular')
+             array('name'=>'Piotr Mazurek','email'=>'mazurek.piotr@student.kdg.be', 'password' => Hash::make( 'projectant' ), 'type_of_user'=>'admin', 'level' => 10, 'rank' => "Level X", 'path_rank_image' => "level10.psd", 'XP' => '20000', 'coins' => '3000', 'coin_multiplier' => 2.0, 'a_points' => 100),
+             array('name'=>'Lander Verschueren','email'=>'lander.verschueren@student.kdg.be', 'password' => Hash::make( 'projectant' ), 'type_of_user'=>'admin', 'level' => 10, 'rank' => "Level X", 'path_rank_image' => "level10.psd", 'XP' => '20000', 'coins' => '3000', 'coin_multiplier' => 2.0, 'a_points' => 100),
+             array('name'=>'John','email'=>'john@test.be', 'password' => Hash::make( 'password' ), 'type_of_user'=>'regular', 'level' => 5, 'rank' => "Level V", 'path_rank_image' => "level5.psd", 'XP' => '3000', 'coins' => '300', 'coin_multiplier' => 1.3, 'a_points' => 100),
+             array('name'=>'Alexander','email'=>'alexander@test.be', 'password' => Hash::make( 'password' ), 'type_of_user'=>'regular', 'level' => 2, 'rank' => "Level II", 'path_rank_image' => "level2.psd", 'XP' => '500', 'coins' => '20', 'coin_multiplier' => 1.1, 'a_points' => 100),
+             array('name'=>'Ronny','email'=>'ronny@test.be', 'password' => Hash::make( 'password' ), 'type_of_user'=>'regular', 'level' => 1, 'rank' => "Level I", 'path_rank_image' => "level1.psd", 'XP' => '200', 'coins' => '30', 'coin_multiplier' => 1.0, 'a_points' => 100)
 
           ));
 

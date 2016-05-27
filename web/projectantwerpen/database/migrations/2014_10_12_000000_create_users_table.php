@@ -18,6 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('password');
             $table->string('type_of_user');
+            $table->integer('level');
+            $table->string('rank');
+            $table->string('path_rank_image');
+            $table->integer('XP');
+            $table->integer('coins');
+            $table->double('coin_multiplier', 3, 1);
+            $table->integer('a_points');
             $table->rememberToken();
             $table->timestamps();
         });
