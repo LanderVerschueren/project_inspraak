@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Project;
 use App\User;
+use App\User;
 use Hash;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -19,6 +20,13 @@ class APIController extends Controller
       $all = array('projects' => $projects );
 
     	return response()->json($all);
+    }
+
+    public function getComments(){
+      $comments = Comment::all();
+      $all = array('comments' => $comments);
+
+      return response()->json($all);
     }
 
     public function login(Request $request){

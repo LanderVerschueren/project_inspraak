@@ -34,6 +34,7 @@ Route::group(['prefix' =>'api'], function()
 	Route::get('/projects' , 'APIController@requestProjects');
 	Route::post('/login', 'APIController@login');
 	Route::post('/register' , 'APIController@register');
+	Route::get('/comments', 'APIController@getComments');
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
     	Route::post('/logout', 'APIController@logout');
     });    
