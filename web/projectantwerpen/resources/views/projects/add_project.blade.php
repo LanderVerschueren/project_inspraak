@@ -17,16 +17,26 @@
 								<section class="info">
 									<ul>
 										<li>
-											<label>Einddatum:</label>
-											<label>  </label>
+											<input type="text" id="datepicker" class="form-control" name="einddatum" placeholder="Einddatum">
 										</li>
 										<li>
-											<label>Kostprijs:</label>
-											<label>  </label>
+											<input type="text" class="form-control" name="kostprijs" placeholder="Kostprijs">
 										</li>
 										<li>
-											<label>Categorie</label>
-											<label>  </label>
+											<select name="" class="form-control">
+												<option>
+													...
+												</option>
+												<option value="renovatie">
+													Renovatie
+												</option>
+												<option value="heraanleg">
+													Heraanleg
+												</option>
+												<option value="opknapwerk">
+													Opknapwerk
+												</option>
+											</select>
 										</li>
 									</ul>
 								</section>
@@ -80,6 +90,7 @@
 						    		<p> Uitleg </p>
 						    	</section>
 					    	</section>
+					    	<a href="{{ url('/addProject') }}" class="btn btn-raised"> Project toevoegen </a>
 				    	</form>
 				  	</div>
 			  	</div>

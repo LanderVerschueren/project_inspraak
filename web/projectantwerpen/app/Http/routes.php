@@ -21,7 +21,7 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/projecten', 'ProjectController@index');
 	Route::post('/projecten/filter', 'ProjectController@filter');
 	Route::get('/projectslist', 'AdminController@index');
-	Route::post('/projectslist/addproject', 'AdminController@addProject');
+	Route::get('/project/addproject', 'AdminController@addProject');
 	Route::get('/project/{id}', 'IndividualProjectController@index');
 	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
 	Route::get('/project/unfollow/{id}', 'IndividualProjectController@unfollow');

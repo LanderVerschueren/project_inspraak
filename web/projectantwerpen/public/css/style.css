@@ -581,6 +581,12 @@ label, input, p, a {
   color: black;
 }
 
+li .form-group {
+  width: 100%;
+  font-family: 'antwerpen_sun500';
+  color: #555;
+}
+
 
 
 
