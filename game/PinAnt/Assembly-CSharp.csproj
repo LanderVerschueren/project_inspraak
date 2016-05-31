@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Navigation\UILogic.cs" />
      <Compile Include="Assets\Scripts\PlayerSettings.cs" />
      <Compile Include="Assets\Scripts\ToggleInfo.cs" />
+     <Compile Include="Assets\TextWriter.cs" />
      <Compile Include="Assets\UpdateContentProjects.cs" />
      <Compile Include="Assets\projectPosition.cs" />
      <Compile Include="Assets\updateReactionContect.cs" />

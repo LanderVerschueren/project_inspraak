@@ -11,13 +11,12 @@ public class LoadProjectTitle : MonoBehaviour
 
   public static int currentProject;
 
-  public InputField addReactionField;
-
   public GameObject titlePanel;
   public GameObject likePanel;
   public GameObject dislikePanel;
   public GameObject questionPanel;
   public GameObject extraInfoPanel;
+  public GameObject extraInfoTitle;
 
   public AddReaction addReaction;
 
@@ -34,6 +33,7 @@ public class LoadProjectTitle : MonoBehaviour
     dislikePanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].dislikes;
     questionPanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].question;
     extraInfoPanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].info;
+    extraInfoTitle.GetComponent<Text>().text = "Extra Info " + LoadProjectSettings.projectList[currentProject].title;
 
     StartCoroutine(addReaction.LoadComments(currentProject + 1));
   }

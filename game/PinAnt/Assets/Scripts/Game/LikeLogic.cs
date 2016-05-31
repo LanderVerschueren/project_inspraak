@@ -148,6 +148,4 @@ public class LikeLogic : MonoBehaviour {
       Debug.Log("LIKE ERROR: " + dislikewww.error);
     }
   }
-
-
 }

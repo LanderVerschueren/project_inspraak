@@ -9,7 +9,7 @@ public class UILogic : MonoBehaviour {
     public Transform endMarker;
     public Color activeColor;
     public Color passiveColor;
-    
+    public Scrollbar reactionScroll;
 
 
 
@@ -56,6 +56,15 @@ public class UILogic : MonoBehaviour {
       float startTime = Time.time;
       float journeyLength;
       journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+    }
+
+    public void setCommentScroll()
+    {
+      reactionScroll.value = 0.9F;
+    }
+    public void setInfoScroll()
+    {
+      reactionScroll.value = 1F;
     }
 
     
