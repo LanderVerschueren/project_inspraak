@@ -42,6 +42,16 @@ class APIController extends Controller
       return response()->json($all);
     }
 
+    public function placeComment($id, Request $request){
+      $comment = $request->input('text');
+      $user_id = $request->input('user_id');
+      if($user_id == 0){
+        $user_id = null;
+      }
+      Comment::create(array('fk_user' => $user_id, 'fk_project' => $id, 'comment' => $comment ));
+      return response('comment created');
+    }
+
     public function login(Request $request){
     	$credentials = $request->only('email', 'password');
 
@@ -81,4 +91,23 @@ class APIController extends Controller
 
    		return response()->json(compact('token'));
   	}
+
+    public function vote_like($id) {
+      $project = Project::find($id);
+        
+      $project->increment('likes');
+      $project->save();
+
+      return response('liked');
+  }
+  
+    public function vote_dislike($id) {
+      $project = Project::find($id);
+        
+      $project->increment('dislikes');
+      $project->save();
+
+      return response('disliked');
+
+  }
 }
