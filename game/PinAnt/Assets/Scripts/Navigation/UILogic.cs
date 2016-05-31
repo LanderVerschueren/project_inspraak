@@ -4,8 +4,9 @@ using System.Collections;
 
 public class UILogic : MonoBehaviour {
 
-     public GameObject PlayerLogic;
-
+    public GameObject PlayerLogic;
+    public Transform startMarker;
+    public Transform endMarker;
     public Color activeColor;
     public Color passiveColor;
 
@@ -42,6 +43,19 @@ public class UILogic : MonoBehaviour {
     public void setPassiveButtonColor(Button passiveBtn)
     {
         passiveBtn.image.color = passiveColor;
+    }
+
+    public void OpenHamburgerMenu(GameObject menu)
+    {
+      OpenTab(menu);
+      float speed = 1.0F;
+      float startTime = Time.time;
+      float journeyLength;
+      journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+    }
+
+    public void LerpProbeersel()
+    {
     }
 
 }
