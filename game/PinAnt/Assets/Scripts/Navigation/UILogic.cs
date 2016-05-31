@@ -9,10 +9,14 @@ public class UILogic : MonoBehaviour {
     public Transform endMarker;
     public Color activeColor;
     public Color passiveColor;
+    
+
+
+
 
 	// Use this for initialization
 	void Start () {
-                PlayerLogic = GameObject.Find("Player");
+                PlayerLogic = GameObject.Find("Player");    
 	}
 	
 	// Update is called once per frame
@@ -33,7 +37,7 @@ public class UILogic : MonoBehaviour {
     public void OpenWebsite(string url)
     {
         Application.OpenURL(url);
-        Debug.Log("go to website");
+        Debug.Log("go to website: " + url);
     }
 
     public void SetActiveButtonColor(Button activeBtn)
@@ -54,8 +58,6 @@ public class UILogic : MonoBehaviour {
       journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
     }
 
-    public void LerpProbeersel()
-    {
-    }
+    
 
 }
