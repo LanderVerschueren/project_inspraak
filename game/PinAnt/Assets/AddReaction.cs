@@ -47,7 +47,7 @@ public class AddReaction : MonoBehaviour {
     string url = "http://bananas.multimediatechnology.be/api/comments/" + projectnr.ToString();
     WWW www = new WWW(url);
     yield return www;
-    Debug.Log(url);
+    //Debug.Log(url);
     if (www.error == null)
     {
       commentData = JsonMapper.ToObject(www.text);
@@ -72,9 +72,10 @@ public class AddReaction : MonoBehaviour {
       catch (Exception exception)
       {
         userName = "Anoniem";
-        Debug.Log(exception);
+        string error = exception.ToString();
+        //Debug.Log(error);
       }
-      Debug.Log("proberen eh " + userName);
+      //Debug.Log("proberen eh " + userName);
 
       CreateReaction(text, id, userName, reactionsToPrint, nrOfReactions);
       reactionsToPrint--;
@@ -102,7 +103,7 @@ public class AddReaction : MonoBehaviour {
 
       if (reactionwww.error == null)
       {
-        Debug.Log("REACTION OK!: " + reactionwww.text);
+        //Debug.Log("REACTION OK!: " + reactionwww.text);
         StartCoroutine(LoadComments(currentProject+1));
       }
       else
@@ -116,9 +117,9 @@ public class AddReaction : MonoBehaviour {
   {
     //CreateLists(text, reactionNr, userName, currentproject);
     //List<string> textList = new List<string>();
-    Debug.Log("reactionsToPrint = " + reactionsToPrint);
+    //Debug.Log("reactionsToPrint = " + reactionsToPrint);
     GameObject newReaction = GameObject.Instantiate(originalPanel) as GameObject;
-    newReaction.name = "Reaction"+ nrOfReactions;
+    newReaction.name = "Reaction"+ reactionNr;
 
     reactionDifference = nrOfReactions - reactionsToPrint;
 
@@ -139,7 +140,7 @@ public class AddReaction : MonoBehaviour {
 
     newReaction.SetActive(true);
 
-    Debug.Log(reactionList);
+    //Debug.Log(reactionList);
 
     updateContent();
   }

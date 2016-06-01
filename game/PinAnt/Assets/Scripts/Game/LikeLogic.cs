@@ -79,10 +79,10 @@ public class LikeLogic : MonoBehaviour {
 
     void checkText()
     {
-      Debug.Log("dislikes = " + nrOfDislikes);
+      /*Debug.Log("dislikes = " + nrOfDislikes);
       Debug.Log("likes = " + nrOfLikes);
       Debug.Log("isLiked = " + isLiked);
-      Debug.Log("isDisLiked = " + isDisliked);
+      Debug.Log("isDisLiked = " + isDisliked);*/
 
       likeButton.GetComponentInChildren<Text>().text = nrOfLikes.ToString();
       dislikeButton.GetComponentInChildren<Text>().text = nrOfDislikes.ToString();
@@ -120,7 +120,7 @@ public class LikeLogic : MonoBehaviour {
 
       if (likewww.error == null)
       {
-        Debug.Log("LIKE OK!: " + likewww.text);
+        //Debug.Log("LIKE OK!: " + likewww.text);
       }
       else
       {
@@ -141,11 +141,11 @@ public class LikeLogic : MonoBehaviour {
 
     if (dislikewww.error == null)
     {
-      Debug.Log("LIKE OK!: " + dislikewww.text);
+      //Debug.Log("DISLIKE OK!: " + dislikewww.text);
     }
     else
     {
-      Debug.Log("LIKE ERROR: " + dislikewww.error);
+      Debug.Log("DISLIKE ERROR: " + dislikewww.error);
     }
   }
 }
