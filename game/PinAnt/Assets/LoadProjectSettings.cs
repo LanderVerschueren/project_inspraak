@@ -7,7 +7,6 @@ using System.ComponentModel;
 
 public class LoadProjectSettings : MonoBehaviour {
   public static int totalProjects;
-  public static int currentprojectNr;
 
   public GameObject originalProject;
   public GameObject projectCollection;
