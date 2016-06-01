@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Validator;
 
 class AdminController extends Controller
 {
@@ -35,18 +36,45 @@ class AdminController extends Controller
 		$fase 			= $request->input('fase');
 		$description 	= $request->input('description');
 
+		var_dump($request->input('pic'));
+
 		Project::create(
 			array(
-				'titel' => $title,
-				'fotonaam' => $image,
-				'einddatum' => $date,
-				'kostprijs' => $cost,
-				'categorie' => $category,
-				'vraag'=> $question,
-				'fase' => $fase,
-				'uitleg' => $description
+				'titel' 		=> $title,
+				'fotonaam' 		=> $image,
+				'einddatum' 	=> $date,
+				'kostprijs' 	=> $cost,
+				'categorie' 	=> $category,
+				'vraag'			=> $question,
+				'fase' 			=> $fase,
+				'uitleg' 		=> $description
 			)
 		);
+
+		/*$image_to_move = Input::file('pic');
+		$validator = Validator::make(
+			[$image_to_move], 
+			['mimes:gif,jpg,jpeg,bmp,png', 'image_to_move.required']
+		);
+
+		if ($validator->fails()) {
+            return response()->json(['error' => 'Bestand moet een extensie :gif,jpg,jpeg,bmp,png hebben '], 200);
+        }*/
+
+        $destinationPath = 'images';
+
+        
+		$request->file('pic')->move($destinationPath, $image);
+
+		/*if (!$image_to_move->move($destinationPath, $image_to_move->getClientOriginalName())) {
+            return $validator->errors(
+            	['message' => 'Er is iets foutgelopen bij het uploaden van het bestand.', 'code' => 400]
+            );
+        }
+		
+		$image_to_move->move($destinationPath, $image_to_move->getClientOriginalName());*/
+
+
 
 		$projects = Project::all();
 
