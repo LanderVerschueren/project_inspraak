@@ -52,6 +52,7 @@
      <Compile Include="Assets\LoadReactions.cs" />
      <Compile Include="Assets\PostPlayerSettings.cs" />
      <Compile Include="Assets\ProjectCollection.cs" />
+     <Compile Include="Assets\ProjectScroll.cs" />
      <Compile Include="Assets\Scripts\Game\GameLogic.cs" />
      <Compile Include="Assets\Scripts\Game\LikeLogic.cs" />
      <Compile Include="Assets\Scripts\Game\PlaySounds.cs" />
