@@ -21,14 +21,45 @@ class AdminController extends Controller
 		return view('projects.projectslist', ['projects' => $projects]);
 	}
 
-	public function addProject(Request $request) {
-		/*$title = $request->input('title');
-		$image = $request->input('pic');
-		$date = $request->input('date');
-		$cost = $request->input('cost');
-		$category = $request->input('category');
-		$description = $request->input('description');
-		$project = Project::create(array('titel' => $title, 'categorie' => $category, 'uitleg' => $description, 'fotonaam'));*/
+	public function addProject() {
 		return view('projects.add_project');
+	}
+
+	public function add(Request $request) {
+		$title 			= $request->input('title');
+		$image	 		= $request->input('pic');
+		$date 			= $request->input('date');
+		$cost 			= $request->input('cost');
+		$category 		= $request->input('category');
+		$question 		= $request->input('question');
+		$fase 			= $request->input('fase');
+		$description 	= $request->input('description');
+
+		Project::create(
+			array(
+				'titel' => $title,
+				'fotonaam' => $image,
+				'einddatum' => $date,
+				'kostprijs' => $cost,
+				'categorie' => $category,
+				'vraag'=> $question,
+				'fase' => $fase,
+				'uitleg' => $description
+			)
+		);
+
+		$projects = Project::all();
+
+		return view('projects.projectslist', ['projects' => $projects]);
+	}
+
+	public function delete_project( $id ) {
+		$project = Project::find($id);
+
+		$project->delete();
+
+		$projects = Project::all();
+
+		return view('projects.projectslist', ['projects' => $projects]);
 	}
 }

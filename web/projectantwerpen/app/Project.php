@@ -6,6 +6,7 @@ use App\Comment;
 class Project extends Model
 {
     protected $table = "projects";
+    protected $fillable = array('titel', 'categorie', 'uitleg', 'fotonaam', 'kostprijs', 'fase', 'vraag', 'fotonaam');
 
     public function scopeSearchByKeyword($query, $keyword)
     {
@@ -20,8 +21,7 @@ class Project extends Model
         
         return $query;
     }
-    public static function comments($id)
-        {
-        	return Comment::where('fk_project', $id);
-        }
+    public static function comments($id) {
+       	return Comment::where('fk_project', $id);
+    }
 }

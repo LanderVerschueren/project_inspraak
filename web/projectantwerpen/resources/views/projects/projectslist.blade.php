@@ -19,6 +19,7 @@
 					</section>
 					<section class="btn_aanpassen">
 						<a href="{{ url('/project/'.$project->id) }}" class="btn btn-raised btn-default" role="button">Aanpassen</a>
+						<a href="{{ url('/project/delete/'.$project->id) }}" class="btn btn-raised btn-default" role="button">Verwijderen</a>
 					</section>
 				</div>
 				@endforeach

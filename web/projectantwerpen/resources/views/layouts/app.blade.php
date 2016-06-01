@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/navbar.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/ripples.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -123,6 +124,7 @@
     <script src="{{ URL::asset('jquery-ui/jquery-ui.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="{{ URL::asset('js/material.js') }}"></script>
+    <script src="{{ URL::asset('js/ripples.js') }}"></script>
     <script src="{{ URL::asset('js/base.js') }}"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>

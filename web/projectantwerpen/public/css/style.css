@@ -238,6 +238,7 @@ label, input, p, a {
   background-color: #CF0036;
   border: 1px solid #CF0036;
   color: white;
+  border-radius: 0;
 }
 
 #filter button:hover {
@@ -403,6 +404,20 @@ label, input, p, a {
   font-size: 20px;
 }
 
+#project textarea {
+  width: 100%;
+  font-family: 'antwerpen_sun300';
+  font-size: 16px;
+}
+
+#project .timeline_explanation select {
+  font-family: 'antwerpen_sun500';
+}
+
+.admin .timeline {
+  cursor: pointer;
+}
+
 #project form .main_info .image {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -474,46 +489,6 @@ label, input, p, a {
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 767px) {
-  #project form .main_info .image {
-    margin-bottom: 15px;
-  }
-  #project form .main_info .info ul {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  #project form .main_info .info ul li label {
-    min-width: 50px;
-  }
-}
-
-/* Input fields add page */
-#project form .main_info .admin ul li input {
-  border: 1px solid grey;
-  max-width: 150px;
-}
-
-@media screen and (max-width: 767px) {
-  #project form .main_info {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #project form .main_info .image img {
-    min-width: 0;
-  }
-  #project .timeline_explanation {
-    flex-flow: column nowrap;
-  }
-  #project .timeline_explanation .timeline{
-    margin-bottom: 15px;
-  }
-
-  #project .timeline_explanation .explanation p {
-    margin-left: 0;
-  }
-}
-
 #project .comments {
   width: 100%;
   display: flex;
@@ -573,7 +548,8 @@ label, input, p, a {
   background-color: #CF0036;
   color: white;
   font-size: 20px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+  margin: 10px 0 10px 0;
 }
 
 #project .comments button:hover {
@@ -585,6 +561,62 @@ li .form-group {
   width: 100%;
   font-family: 'antwerpen_sun500';
   color: #555;
+}
+
+#project .form-group {
+  padding: 0;
+  margin: 0;
+}
+
+#project .form-group input {
+  padding: 0;
+  margin: 0;
+}
+
+#project h4 .form-group input {
+  color: white;
+  font-family: 'antwerpen_regular';
+  text-align: center;
+}
+
+.admin .timeline_explanation .explanation {
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  #project form .main_info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #project form .main_info .image img {
+    min-width: 0;
+  }
+  #project .timeline_explanation {
+    flex-flow: column nowrap;
+  }
+  #project .timeline_explanation .timeline{
+    margin-bottom: 15px;
+  }
+  #project .timeline_explanation .explanation p {
+    margin-left: 0;
+  }
+  #project form .main_info .image {
+    margin-bottom: 15px;
+  }
+  #project form .main_info .info {
+    width: 100%;
+  }
+  #project form .main_info .info ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #project form .main_info .info ul li label {
+    min-width: 50px;
+  }
+  .admin .timeline_explanation .explanation {
+    margin: 0;
+  }
 }
 
 

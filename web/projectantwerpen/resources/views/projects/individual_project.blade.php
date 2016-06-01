@@ -103,7 +103,7 @@
     								</section>
 								@endforeach
 								<textarea name="comment"></textarea>
-								<button type="submit">Reactie plaatsen</button>
+								<button type="submit" class="btn btn-raised">Reactie plaatsen</button>
 							</section>
 						</form>
 				  	</div>

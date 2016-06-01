@@ -7,6 +7,22 @@ $(document).ready(function() {
 		return false;  
 	});
 
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#img_preview").change(function () {
+        readURL(this);
+    });
+
 
   	$("#carousel-example-generic").swiperight(function() {  
       	$(this).carousel('prev');  
@@ -17,7 +33,6 @@ $(document).ready(function() {
 
 	$('#datepicker').datepicker();
 
-    
 
 	// Variables
 	var clickedTab = $(".tabs > .active");

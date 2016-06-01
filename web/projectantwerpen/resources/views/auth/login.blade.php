@@ -54,7 +54,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-raised btn-default">
                                     <i class="fa fa-btn fa-sign-in"></i>Inloggen
                                 </button>
 
@@ -75,7 +75,7 @@
                         <li>Nog geen profiel?</li>
                         <li>Maak nu een profiel aan om projecten te kunnen volgen!</li>
                         <li>
-                            <a href="{{ url('/register') }}" class="btn btn-primary" role="button">
+                            <a href="{{ url('/register') }}" class="btn btn-raised btn-default" role="button">
                                 <i class="fa fa-btn fa-user"></i>Registreren
                             </a>
                         </li>

@@ -73,7 +73,7 @@
                                     </label>
 								</div>
 
-								<button type="submit"> Filter </button>
+								<button type="submit" class="btn btn-raised btn-default"> Filter </button>
 							</section>
 						</form>
 					</div>
