@@ -42,6 +42,7 @@ Route::group(['prefix' =>'api'], function()
 	Route::get('/like/{id}' , 'APIController@vote_like');
 	Route::get('/dislike/{id}' , 'APIController@vote_dislike');
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
+    	Route::get('/user', 'APIController@getUserInfo');
     	Route::post('/logout', 'APIController@logout');
     });    
 });

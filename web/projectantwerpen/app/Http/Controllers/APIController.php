@@ -30,10 +30,10 @@ class APIController extends Controller
       
       foreach($comments as $comment){
           if($comment->fk_user != null){
-            $comment->push(['username' => $comment->user->name]);
+            $comment->push(['user' => $comment->user->name]);
           }
           else{
-            $comment->push(['username' => "Anoniem"]);
+            $comment->push(['user' => "Anoniem"]);
           }
       }
 
@@ -108,6 +108,11 @@ class APIController extends Controller
       $project->save();
 
       return response('disliked');
+  }
 
+    public function getUserInfo(){
+      $user = JWTAuth::parseToken()->authenticate();
+
+      return response($user);
   }
 }
