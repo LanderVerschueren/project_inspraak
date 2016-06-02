@@ -4,6 +4,7 @@ using System.IO;
 using LitJson;
 using System.Collections.Generic;
 using System.ComponentModel;
+using UnityEngine.UI;
 
 public class LoadProjectSettings : MonoBehaviour {
   public static int totalProjects;
@@ -11,7 +12,7 @@ public class LoadProjectSettings : MonoBehaviour {
   public GameObject originalProject;
   public GameObject projectCollection;
   public RectTransform originelRectTrans;
-  //public GameObject scrollScript;
+  public Scrollbar projectScroll;
   public GameObject content;
 
   private int projectsCreated;
@@ -47,6 +48,8 @@ public class LoadProjectSettings : MonoBehaviour {
     Debug.Log(itemData.Count);
     totalProjects = itemData[0].Count; //tel totaal aantal projecten
     Debug.Log("totalprojects = " + totalProjects);
+
+    projectScroll.numberOfSteps = totalProjects;
 
     projectList = new List<Project>();
 
@@ -161,7 +164,7 @@ public class LoadProjectSettings : MonoBehaviour {
       newProject.GetComponent<RectTransform>().localPosition = new Vector2(0 + 800 * (projectsCreated), 0);
 
       newProject.SetActive(true);
-
+    
       projectsCreated++;
     }
   }
