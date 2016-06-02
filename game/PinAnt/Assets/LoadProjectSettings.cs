@@ -11,7 +11,7 @@ public class LoadProjectSettings : MonoBehaviour {
   public GameObject originalProject;
   public GameObject projectCollection;
   public RectTransform originelRectTrans;
-
+  public GameObject scrollScript;
   public GameObject content;
 
   private int projectsCreated;
@@ -47,6 +47,8 @@ public class LoadProjectSettings : MonoBehaviour {
     Debug.Log(itemData.Count);
     totalProjects = itemData[0].Count; //tel totaal aantal projecten
     Debug.Log("totalprojects = " + totalProjects);
+
+    scrollScript.SetActive(true);
 
     projectList = new List<Project>();
 
