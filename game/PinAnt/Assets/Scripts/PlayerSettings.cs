@@ -17,7 +17,10 @@ public class PlayerSettings : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+        playerName = " ";
+        playerPassword = " ";
+
+
 	}
 	
 	// Update is called once per frame

@@ -133,15 +133,15 @@ public class GameLogic : MonoBehaviour {
 
     }
 
-    public void GainExp()
+    public void GainExp(int mXP)
     {
-        xp += 5;
+        xp += mXP;
         DetermineLevel(xp);
         UpdatePlayerSettings();
     }
-    public void GainCoins()
+    public void GainCoins(int mCoins)
     {
-        coins += 2;
+        coins += mCoins;
         DetermineLevel(xp);
         UpdatePlayerSettings();
     }

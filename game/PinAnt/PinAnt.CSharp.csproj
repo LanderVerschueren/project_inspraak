@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -88,9 +82,11 @@
     <Compile Include="Assets\Scripts\Game\GameLogic.cs" />
     <Compile Include="Assets\Scripts\Game\LikeLogic.cs" />
     <Compile Include="Assets\Scripts\Game\PlaySounds.cs" />
+    <Compile Include="Assets\Scripts\Game\Register.cs" />
     <Compile Include="Assets\Scripts\Game\UpdateProfileUI.cs" />
     <Compile Include="Assets\Scripts\GetCanvasSize.cs" />
     <Compile Include="Assets\Scripts\Login.cs" />
+    <Compile Include="Assets\Scripts\Navigation\CloseGame.cs" />
     <Compile Include="Assets\Scripts\Navigation\HambugerOpen.cs" />
     <Compile Include="Assets\Scripts\Navigation\HamburgerClose.cs" />
     <Compile Include="Assets\Scripts\Navigation\UILogic.cs" />

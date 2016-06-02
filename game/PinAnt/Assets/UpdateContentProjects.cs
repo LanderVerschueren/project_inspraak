@@ -24,7 +24,6 @@ public class UpdateContentProjects : MonoBehaviour {
     for (int i = 0; i < project; i++)
     {
       Debug.Log("loop");
-      content.GetComponent<RectTransform>().offsetMax = new Vector2(content.GetComponent<RectTransform>().offsetMax.x + 533.325f, (content.GetComponent<RectTransform>().offsetMax.y));
     }
     //}
   }

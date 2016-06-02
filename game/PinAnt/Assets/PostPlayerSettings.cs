@@ -2,78 +2,214 @@
 using System.Collections;
 using UnityEngine.UI;
 using LitJson;
+using System.Collections.Generic;
+using System.Linq;
 
-public class PostPlayerSettings : MonoBehaviour {
+public class PostPlayerSettings : MonoBehaviour
+{
 
   public InputField usernameField;
   public InputField passwordField;
-  public InputField nameField;
+  public InputField emailField;
+  public InputField passwordRepeatField;
+
+  public GameObject error1;
+  public GameObject error2;
+  public GameObject error3;
+  public GameObject error4;
+  public GameObject errormsg;
 
   public static JsonData playerToken;
 
   private string playerName;
   private string playerEmail;
   private string playerPassword;
+  private string playerPasswordRepeat;
 
-	// Use this for initialization
-	public void Start () {
-
-    
-
-    playerName = "Bert5";
-    playerEmail = "bert.vanhove@live.be5";
-    playerPassword = "wachtwoord";
-
-
-
-    
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-  public void LoginPlayer()
+  // Use this for initialization
+  public void Start()
   {
+
+  }
+  public void CheckRegisterFields()
+  {
+    playerEmail = emailField.text;
+    playerPassword = passwordField.text;
+    playerPasswordRepeat = passwordRepeatField.text;
+    playerName = usernameField.text;
+
+    if (ValidateInformation())
+    {
+      RegisterPlayer(playerName, playerEmail, playerPassword);
+    }
+  }
+
+  bool ValidateInformation()
+  {
+    bool check1 = false;
+    bool check2 = false;
+    bool check3 = false;
+    bool check4 = false;
+
+    if (playerName == "" || playerName == " " || playerName == "  ")
+    {
+      ShowError1();
+    }
+    else
+    {
+      check1 = true;
+      error1.SetActive(false);
+    }
+    if (playerEmail.Contains("@") && playerEmail.Contains("."))
+    {
+      check2 = true;
+      error2.SetActive(false);
+    }
+    else ShowError2();
+
+    if (playerPassword == " " || playerPassword == "")
+    {
+      ShowError3();
+    }
+    else
+    {
+      check3 = true;
+      error3.SetActive(false);
+    }
+
+    if (playerPassword != playerPasswordRepeat)
+    {
+      ShowError4();
+    }
+    else
+    {
+      error4.SetActive(false);
+      check4 = true;
+    }
+
+    if (check1 && check2 && check3 && check4)
+    {
+      return true;
+    }
+    else return false;
+  }
+
+  void ShowError1()
+  {
+    error1.SetActive(true);
+  }
+
+  void ShowError2()
+  {
+    error2.SetActive(true);
+  }
+
+  void ShowError3()
+  {
+    error3.SetActive(true);
+  }
+
+  void ShowError4()
+  {
+    error4.SetActive(true);
+  }
+
+  void resetError()
+  {
+    error1.SetActive(false);
+    error2.SetActive(false);
+    error3.SetActive(false);
+    error4.SetActive(false);
+  }
+
+  public void CheckLogInFields()
+  {
+    playerEmail = emailField.text;
+    playerPassword = passwordField.text;
+
+    LoginPlayer(playerEmail, playerPassword);
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+
+  }
+
+  public void LoginPlayer(string email, string password)
+  {
+    Debug.Log("loginplayer");
     string loginUrl = "http://bananas.multimediatechnology.be/api/login";
 
     WWWForm loginForm = new WWWForm();
-    loginForm.AddField("email", playerEmail);
-    loginForm.AddField("password", playerPassword);
+    loginForm.AddField("email", email);
+    loginForm.AddField("password", password);
 
     WWW loginwww = new WWW(loginUrl, loginForm);
 
-    StartCoroutine(PostPlayer(loginwww));
+    StartCoroutine(PostPlayerLogin(loginwww));
   }
 
-  public void RegisterPlayer()
+  IEnumerator PostPlayerLogin(WWW www)
   {
-    string RegisterUrl = "http://bananas.multimediatechnology.be/api/register";
-
-    WWWForm RegisterForm = new WWWForm();
-    RegisterForm.AddField("name", playerName);
-    RegisterForm.AddField("email", playerEmail);
-    RegisterForm.AddField("password", playerPassword);
-
-    WWW registerwww = new WWW(RegisterUrl, RegisterForm);
-
-    StartCoroutine(PostPlayer(registerwww));
-  }
-
-  IEnumerator PostPlayer(WWW www)
-  {
+    Debug.Log("postplayer");
     yield return www;
 
     if (www.error == null)
     {
       Debug.Log("WWW OK!: " + www.text);
       playerToken = JsonMapper.ToObject(www.text);
-      Debug.Log(playerToken[0]);
+      StartCoroutine(postToken());
+      error1.SetActive(false);
+      error2.SetActive(false);
+      errormsg.SetActive(false);
     }
     else
     {
       Debug.Log("WWW ERROR: " + www.error);
+      errormsg.GetComponent<Text>().text = "Inloggegevens zijn ongeldig";
+      error1.SetActive(true);
+      error2.SetActive(true);
+      errormsg.SetActive(true);
     }
+  }
+
+  IEnumerator postToken()
+  {
+    WWWForm tokenForm = new WWWForm();
+    tokenForm.AddField("name", "value");
+
+    Dictionary<string, string> headers = tokenForm.headers;
+    /*Hashtable headers = new Hashtable();
+    headers.Add("Authorization", "Bearer: " + playerToken[0].ToString());*/
+    string url = "http://bananas.multimediatechnology.be/api/user";
+
+    headers["Authorization"] = "Bearer: " + playerToken[0].ToString();
+
+    WWW www = new WWW(url, null, headers);
+    yield return www;
+
+    if (www.error == null)
+    {
+      Debug.Log("POSTTOKEN OK!: " + www.text);
+    }
+    else
+    {
+      Debug.Log("POSTTOKEN ERROR: " + www.error);
+    }
+  }
+
+  public void RegisterPlayer(string name, string email, string password)
+  {
+    string RegisterUrl = "http://bananas.multimediatechnology.be/api/register";
+
+    WWWForm RegisterForm = new WWWForm();
+    RegisterForm.AddField("name", name);
+    RegisterForm.AddField("email", email);
+    RegisterForm.AddField("password", password);
+
+    WWW registerwww = new WWW(RegisterUrl, RegisterForm);
+
+    StartCoroutine(PostPlayerLogin(registerwww));
   }
 }

@@ -10,6 +10,7 @@ public class UILogic : MonoBehaviour {
     public Color activeColor;
     public Color passiveColor;
     public Scrollbar reactionScroll;
+    
 
 
 
@@ -21,8 +22,8 @@ public class UILogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        
+    }
 
     public void OpenTab(GameObject tab_to_open)
     {
@@ -66,7 +67,10 @@ public class UILogic : MonoBehaviour {
     {
       reactionScroll.value = 1F;
     }
-
+    public void CloseApplication()
+    {
+        Application.Quit();
+    }
     
 
 }

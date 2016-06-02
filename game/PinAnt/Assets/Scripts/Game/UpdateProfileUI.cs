@@ -24,6 +24,10 @@ public class UpdateProfileUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(PlayerLogic != null)
+        {
+
+        
         playerName.text = PlayerLogic.GetComponent<PlayerSettings>().playerName;
         playerRank.text = PlayerLogic.GetComponent<PlayerSettings>().playerRank;
         playerExp.text = PlayerLogic.GetComponent<PlayerSettings>().experiencePoints.ToString();
@@ -31,5 +35,6 @@ public class UpdateProfileUI : MonoBehaviour {
         coins.text = PlayerLogic.GetComponent<PlayerSettings>().playerCoins.ToString() ;
         aPoints.text = PlayerLogic.GetComponent<PlayerSettings>().playerApoints.ToString();
         coins_main.text = coins.text;
+        }
     }
 }
