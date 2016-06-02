@@ -28,7 +28,7 @@ class AdminController extends Controller
 
 	public function add(Request $request) {
 		$title 			= $request->input('title');
-		$image	 		= $request->input('pic');
+		$image	 		= $request->file('pic');
 		$date 			= $request->input('date');
 		$cost 			= $request->input('cost');
 		$category 		= $request->input('category');
@@ -36,12 +36,13 @@ class AdminController extends Controller
 		$fase 			= $request->input('fase');
 		$description 	= $request->input('description');
 
-		var_dump($request->input('pic'));
-
+		$pic_name = str_replace(' ', '_', $title);
+		$destinationPath = $pic_name .'.'. $image->getClientOriginalExtension();
+		$image->move(public_path('images'), $destinationPath);
 		Project::create(
 			array(
 				'titel' 		=> $title,
-				'fotonaam' 		=> $image,
+				'fotonaam' 		=> $destinationPath,
 				'einddatum' 	=> $date,
 				'kostprijs' 	=> $cost,
 				'categorie' 	=> $category,
@@ -50,31 +51,6 @@ class AdminController extends Controller
 				'uitleg' 		=> $description
 			)
 		);
-
-		/*$image_to_move = Input::file('pic');
-		$validator = Validator::make(
-			[$image_to_move], 
-			['mimes:gif,jpg,jpeg,bmp,png', 'image_to_move.required']
-		);
-
-		if ($validator->fails()) {
-            return response()->json(['error' => 'Bestand moet een extensie :gif,jpg,jpeg,bmp,png hebben '], 200);
-        }*/
-
-        $destinationPath = 'images';
-
-        
-		$request->file('pic')->move($destinationPath, $image);
-
-		/*if (!$image_to_move->move($destinationPath, $image_to_move->getClientOriginalName())) {
-            return $validator->errors(
-            	['message' => 'Er is iets foutgelopen bij het uploaden van het bestand.', 'code' => 400]
-            );
-        }
-		
-		$image_to_move->move($destinationPath, $image_to_move->getClientOriginalName());*/
-
-
 
 		$projects = Project::all();
 

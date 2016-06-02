@@ -50,7 +50,6 @@ class ProjectController extends Controller
 			}
 		})->get();
 		$data = array('types' => $request->input('type'), 'fases' => $request->input('fase'), 'likes' => $request->input('likes') );
-		var_dump($data);
 		return view('projects/projects', ['projects' => $projects])->with($data);
 	}
 }

@@ -6,7 +6,7 @@
 		<div class="col-md-12 admin" id="project">
 			<div class="panel panel-default">
 
-				<form method="POST" action="/add_project">
+				<form method="POST" action="/add_project" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="panel-heading">
 						<h4> <input type="text" class="form-control" name="title" placeholder="Titel"> </h4>
