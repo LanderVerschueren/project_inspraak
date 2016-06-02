@@ -23,28 +23,27 @@ class DatabaseSeeder extends Seeder
               'type_of_user'=>'regular', 'level' => 2, 'rank' => "Level II", 'path_rank_image' => "level2.psd", 'XP' => '500', 'coins' => '20', 'coin_multiplier' => 1.1, 'a_points' => 100),
              array('name'=>'Ronny','email'=>'ronny@test.be', 'password' => Hash::make( 'password' ),
               'type_of_user'=>'regular', 'level' => 1, 'rank' => "Level I", 'path_rank_image' => "level1.psd", 'XP' => '200', 'coins' => '30', 'coin_multiplier' => 1.0, 'a_points' => 100)
-
           ));
 
 
          DB::table('projects')->delete();
          //insert some dummy records
          DB::table('projects')->insert(array(
-             array('titel' => 'Museum aan de stroom', 'categorie' => 'renovatie', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+             array('title' => 'Museum aan de stroom', 'category' => 'renovatie', 'description' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'mas.jpg', 'locatie' => 'Het Eilandje','einddatum' => '2011-06-20', 'kostprijs' => '20 miljoen euro', 'fase' => '1', 'likes' => '50','dislikes' => '2', 'aantal_bekeken' => '5432', 'vraag' => 'Wilt u meer banken rond het MAS?'),
-             array('titel' => 'Meir', 'categorie' => 'heraanleg', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+             	'image_name' => 'mas.jpg', 'location' => 'Het Eilandje','date' => '2011-06-20', 'cost' => '20 miljoen euro', 'fase' => '1', 'likes' => '50','dislikes' => '2', 'view_amount' => '5432', 'question' => 'Wilt u meer banken rond het MAS?'),
+             array('title' => 'Meir', 'category' => 'heraanleg', 'description' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'meir.png', 'locatie' => 'meir', 'einddatum' => '2016-04-01', 'kostprijs' => '40 miljoen euro', 'fase' => '2', 'likes' => '500', 'dislikes' => '20', 'aantal_bekeken' => '632', 'vraag' => 'Wilt u meer vuilbakken op de meir?'),
-             array('titel' => 'Grote Markt', 'categorie' => 'opknapwerk', 'uitleg' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+             	'image_name' => 'meir.png', 'location' => 'meir', 'date' => '2016-04-01', 'cost' => '40 miljoen euro', 'fase' => '2', 'likes' => '500', 'dislikes' => '20', 'view_amount' => '632', 'question' => 'Wilt u meer vuilbakken op de meir?'),
+             array('title' => 'Grote Markt', 'category' => 'opknapwerk', 'description' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'fotonaam' => 'grote_markt.jpg', 'locatie' => 'Grote Markt', 'einddatum' => '2013-08-31', 'kostprijs' => '55 miljoen euro', 'fase' => '3', 'likes' => '1345', 'dislikes' => '150','aantal_bekeken' => '6543', 'vraag' => 'Wilt u meer groen op de Grote Markt?')
+             	'image_name' => 'grote_markt.jpg', 'location' => 'Grote Markt', 'date' => '2013-08-31', 'cost' => '55 miljoen euro', 'fase' => '3', 'likes' => '1345', 'dislikes' => '150','view_amount' => '6543', 'question' => 'Wilt u meer groen op de Grote Markt?')
           ));
 
 		DB::table('users_projects')->delete();

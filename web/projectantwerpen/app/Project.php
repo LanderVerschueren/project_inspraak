@@ -6,7 +6,7 @@ use App\Comment;
 class Project extends Model
 {
     protected $table = "projects";
-    protected $fillable = array('titel', 'categorie', 'uitleg', 'fotonaam', 'kostprijs', 'fase', 'vraag', 'fotonaam');
+    protected $fillable = array('titel', 'categorie', 'uitleg', 'einddatum', 'kostprijs', 'fase', 'vraag', 'fotonaam');
 
     public function scopeSearchByKeyword($query, $keyword)
     {

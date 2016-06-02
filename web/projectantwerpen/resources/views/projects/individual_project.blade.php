@@ -12,28 +12,28 @@
 						<form>
 							<section class="main_info">							
 								<section class="image">
-									<img src="{{ URL::asset('images/'.$project->fotonaam) }}" alt="">
+									<img src="{{ URL::asset('images/'.$project->image_name) }}" alt="">
 								</section>
 								<section class="info">
 									<ul>
 										<li>
 											<label>Einddatum:</label>
-											<label> {{$project->einddatum}} </label>
+											<label> {{$project->date}} </label>
 										</li>
 										<li>
 											<label>Kostprijs:</label>
-											<label> {{$project->kostprijs}} </label>
+											<label> {{$project->cost}} </label>
 										</li>
 										<li>
 											<label>Categorie</label>
-											<label> {{ ucfirst( $project->categorie) }} </label>
+											<label> {{ ucfirst( $project->category) }} </label>
 										</li>
 									</ul>
 								</section>
 							</section>
 							<section class="question">
 								<section>
-									<p> {{ $project->vraag }} </p>
+									<p> {{ $project->question }} </p>
 								</section>
 								<section class="button">
 										<a href="{{ url('/vote/like/'.$project->id) }}" class="btn btn-raised"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>

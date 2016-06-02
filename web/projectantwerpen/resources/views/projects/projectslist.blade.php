@@ -11,11 +11,11 @@
 				@foreach( $projects as $project )
 				<div class="admin_list">
 					<section class="image">
-						<img src="{{ URL::asset('images/' . $project->fotonaam) }}" alt="">
+						<img src="{{ URL::asset('images/' . $project->image_name) }}" alt="">
 					</section>
 					<section class="titel">
-						<h4>{{ $project->titel }}</h4>
-						<h5>{{ ucfirst( $project->categorie ) }}</h5>
+						<h4>{{ $project->title }}</h4>
+						<h5>{{ ucfirst( $project->category ) }}</h5>
 					</section>
 					<section class="btn_aanpassen">
 						<a href="{{ url('/project/'.$project->id) }}" class="btn btn-raised btn-default" role="button">Aanpassen</a>

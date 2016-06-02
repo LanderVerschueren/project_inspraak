@@ -14,18 +14,18 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titel');
-            $table->string('categorie');
-            $table->text('uitleg');
-            $table->text('fotonaam');
-            $table->text('locatie');
-            $table->date('einddatum');
-            $table->double('kostprijs');
+            $table->string('title');
+            $table->text('image_name');
+            $table->string('category');
+            $table->text('description');
+            $table->text('location');
+            $table->date('date');
+            $table->text('cost');
             $table->integer('fase');
             $table->integer('likes');
             $table->integer('dislikes');
-            $table->integer('aantal_bekeken');
-            $table->text('vraag');
+            $table->integer('view_amount');
+            $table->text('question');
             $table->timestamps();
         });
     }
