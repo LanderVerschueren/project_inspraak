@@ -28,6 +28,7 @@ class AdminController extends Controller
 
 	public function add(Request $request) {
 		$title 			= $request->input('title');
+		$title			= strtolower($title);
 		$image	 		= $request->file('pic');
 		$date 			= date("Y-m-d", strtotime($request->input('date')));
 		$cost 			= $request->input('cost');
@@ -35,22 +36,33 @@ class AdminController extends Controller
 		$question 		= $request->input('question');
 		$fase 			= $request->input('fase');
 		$description 	= $request->input('description');
-		var_dump($request->input('date'));
+		var_dump($request->all());
 		$pic_name = str_replace(' ', '_', $title);
 		$destinationPath = $pic_name .'.'. $image->getClientOriginalExtension();
-		$image->move(public_path('images'), $destinationPath);
+		$image->move(public_path('/images'), $destinationPath);
 		/*Project::create(
 			array(
-				'titel' 		=> $title,
-				'fotonaam' 		=> $destinationPath,
-				'einddatum' 	=> $date,
-				'kostprijs' 	=> $cost,
-				'categorie' 	=> $category,
-				'vraag'			=> $question,
+				'title' 		=> $title,
+				'image_name' 	=> $destinationPath,
+				'date' 			=> $date,
+				'cost' 			=> $cost,
+				'category' 		=> $category,
+				'question'		=> $question,
 				'fase' 			=> $fase,
-				'uitleg' 		=> $description
+				'description' 	=> $description
 			)
 		);*/
+
+		Project::insert([
+			'title' 		=> $title,
+			'image_name' 	=> $destinationPath,
+			'date' 			=> $date,
+			'cost' 			=> $cost,
+			'category' 		=> $category,
+			'question'		=> $question,
+			'fase' 			=> $fase,
+			'description' 	=> $description
+		]);
 
 		$projects = Project::all();
 

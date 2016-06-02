@@ -14,7 +14,7 @@
 						<img src="{{ URL::asset('images/' . $project->image_name) }}" alt="">
 					</section>
 					<section class="titel">
-						<h4>{{ $project->title }}</h4>
+						<h4>{{ ucfirst($project->title) }}</h4>
 						<h5>{{ ucfirst( $project->category ) }}</h5>
 					</section>
 					<section class="btn_aanpassen">

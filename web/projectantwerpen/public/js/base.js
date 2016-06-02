@@ -31,8 +31,9 @@ $(document).ready(function() {
 	   	$(this).carousel('next');  
 	});
 
-	$('#datepicker').datepicker();
-
+	$('#datepicker').datepicker({
+		dateFormat: 'yy-mm-dd'
+	});
 
 	// Variables
 	var clickedTab = $(".tabs > .active");
