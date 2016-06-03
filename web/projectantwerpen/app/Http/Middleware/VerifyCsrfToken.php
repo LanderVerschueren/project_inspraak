@@ -17,6 +17,13 @@ class VerifyCsrfToken extends BaseVerifier
         '/api/logout',
         '/reactie/*',
         '/projecten/filter',
-        '/api/comments/place/*'
+        '/api/comments/place/*',
+        '/api/addcoins/*',
+        '/api/addXP/*',
+        '/api/addLevel',
+        '/rankImage/*',
+        '/multiplier/*',
+        '/addPoints/*',
+        '/removePoints/*'
     ];
 }

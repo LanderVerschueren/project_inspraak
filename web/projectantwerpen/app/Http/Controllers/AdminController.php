@@ -35,11 +35,11 @@ class AdminController extends Controller
 		$question 		= $request->input('question');
 		$fase 			= $request->input('fase');
 		$description 	= $request->input('description');
-		var_dump($request->input('date'));
+		var_dump($image);
 		$pic_name = str_replace(' ', '_', $title);
 		$destinationPath = $pic_name .'.'. $image->getClientOriginalExtension();
 		$image->move(public_path('images'), $destinationPath);
-		/*Project::create(
+		Project::create(
 			array(
 				'titel' 		=> $title,
 				'fotonaam' 		=> $destinationPath,
@@ -50,7 +50,7 @@ class AdminController extends Controller
 				'fase' 			=> $fase,
 				'uitleg' 		=> $description
 			)
-		);*/
+		);
 
 		$projects = Project::all();
 

@@ -13,12 +13,13 @@
 					</div>
 					<div class="panel-body">
 						<section class="main_info">					
-							<section class="image form-group">
+							<section class="image form-group" id="images">
 								<img id="preview" src="{{URL::asset('images/no_image.png')}}" alt="">
 								<input type="file" id="img_preview" name="pic">
 								<input type="text" readonly class="form-control" placeholder="Kies een afbeelding">
 							</section>
 							<section class="info">
+							<input type="button" id="add" value="Voeg meer foto's toe">
 								<ul>
 									<li>
 										<input type="text" id="datepicker" class="form-control" name="date" placeholder="Einddatum">
@@ -114,9 +115,5 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript">
-    		$('#datepicker').datepicker({
-      		 format: 'yyyy-mm-dd'
-     		});
-		</script>
+
 		@endsection

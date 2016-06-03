@@ -82,7 +82,7 @@
 										</div>
 						    	</section>
 						    	<section class="explanation">
-						    		<p>{{$project->uitleg}}</p>
+						    		<p>{{$project->description}}</p>
 						    	</section>
 					    	</section>
 				    	</form>

@@ -54,9 +54,9 @@
                     <ul class="tab__content">
                         <li class="active">
                             <div class="content__wrapper">
-                                @foreach($projects->sortByDesc('einddatum') as $project)                                    
+                                @foreach($projects->sortByDesc('einddatum')->slice(0,3) as $project)                                    
                                     <a href="{{ url('/project/'.$project->id) }}">
-                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
+                                        <h4> {{ ucfirst( $project->title ) }} </h4>
                                         <img src="{{URL::asset('images/'.$project->image_name)}}" alt="">
                                     </a>
                                 @endforeach
@@ -64,9 +64,9 @@
                         </li>
                         <li>
                             <div class="content__wrapper">
-                                @foreach($projects->sortByDesc('aantal_bekeken') as $project)
+                                @foreach($projects->sortByDesc('aantal_bekeken')->slice(0,3) as $project)
                                     <a href="{{ url('/project/'.$project->id) }}">
-                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
+                                        <h4> {{ ucfirst( $project->title ) }} </h4>
                                         <img src="{{URL::asset('images/'.$project->image_name)}}" alt="">
                                     </a>
                                 @endforeach
@@ -74,9 +74,9 @@
                         </li>
                         <li>
                             <div class="content__wrapper">
-                                @foreach($projects->sortByDesc('likes') as $project)
+                                @foreach($projects->sortByDesc('likes')->slice(0,3) as $project)
                                     <a href="{{ url('/project/'.$project->id) }}">
-                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
+                                        <h4> {{ ucfirst( $project->title ) }} </h4>
                                         <img src="{{URL::asset('images/'.$project->image_name)}}" alt="">
                                     </a>
                                 @endforeach
