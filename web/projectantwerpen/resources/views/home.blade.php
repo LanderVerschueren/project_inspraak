@@ -21,7 +21,7 @@
                     @foreach($projects as $project)
                             <?php if($count == 2) break; ?>
                             <div class="{{($count === 0) ? 'item active' : 'item'}}">
-                            <img src="{{URL::asset('images/'.$project->image_name)}}" class=""></li>
+                            <img src="{{URL::asset('images/'.$project->title.'/'.$project->image_name)}}" class=""></li>
                                 <div class="carousel-caption">
                                     <h2>{{ $project->title }}</h2>
                                     <p>{{ $project->question }} - Al {{ $project->likes }} personen keurden dit goed!</p>
@@ -54,20 +54,20 @@
                     <ul class="tab__content">
                         <li class="active">
                             <div class="content__wrapper">
-                                @foreach($projects->sortByDesc('einddatum') as $project)                                    
+                                @foreach($projects->sortByDesc('date') as $project)                                    
                                     <a href="{{ url('/project/'.$project->id) }}">
-                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
-                                        <img src="{{URL::asset('images/'.$project->image_name)}}" alt="">
+                                        <h4> {{ ucfirst( $project->title ) }} </h4>
+                                        <img src="{{URL::asset('images/' . $project->title . '/' . $project->image_name)}}" alt="">
                                     </a>
                                 @endforeach
                             </div>
                         </li>
                         <li>
                             <div class="content__wrapper">
-                                @foreach($projects->sortByDesc('aantal_bekeken') as $project)
+                                @foreach($projects->sortByDesc('view_amount') as $project)
                                     <a href="{{ url('/project/'.$project->id) }}">
-                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
-                                        <img src="{{URL::asset('images/'.$project->image_name)}}" alt="">
+                                        <h4> {{ ucfirst( $project->title ) }} </h4>
+                                        <img src="{{URL::asset('images/' . $project->title . '/' . $project->image_name)}}" alt="">
                                     </a>
                                 @endforeach
                             </div>
@@ -76,8 +76,8 @@
                             <div class="content__wrapper">
                                 @foreach($projects->sortByDesc('likes') as $project)
                                     <a href="{{ url('/project/'.$project->id) }}">
-                                        <h4> {{ ucfirst( $project->titel ) }} </h4>
-                                        <img src="{{URL::asset('images/'.$project->image_name)}}" alt="">
+                                        <h4> {{ ucfirst( $project->title ) }} </h4>
+                                        <img src="{{URL::asset('images/' . $project->title . '/' . $project->image_name)}}" alt="">
                                     </a>
                                 @endforeach
                             </div>

@@ -11,7 +11,7 @@
 				@foreach( $projects as $project )
 				<div class="admin_list">
 					<section class="image">
-						<img src="{{ URL::asset('images/' . $project->image_name) }}" alt="">
+						<img src="{{ URL::asset('images/' . $project->title . '/' . $project->image_name) }}" alt="">
 					</section>
 					<section class="titel">
 						<h4>{{ ucfirst($project->title) }}</h4>

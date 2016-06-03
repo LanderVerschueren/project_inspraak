@@ -6,13 +6,13 @@
 			<div class="col-md-12" id="project">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4>{{$project->titel}}</h4>
+						<h4>{{ ucfirst($project->title) }}</h4>
 					</div>
 					<div class="panel-body">
 						<form>
 							<section class="main_info">							
 								<section class="image">
-									<img src="{{ URL::asset('images/'.$project->image_name) }}" alt="">
+									<img src="{{ URL::asset('images/' . $project->title . '/' . $project->image_name) }}" alt="">
 								</section>
 								<section class="info">
 									<ul>
@@ -82,7 +82,7 @@
 										</div>
 						    	</section>
 						    	<section class="explanation">
-						    		<p>{{$project->uitleg}}</p>
+						    		<p>{{$project->description}}</p>
 						    	</section>
 					    	</section>
 				    	</form>

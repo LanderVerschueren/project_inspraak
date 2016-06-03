@@ -38,20 +38,9 @@ class AdminController extends Controller
 		$description 	= $request->input('description');
 		var_dump($request->all());
 		$pic_name = str_replace(' ', '_', $title);
+		$dir = File::makeDirectory(public_path($title));
 		$destinationPath = $pic_name .'.'. $image->getClientOriginalExtension();
 		$image->move(public_path('/images'), $destinationPath);
-		/*Project::create(
-			array(
-				'title' 		=> $title,
-				'image_name' 	=> $destinationPath,
-				'date' 			=> $date,
-				'cost' 			=> $cost,
-				'category' 		=> $category,
-				'question'		=> $question,
-				'fase' 			=> $fase,
-				'description' 	=> $description
-			)
-		);*/
 
 		Project::insert([
 			'title' 		=> $title,

@@ -87,9 +87,9 @@
 					<section class="project_section" >
 						<span class="image">
 							<a href="{{ url('/project/'.$project->id) }}">
-								<img src="{{URL::asset('images/'.$project->image_name)}}" alt="">
+								<img src="{{URL::asset('images/' . $project->title . '/' . $project->image_name)}}" alt="">
 								<h4>
-									<span>{{ $project->title }}</span>
+									<span>{{ ucfirst($project->title) }}</span>
 								</h4>
 							</a>
 						</span>
