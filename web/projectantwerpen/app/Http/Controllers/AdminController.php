@@ -7,6 +7,7 @@ use App\Project;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Validator;
+use File;
 
 class AdminController extends Controller
 {
@@ -36,11 +37,11 @@ class AdminController extends Controller
 		$question 		= $request->input('question');
 		$fase 			= $request->input('fase');
 		$description 	= $request->input('description');
-		var_dump($request->all());
 		$pic_name = str_replace(' ', '_', $title);
-		$dir = File::makeDirectory(public_path($title));
+		File::makeDirectory('images/' . $title);
 		$destinationPath = $pic_name .'.'. $image->getClientOriginalExtension();
-		$image->move(public_path('/images'), $destinationPath);
+		$image->move(public_path('images/' . $title), $destinationPath);
+		var_dump($destinationPath);
 
 		Project::insert([
 			'title' 		=> $title,
