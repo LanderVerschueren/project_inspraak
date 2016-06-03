@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\ToggleInfo.cs" />
      <Compile Include="Assets\TextWriter.cs" />
      <Compile Include="Assets\UpdateContentProjects.cs" />
+     <Compile Include="Assets\UpdatePlayer.cs" />
      <Compile Include="Assets\projectPosition.cs" />
      <Compile Include="Assets\updateReactionContect.cs" />
  <Reference Include="UnityEngine.UI">
@@ -77,7 +78,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>C:/Users/bertv_000/Downloads/School/3MCT/Project/project_inspraak3/project_inspraak/game/PinAnt/Assets/LitJson.dll</HintPath>
+ <HintPath>C:/Users/bertv_000/Documents/GitHub/project_inspraak/game/PinAnt/Assets/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

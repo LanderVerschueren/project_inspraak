@@ -112,7 +112,79 @@ class APIController extends Controller
 
     public function getUserInfo(){
       $user = JWTAuth::parseToken()->authenticate();
+      $newToken = JWTAuth::parseToken()->refresh();
+      return response(["user" => $user, "token" => $newToken]);
+  }
 
-      return response($user);
+  public function addCoins($coins){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->coins = $user->coins + $coins;
+      $user->save();
+      $newToken = JWTAuth::parseToken()->refresh();
+      return response(["message" => $coins . " coins added", "token" => $newToken]);
+  }
+
+  public function removeCoins($coins){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->coins = $user->coins - $coins;
+      $user->save();
+      $newToken = JWTAuth::parseToken()->refresh();
+      return response(["message" => $coins . " coins removed", "token" => $newToken]);
+  }
+
+  public function addXP($xp){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->XP = $user->XP + $xp;
+      $user->save();
+      $newToken = JWTAuth::parseToken()->refresh();
+      return response(["message" => $xp . " xp added", "token" => $newToken]);
+  }
+
+  public function addLevel(){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->increment('level');
+      $user->save();
+      $newToken = JWTAuth::parseToken()->refresh();
+      return response([ "message" => "achieved ".$user->level, "token" => $newToken]);
+  }
+
+  public function changeImage($path){
+    $user = JWTAuth::parseToken()->authenticate();
+    $user->path_rank_image = $path;
+    $user->save();
+    $newToken = JWTAuth::parseToken()->refresh();
+    return response(["message" => "path changed to: ".$path, "token" => $newToken]);
+  }
+
+  public function changeRank($rank){
+    $user = JWTAuth::parseToken()->authenticate();
+    $user->rank = $rank;
+    $user->save();
+    $newToken = JWTAuth::parseToken()->refresh();
+    return response(["message" => "rank changed to: ".$user->rank, "token" => $newToken]);
+  }
+
+  public function changeMultiplier($multiplier){
+    $user = JWTAuth::parseToken()->authenticate();
+    $user->coin_multiplier = $multiplier;
+    $user->save();
+    $newToken = JWTAuth::parseToken()->refresh();
+    return response(["message" => "multiplier changed to: ".$user->coin_multiplier, "token" => $newToken]);
+  }
+
+  public function add_a_points($points){
+    $user = JWTAuth::parseToken()->authenticate();
+    $user->a_points = $user->a_points + $points;
+    $user->save();
+    $newToken = JWTAuth::parseToken()->refresh();
+    return response(["message" => $user->a_points. " total", "token" => $newToken]);
+  }
+
+  public function remove_a_points($points){
+    $user = JWTAuth::parseToken()->authenticate();
+    $user->a_points = $user->a_points - $points;
+    $user->save();
+    $newToken = JWTAuth::parseToken()->refresh();
+    return response(["message" => $user->a_points. " total", "token" => $newToken]);
   }
 }

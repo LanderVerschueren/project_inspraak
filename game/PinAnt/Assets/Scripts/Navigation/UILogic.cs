@@ -17,7 +17,9 @@ public class UILogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-                PlayerLogic = GameObject.Find("Player");    
+                PlayerLogic = GameObject.Find("Player");
+        
+        
 	}
 	
 	// Update is called once per frame
