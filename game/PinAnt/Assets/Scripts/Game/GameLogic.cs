@@ -45,11 +45,11 @@ public class GameLogic : MonoBehaviour {
 
         InitializePlayerSettings();
 
-        level = Player.GetComponent<PlayerSettings>().playerLevel;
-        rank = Player.GetComponent<PlayerSettings>().playerRank;
-        xp = Player.GetComponent<PlayerSettings>().experiencePoints;
-        coins = Player.GetComponent<PlayerSettings>().playerCoins;
-        aPoints = Player.GetComponent<PlayerSettings>().playerApoints;
+        /*level = Player.GetComponent<LoadPlayerSettings>().playerLevel;
+        rank = Player.GetComponent<LoadPlayerSettings>().playerRank;
+        xp = Player.GetComponent<LoadPlayerSettings>().playerXP;
+        coins = Player.GetComponent<LoadPlayerSettings>().playerCoins;
+        aPoints = Player.GetComponent<LoadPlayerSettings>().playerApoints;*/
     }
 	// Update is called once per frame
 	void Update () {
@@ -58,19 +58,18 @@ public class GameLogic : MonoBehaviour {
 
     public void UpdatePlayerSettings()
     {
-        Player.GetComponent<PlayerSettings>().playerLevel = level;
-        Player.GetComponent<PlayerSettings>().playerRank = rank;
-        Player.GetComponent<PlayerSettings>().playerRankImage = rankImg;
-        Player.GetComponent<PlayerSettings>().playerCoins = coins;
-        Player.GetComponent<PlayerSettings>().experiencePoints = xp;
-        Player.GetComponent<PlayerSettings>().playerApoints = aPoints;
+      /*Player.GetComponent<LoadPlayerSettings>().playerLevel = level;
+      Player.GetComponent<LoadPlayerSettings>().playerRank = rank;
+      //Player.GetComponent<LoadPlayerSettings>().playerRankImage = rankImg;
+      Player.GetComponent<LoadPlayerSettings>().playerCoins = coins;
+      Player.GetComponent<LoadPlayerSettings>().playerXP = xp;
+      Player.GetComponent<LoadPlayerSettings>().playerApoints = aPoints;*/
     }
 
     public void InitializePlayerSettings()
     {
-        //normaal uit database halen
-        xp = 0;
-        aPoints = 0;
+        xp = LoadPlayerSettings.playerXP;
+        aPoints = LoadPlayerSettings.playerApoints;
         DetermineLevel(xp);
         UpdatePlayerSettings();
     }

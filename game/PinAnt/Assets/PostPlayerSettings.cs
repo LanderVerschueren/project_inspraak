@@ -13,13 +13,19 @@ public class PostPlayerSettings : MonoBehaviour
   public InputField emailField;
   public InputField passwordRepeatField;
 
+  public GameObject introCanvas;
+  public GameObject mainCanvas;
+
   public GameObject error1;
   public GameObject error2;
   public GameObject error3;
   public GameObject error4;
   public GameObject errormsg;
 
+  public GameObject player;
+
   public static JsonData playerToken;
+  public static JsonData playerData;
 
   private string playerName;
   private string playerEmail;
@@ -124,10 +130,24 @@ public class PostPlayerSettings : MonoBehaviour
 
   public void CheckLogInFields()
   {
-    playerEmail = emailField.text;
-    playerPassword = passwordField.text;
+    error1.SetActive(false);
+    error2.SetActive(false);
+    errormsg.SetActive(false);
 
-    LoginPlayer(playerEmail, playerPassword);
+    playerEmail = "mazurek.piotr@student.kdg.be";//emailField.text;
+    playerPassword = "projectant";//passwordField.text;
+
+    if (playerEmail != "")
+    {
+      LoginPlayer(playerEmail, playerPassword);
+    }
+    else
+    {
+      errormsg.GetComponent<Text>().text = "Inloggegevens zijn ongeldig";
+      error1.SetActive(true);
+      error2.SetActive(true);
+      errormsg.SetActive(true);
+    }
   }
 
   // Update is called once per frame
@@ -138,7 +158,7 @@ public class PostPlayerSettings : MonoBehaviour
 
   public void LoginPlayer(string email, string password)
   {
-    Debug.Log("loginplayer");
+    //Debug.Log("loginplayer");
     string loginUrl = "http://bananas.multimediatechnology.be/api/login";
 
     WWWForm loginForm = new WWWForm();
@@ -152,7 +172,7 @@ public class PostPlayerSettings : MonoBehaviour
 
   IEnumerator PostPlayerLogin(WWW www)
   {
-    Debug.Log("postplayer");
+    //Debug.Log("postplayer");
     yield return www;
 
     if (www.error == null)
@@ -192,6 +212,10 @@ public class PostPlayerSettings : MonoBehaviour
     if (www.error == null)
     {
       Debug.Log("POSTTOKEN OK!: " + www.text);
+      playerData = JsonMapper.ToObject(www.text);
+      player.SetActive(true);
+      introCanvas.SetActive(false);
+      mainCanvas.SetActive(true);
     }
     else
     {

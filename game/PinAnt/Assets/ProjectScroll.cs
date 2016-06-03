@@ -11,7 +11,8 @@ public class ProjectScroll : MonoBehaviour {
 	// Use this for initialization
 	public void Start () 
   {
-    totalProjects = LoadProjectSettings.totalProjects;
+    projectScroll.numberOfSteps = totalProjects;
+    /*totalProjects = LoadProjectSettings.totalProjects;
     Debug.Log("SCROLLLLOLLOLOL = " + totalProjects);
     scrollList = new List<float>();
     float currentScroll = (1.0F / (float)(totalProjects - 1));
@@ -22,7 +23,7 @@ public class ProjectScroll : MonoBehaviour {
       scrollList.Add(currentScroll);
       Debug.Log("currentScroll = " + currentScroll);
       currentScroll += addScroll;
-    }*/
+    }
     while (currentScroll < 1F)
     {
       scrollList.Add(currentScroll);
@@ -34,7 +35,7 @@ public class ProjectScroll : MonoBehaviour {
     {
       Debug.Log("itemlist" +item);
       //Debug.Log(scrollList[0]);
-    }
+    }*/
 	}
 	
 	// Update is called once per frame
