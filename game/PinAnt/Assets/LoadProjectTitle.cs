@@ -19,7 +19,6 @@ public class LoadProjectTitle : MonoBehaviour
   public GameObject extraInfoTitle;
   public RawImage projectImage;
 
-  public Scrollbar projectScroll;
   private int totalProjects;
 
   public AddReaction addReaction;
