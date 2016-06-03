@@ -8,7 +8,7 @@
 					<a href="{{ url('/project/addproject') }}" class="btn btn-raised btn-default" role="button">Project toevoegen</a>
 				</div>
 
-				@foreach( $projects as $project )
+				@foreach( $projects as $project )				
 				<div class="admin_list">
 					<section class="image">
 						<img src="{{ URL::asset('images/' . $project->title . '/' . $project->image_name) }}" alt="">

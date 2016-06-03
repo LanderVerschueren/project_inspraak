@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+	<?php echo '<pre>'; print_r(old('type')); echo '</pre>'; ?>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12" id="filter" unselectable="on">
@@ -14,7 +17,7 @@
 								<h5>Type</h5>
 								<div class="checkbox">
 									<label>
-                                        <input id="checkbox_renovatie" type="checkbox" name="type[]" value="renovatie" >
+                                        <input id="checkbox_renovatie" type="checkbox" name="type[]" value="renovatie" <?= (old( 'type' ) === 'renovatie ') ? 'checked' : '' ?>>
                                         <label id="label_renovatie" for="checkbox_renovatie">Renovatie</label>
                                     </label>
 								</div>

@@ -27,7 +27,7 @@ class ProjectController extends Controller
 			$likes = $request->input('likes');
 			if(isset($types)){
 				foreach($types as $type){
-					$query->orWhere('categorie', '=', $type);			
+					$query->orWhere('category', '=', $type);			
 				}
 			}
 			if(isset($fases)){
@@ -50,6 +50,11 @@ class ProjectController extends Controller
 			}
 		})->get();
 		$data = array('types' => $request->input('type'), 'fases' => $request->input('fase'), 'likes' => $request->input('likes') );
-		return view('projects/projects', ['projects' => $projects])->with($data);
+
+		$request->flash();
+
+		var_dump(old('type'));
+
+		return view('projects/projects', ['projects' => $projects]);
 	}
 }
