@@ -43,6 +43,7 @@ Route::group(['prefix' =>'api'], function()
 	Route::get('/dislike/{id}' , 'APIController@vote_dislike');
     Route::group(['middleware' => ['before' => 'jwt.auth']], function() {
     	Route::get('/addCoins/{coins}' , 'APIController@addCoins');
+    	Route::get('/removeCoins/{coins}' , 'APIController@removeCoins');
     	Route::get('/rankImage/{path}' , 'APIController@changeImage');
     	Route::get('/addXP/{xp}', 'APIController@addXP');
     	Route::get('/addLevel', 'APIController@addLevel');

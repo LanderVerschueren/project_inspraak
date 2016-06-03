@@ -124,6 +124,14 @@ class APIController extends Controller
       return response(["message" => $coins . " coins added", "token" => $newToken]);
   }
 
+  public function removeCoins($coins){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->coins = $user->coins - $coins;
+      $user->save();
+      $newToken = JWTAuth::parseToken()->refresh();
+      return response(["message" => $coins . " coins removed", "token" => $newToken]);
+  }
+
   public function addXP($xp){
       $user = JWTAuth::parseToken()->authenticate();
       $user->XP = $user->XP + $xp;
