@@ -19,7 +19,7 @@ class VerifyCsrfToken extends BaseVerifier
         '/projecten/filter',
         '/api/comments/place/*',
         '/api/addCoins/*',
-        '/api/removeCoins/*'
+        '/api/removeCoins/*',
         '/api/addXP/*',
         '/api/addLevel',
         '/rankImage/*',
