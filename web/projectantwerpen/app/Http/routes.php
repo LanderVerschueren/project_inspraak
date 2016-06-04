@@ -41,7 +41,7 @@ Route::group(['prefix' =>'api'], function()
 	Route::post('/comments/place/{id}', 'APIController@placeComment');
 	Route::get('/like/{id}' , 'APIController@vote_like');
 	Route::get('/dislike/{id}' , 'APIController@vote_dislike');
-    Route::group(['middleware' => 'jwt.auth'], function() {
+    Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
     	Route::post('/addCoins/{coins}' , 'APIController@addCoins');
     	Route::post('/removeCoins/{coins}' , 'APIController@removeCoins');
     	Route::post('/rankImage/{path}' , 'APIController@changeImage');

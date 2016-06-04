@@ -51,7 +51,7 @@ class APIController extends Controller
       Comment::create(array('fk_user' => $user_id, 'fk_project' => $id, 'comment' => $comment ));
       return response('comment created');
     }
-    
+
 
     public function login(Request $request){
     	$credentials = $request->only('email', 'password');
@@ -113,8 +113,7 @@ class APIController extends Controller
 
     public function getUserInfo(){
       $user = JWTAuth::parseToken()->authenticate();
-      $newToken = JWTAuth::parseToken()->refresh();
-      return response(["user" => $user, "token" => $newToken]);
+      return response(["user" => $user]);
     }
 
     public function addCoins($coins){
