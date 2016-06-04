@@ -59,7 +59,9 @@ public class LoadProjectSettings : MonoBehaviour {
     LoadAllProjects();
 
     //Debug.Log(projectList[0].projectID);
+
     UpdateContent();
+
     /*Debug.Log(jsonString);
     Debug.Log(itemData[0][0]["titel"]);
     Debug.Log("total projects =" + itemData.Count);*/
@@ -135,7 +137,8 @@ public class LoadProjectSettings : MonoBehaviour {
     for (int i = 0; i < totalProjects; i++)
     {
       //Debug.Log("loop");
-      content.GetComponent<RectTransform>().offsetMax = new Vector2(content.GetComponent<RectTransform>().offsetMax.x + 533.325f, (content.GetComponent<RectTransform>().offsetMax.y));
+      content.GetComponent<RectTransform>().sizeDelta = new Vector2(800 * totalProjects, 0);
+      //content.GetComponent<RectTransform>().offsetMax = new Vector2(content.GetComponent<RectTransform>().offsetMax.x + 533.325f, (content.GetComponent<RectTransform>().offsetMax.y));
     }
     //}
   }
