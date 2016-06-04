@@ -29,12 +29,12 @@ public class PostPlayerSettings : MonoBehaviour
 
   public static string playerToken;
 
-  private string playerName;
-  private string playerEmail;
-  private string playerPassword;
-  private string playerPasswordRepeat;
+  private static string playerName;
+  private static string playerEmail;
+  private static string playerPassword;
+  private static string playerPasswordRepeat;
 
-  private string userLink;
+  /*
   private string addCoinsLink;
   private string removeCoinsLink;
   private string addXPLink;
@@ -44,12 +44,21 @@ public class PostPlayerSettings : MonoBehaviour
   private string addAPointsLink;
   private string removeAPointsLink;
   private string updateRankLink;
-  private string updateCoinMultiplierLink;
+  private string updateCoinMultiplierLink;*/
+
+  private string userLink;
+  private string coinsLink;
+  private string xpLink;
+  private string levelLink;
+  private string rankLink;
+  private string imageLink;
+  private string multiplierLink;
+  private string aPointsLink;
 
   // Use this for initialization
   public void Start()
   {
-    userLink = "http://bananas.multimediatechnology.be/api/user";
+    /*
     addCoinsLink = "http://bananas.multimediatechnology.be/api/addCoins/";
     removeCoinsLink = "http://bananas.multimediatechnology.be/api/removeCoins/";
     addXPLink = "http://bananas.multimediatechnology.be/api/addXP/";
@@ -58,7 +67,16 @@ public class PostPlayerSettings : MonoBehaviour
     addAPointsLink = "http://bananas.multimediatechnology.be/api/addPoints";
     removeAPointsLink = "http://bananas.multimediatechnology.be/api/removePoints";
     updateCoinMultiplierLink = "http://bananas.multimediatechnology.be/api/multiplier/";
-    //updateRankLink = "http://bananas.multimediatechnology.be/api/";
+    //updateRankLink = "http://bananas.multimediatechnology.be/api/";*/
+
+    userLink = "http://bananas.multimediatechnology.be/api/user";
+    coinsLink = "http://bananas.multimediatechnology.be/api/setCoins/";
+    xpLink = "http://bananas.multimediatechnology.be/api/setXP/";
+    levelLink = "http://bananas.multimediatechnology.be/api/setLevel/";
+    rankLink = "http://bananas.multimediatechnology.be/api/setRank/";
+    imageLink = "http://bananas.multimediatechnology.be/api/setRankImage/";
+    multiplierLink = "http://bananas.multimediatechnology.be/api/setMultiplier/";
+    aPointsLink = "http://bananas.multimediatechnology.be/api/setPoints/";
   }
   public void CheckRegisterFields()
   {
@@ -157,12 +175,12 @@ public class PostPlayerSettings : MonoBehaviour
     error2.SetActive(false);
     errormsg.SetActive(false);
 
-    playerEmail = emailField.text;
-    playerPassword = passwordField.text; 
+    playerEmail = "john@test.be";//emailField.text;//"mazurek.piotr@student.kdg.be";////
+    playerPassword = "password";//passwordField.text;//"projectant";//
 
     if (playerEmail != "")
     {
-      LoginPlayer(playerEmail, playerPassword);
+      LoginPlayer(playerEmail, playerPassword, userLink);
     }
     else
     {
@@ -179,7 +197,7 @@ public class PostPlayerSettings : MonoBehaviour
 
   }
 
-  public void LoginPlayer(string email, string password)
+  public void LoginPlayer(string email, string password, string urlToPost)
   {
     //Debug.Log("loginplayer");
     string loginUrl = "http://bananas.multimediatechnology.be/api/login";
@@ -190,10 +208,10 @@ public class PostPlayerSettings : MonoBehaviour
 
     WWW loginwww = new WWW(loginUrl, loginForm);
 
-    StartCoroutine(PostPlayerLogin(loginwww));
+    StartCoroutine(PostPlayerLogin(loginwww, urlToPost));
   }
 
-  public IEnumerator PostPlayerLogin(WWW www)
+  public IEnumerator PostPlayerLogin(WWW www, string urlToPost)
   {
     //Debug.Log("postplayer");
     yield return www;
@@ -203,12 +221,7 @@ public class PostPlayerSettings : MonoBehaviour
       Debug.Log("LOGINWWW OK!: " + www.text);
       playerTokenJSON = JsonMapper.ToObject(www.text);
       playerToken = playerTokenJSON["token"].ToString();
-
-      StartCoroutine(postToken(userLink, playerToken));
-
-      error1.SetActive(false);
-      error2.SetActive(false);
-      errormsg.SetActive(false);
+      StartCoroutine(postToken(urlToPost, playerToken));
     }
     else
     {
@@ -231,9 +244,9 @@ public class PostPlayerSettings : MonoBehaviour
 
     /*Hashtable headers = new Hashtable();
     headers.Add("Authorization", "Bearer: " + playerToken[0].ToString());*/
-    //Debug.Log("url =" + url);
+    Debug.Log("url =" + url);
     headers["Authorization"] = "Bearer: " + token;
-    //Debug.Log(headers["Authorization"]);
+    Debug.Log(headers["Authorization"]);
 
     WWW www = new WWW(url, rawData, headers);
     yield return www;
@@ -243,33 +256,19 @@ public class PostPlayerSettings : MonoBehaviour
       Debug.Log("POSTTOKEN OK!: " + www.text);
       if (url == userLink)
       {
-        playerData = JsonMapper.ToObject(www.text);
-        playerToken = playerData["token"].ToString();
-        player.SetActive(true);
         introCanvas.SetActive(false);
+        player.SetActive(true);
       }
-      else
+      /*else
       {
         playerTokenJSON = JsonMapper.ToObject(www.text);
         playerToken = playerTokenJSON["token"].ToString();
-      }
+      }*/
     }
     else
     {
       Debug.Log("POSTTOKEN ERROR: " + www.error);
     }
-  }
-
-  public void addCoins2()
-  {
-    Debug.Log("token = " + playerToken);
-  }
-
-  public string setToken(WWW www)
-  {
-    playerData = JsonMapper.ToObject(www.text);
-    playerToken = playerData["token"].ToString();
-    return playerToken;
   }
 
   public void RegisterPlayer(string name, string email, string password)
@@ -283,76 +282,36 @@ public class PostPlayerSettings : MonoBehaviour
 
     WWW registerwww = new WWW(RegisterUrl, RegisterForm);
 
-    StartCoroutine(PostPlayerLogin(registerwww));
+    StartCoroutine(PostPlayerLogin(registerwww, RegisterUrl));
   }
 
-  public void clickCoins()
+  public void updateRankImage(string ImageRank)
   {
-    addCoins(2);
+    LoginPlayer(playerEmail, playerPassword, rankLink + ImageRank);
   }
 
-  public void clickAddXP()
+  public void updateCoins(int nrOfCoins)
   {
-    addXP(50);
+    LoginPlayer(playerEmail, playerPassword, coinsLink + nrOfCoins);
   }
 
-  public void clickRemoveCoins()
+  public void updateCoinMultiplier(float coinMultiplier)
   {
-    removeCoins(20);
+    LoginPlayer(playerEmail, playerPassword, multiplierLink + coinMultiplier);
   }
 
-  public void clickXP()
+  public void updateXP(int xp)
   {
- 
+    LoginPlayer(playerEmail, playerPassword, xpLink + xp);
   }
 
-  public void addCoins(int nrOfCoinsToAdd)
+  public void updateLevel(int level)
   {
-    Debug.Log("updatecoins" + "token = " + playerToken);
-    Debug.Log(addCoinsLink + nrOfCoinsToAdd);
-    StartCoroutine(postToken(addCoinsLink + nrOfCoinsToAdd, playerToken));
+    LoginPlayer(playerEmail, playerPassword, levelLink + level);
   }
 
-  public void removeCoins(int nrOfCoinsToRemove)
+  public void updateAPoints(int aPoints)
   {
-    Debug.Log("removeCoins");
-
-    StartCoroutine(postToken(removeCoinsLink + nrOfCoinsToRemove, playerToken));
-  }
-
-  public void updateLevel(int newLevel)
-  {
-    StartCoroutine(postToken(addLevelLink + newLevel, playerToken));
-  }
-
-  public void addXP(int nrOfXPToAdd)
-  {
-    Debug.Log("addxp");
-    StartCoroutine(postToken(addXPLink + nrOfXPToAdd, playerToken));
-  }
-
-  public void addAPoints(int nrOfAPointsToAdd)
-  {
-    StartCoroutine(postToken(addAPointsLink + nrOfAPointsToAdd, playerToken));
-  }
-
-  public void removeAPoints(int nrOfAPointsToAdd)
-  {
-    StartCoroutine(postToken(addAPointsLink + nrOfAPointsToAdd, playerToken));
-  }
-
-  public void updateImagePath(string newImagePath)
-  {
-    StartCoroutine(postToken(updateImageLink + newImagePath, playerToken));
-  }
-
-  public void updateCoinMultiplier(float newCointMultiplier)
-  {
-    StartCoroutine(postToken(updateCoinMultiplierLink + newCointMultiplier, playerToken));
-  }
-
-  public void updateRank(string newRank)
-  {
-    StartCoroutine(postToken(updateRankLink + newRank, playerToken));
+    LoginPlayer(playerEmail, playerPassword, aPointsLink + aPoints);
   }
 }
