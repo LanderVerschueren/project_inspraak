@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
-
-<?php echo '<pre>'; print_r(old()); echo '</pre>'; ?>
-
+@section('content') 
 <div class="container">
     <div class="row">
         <div class="col-md-6" id="login">

@@ -78,31 +78,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AddReaction.cs" />
-    <Compile Include="Assets\LoadPlayerSettings.cs" />
-    <Compile Include="Assets\LoadProjectSettings.cs" />
-    <Compile Include="Assets\LoadProjectTitle.cs" />
-    <Compile Include="Assets\LoadReactions.cs" />
-    <Compile Include="Assets\PostPlayerSettings.cs" />
-    <Compile Include="Assets\ProjectCollection.cs" />
-    <Compile Include="Assets\ProjectScroll.cs" />
     <Compile Include="Assets\Scripts\Game\GameLogic.cs" />
+    <Compile Include="Assets\Scripts\Game\GetCanvasSize.cs" />
     <Compile Include="Assets\Scripts\Game\LikeLogic.cs" />
     <Compile Include="Assets\Scripts\Game\PlaySounds.cs" />
-    <Compile Include="Assets\Scripts\Game\Register.cs" />
-    <Compile Include="Assets\Scripts\Game\UpdateProfileUI.cs" />
-    <Compile Include="Assets\Scripts\GetCanvasSize.cs" />
-    <Compile Include="Assets\Scripts\Login.cs" />
-    <Compile Include="Assets\Scripts\Navigation\CloseGame.cs" />
-    <Compile Include="Assets\Scripts\Navigation\HambugerOpen.cs" />
-    <Compile Include="Assets\Scripts\Navigation\HamburgerClose.cs" />
-    <Compile Include="Assets\Scripts\Navigation\UILogic.cs" />
-    <Compile Include="Assets\Scripts\PlayerSettings.cs" />
-    <Compile Include="Assets\Scripts\ToggleInfo.cs" />
-    <Compile Include="Assets\TextWriter.cs" />
-    <Compile Include="Assets\UpdateContentProjects.cs" />
-    <Compile Include="Assets\projectPosition.cs" />
-    <Compile Include="Assets\updateReactionContect.cs" />
+    <Compile Include="Assets\Scripts\Navigation_UI\CloseGame.cs" />
+    <Compile Include="Assets\Scripts\Navigation_UI\HambugerOpen.cs" />
+    <Compile Include="Assets\Scripts\Navigation_UI\HamburgerClose.cs" />
+    <Compile Include="Assets\Scripts\Navigation_UI\TextWriter.cs" />
+    <Compile Include="Assets\Scripts\Navigation_UI\ToggleInfo.cs" />
+    <Compile Include="Assets\Scripts\Navigation_UI\UILogic.cs" />
+    <Compile Include="Assets\Scripts\Player\LoadPlayerSettings.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerSettings.cs" />
+    <Compile Include="Assets\Scripts\Player\PostPlayerSettings.cs" />
+    <Compile Include="Assets\Scripts\Projects\AddReaction.cs" />
+    <Compile Include="Assets\Scripts\Projects\LoadProjectSettings.cs" />
+    <Compile Include="Assets\Scripts\Projects\LoadProjectTitle.cs" />
+    <Compile Include="Assets\Scripts\Projects\LoadReactions.cs" />
+    <Compile Include="Assets\Scripts\Projects\ProjectCollection.cs" />
+    <Compile Include="Assets\Scripts\Projects\ProjectScroll.cs" />
+    <Compile Include="Assets\Scripts\Projects\UpdateContentProjects.cs" />
+    <Compile Include="Assets\Scripts\Projects\projectPosition.cs" />
+    <Compile Include="Assets\Scripts\Projects\updateReactionContect.cs" />
+    <Compile Include="Assets\Scripts\UpdateUIWithProfileSettings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
