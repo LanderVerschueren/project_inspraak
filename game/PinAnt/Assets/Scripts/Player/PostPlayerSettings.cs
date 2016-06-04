@@ -257,6 +257,7 @@ public class PostPlayerSettings : MonoBehaviour
       if (url == userLink)
       {
         introCanvas.SetActive(false);
+                playerData = JsonMapper.ToObject(www.text);
         player.SetActive(true);
       }
       /*else

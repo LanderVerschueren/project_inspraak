@@ -3,17 +3,24 @@ guid: 89f7c097ae830e94b80ce8b55359a5eb
 timeCreated: 1461323379
 licenseType: Free
 TrueTypeFontImporter:
-  serializedVersion: 2
+  serializedVersion: 3
   fontSize: 16
   forceTextureCase: -2
   characterSpacing: 1
   characterPadding: 0
   includeFontData: 1
-  use2xBehaviour: 0
   fontNames: []
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3d018711cb9d805468bf2a107cc0d829, type: 3}
+  - {fileID: 12800000, guid: 30f12fd30e65c4d46a96e9e6f26dbc4f, type: 3}
+  - {fileID: 12800000, guid: bd5e39e59ada0594783c16a534c2c91b, type: 3}
+  - {fileID: 12800000, guid: d2f4e8c6373a11e49858ac3e825dfdfc, type: 3}
+  - {fileID: 12800000, guid: 1df50d088cb68534295e2ab9a2074d54, type: 3}
+  - {fileID: 12800000, guid: 2dd6ae1e56cbbb741a93d8fce3aacbb3, type: 3}
+  - {fileID: 12800000, guid: 98a3358e9e47b314a92cd75a41bd036f, type: 3}
   customCharacters: 
   fontRenderingMode: 0
+  ascentCalculationMode: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
