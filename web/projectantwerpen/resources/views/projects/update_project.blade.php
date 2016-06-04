@@ -31,13 +31,13 @@
 											<option>
 												Selecteer Categorie
 											</option>
-											<option value="renovatie">
+											<option value="renovatie" <?= ($project->category == 'renovatie') ? 'selected' : '' ?>>
 												Renovatie
 											</option>
-											<option value="heraanleg">
+											<option value="heraanleg" <?= ($project->category == 'heraanleg') ? 'selected' : '' ?>>
 												Heraanleg
 											</option>
-											<option value="opknapwerk">
+											<option value="opknapwerk" <?= ($project->category == 'opknapwerk') ? 'selected' : '' ?>>
 												Opknapwerk
 											</option>
 										</select>
@@ -55,13 +55,13 @@
 											<option>
 												Selecteer Fase
 											</option>
-											<option value="1">
+											<option value="1" <?= ($project->fase == '1') ? 'selected' : '' ?>>
 												Mening
 											</option>
-											<option value="2">
+											<option value="2" <?= ($project->fase == '2') ? 'selected' : '' ?>>
 												Afbraak
 											</option>
-											<option value="3">
+											<option value="3" <?= ($project->fase == '3') ? 'selected' : '' ?>>
 												Opbouw
 											</option>
 										</select>

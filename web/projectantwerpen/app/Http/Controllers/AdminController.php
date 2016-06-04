@@ -42,6 +42,7 @@ class AdminController extends Controller
 		$question 		= $request->input('question');
 		$fase 			= $request->input('fase');
 		$description 	= $request->input('description');
+
 		$pic_name = str_replace(' ', '_', $title);
 		File::makeDirectory('images/' . $title);
 		$destinationPath = $pic_name .'.'. $image->getClientOriginalExtension();
@@ -102,7 +103,7 @@ class AdminController extends Controller
 
 	public function delete_project( $id ) {
 		$project = Project::find($id);
-		var_dump($project->title);
+		0
 		File::deleteDirectory(public_path('images/' . $project->title));
 		$project->delete();
 
