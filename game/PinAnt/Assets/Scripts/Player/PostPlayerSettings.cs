@@ -157,8 +157,8 @@ public class PostPlayerSettings : MonoBehaviour
     error2.SetActive(false);
     errormsg.SetActive(false);
 
-    playerEmail = "mazurek.piotr@student.kdg.be";////emailField.text;
-    playerPassword = "projectant";//passwordField.text; 
+    playerEmail = emailField.text;
+    playerPassword = passwordField.text; 
 
     if (playerEmail != "")
     {
