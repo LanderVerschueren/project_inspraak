@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\Projects\projectPosition.cs" />
      <Compile Include="Assets\Scripts\Projects\updateReactionContect.cs" />
      <Compile Include="Assets\Scripts\UpdateUIWithProfileSettings.cs" />
+     <Compile Include="Assets\SwitchProject.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
