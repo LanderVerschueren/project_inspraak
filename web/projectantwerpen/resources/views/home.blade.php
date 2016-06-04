@@ -54,31 +54,40 @@
                     <ul class="tab__content">
                         <li class="active">
                             <div class="content__wrapper">
-                                @foreach($projects->sortByDesc('date') as $project)                                    
+                            <?php $count = 0; ?>
+                                @foreach($projects->sortByDesc('date') as $project)
+                                    <?php if($count == 3) break; ?>                              
                                     <a href="{{ url('/project/'.$project->id) }}">
                                         <h4> {{ ucfirst( $project->title ) }} </h4>
                                         <img src="{{URL::asset('images/' . $project->title . '/' . $project->image_name)}}" alt="">
-                                    </a>
+                                    </a>                                    
+                                    <?php $count++; ?>
                                 @endforeach
                             </div>
                         </li>
                         <li>
                             <div class="content__wrapper">
+                            <?php $count = 0; ?>
                                 @foreach($projects->sortByDesc('view_amount') as $project)
+                                <?php if($count == 3) break; ?>
                                     <a href="{{ url('/project/'.$project->id) }}">
                                         <h4> {{ ucfirst( $project->title ) }} </h4>
                                         <img src="{{URL::asset('images/' . $project->title . '/' . $project->image_name)}}" alt="">
                                     </a>
-                                @endforeach
+                                    <?php $count++; ?>
+                                @endforeach                                
                             </div>
                         </li>
                         <li>
                             <div class="content__wrapper">
+                            <?php $count = 0; ?>
                                 @foreach($projects->sortByDesc('likes') as $project)
+                                <?php if($count == 3) break; ?>
                                     <a href="{{ url('/project/'.$project->id) }}">
                                         <h4> {{ ucfirst( $project->title ) }} </h4>
                                         <img src="{{URL::asset('images/' . $project->title . '/' . $project->image_name)}}" alt="">
                                     </a>
+                                    <?php $count++; ?>
                                 @endforeach
                             </div>
                         </li>

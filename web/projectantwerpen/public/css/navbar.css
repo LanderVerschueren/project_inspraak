@@ -18,7 +18,7 @@
   padding: 0;
   padding-right: 15px;
   margin-left: 0;
-  height: 50px;
+  height: 60px;
 }
 
 .navbar-collapse>.nav>li>a {
@@ -76,5 +76,11 @@
 
   .navbar-right {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #div-brand-image {
+    height: 50px;
   }
 }
