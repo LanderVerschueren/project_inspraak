@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class UpdateUIWithProfileSettings : MonoBehaviour {
 
@@ -24,10 +25,10 @@ public class UpdateUIWithProfileSettings : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        SetPlayerSettingsInUI();
     }
 
-    public void SetPlayerSettings()
+    public void SetPlayerSettingsInUI()
     {
         lblPlayerName.text = player.GetComponent<PlayerSettings>().playerName;
         lblPlayerRank.text = player.GetComponent<PlayerSettings>().playerRank;

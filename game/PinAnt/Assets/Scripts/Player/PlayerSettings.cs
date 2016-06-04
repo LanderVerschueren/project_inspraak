@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerSettings : MonoBehaviour {
 
@@ -14,8 +15,10 @@ public class PlayerSettings : MonoBehaviour {
     public int playerApoints;
     public double coinMultiplier;
 
-	// Use this for initialization
-	void Start () {
+    public List <int> LikedProjects = new List<int>();
+
+    // Use this for initialization
+    void Start () {
         playerName = LoadPlayerSettings.playerName;
         playerLevel = LoadPlayerSettings.playerLevel;
         playerRank = LoadPlayerSettings.playerRank;
@@ -25,7 +28,7 @@ public class PlayerSettings : MonoBehaviour {
         playerApoints = LoadPlayerSettings.playerApoints;
         coinMultiplier = LoadPlayerSettings.coinMultiplier;
 
-        GetComponent<UpdateUIWithProfileSettings>().SetPlayerSettings();
+        GetComponent<UpdateUIWithProfileSettings>().SetPlayerSettingsInUI();
 	}
 	
 	// Update is called once per frame
