@@ -97,15 +97,24 @@
 					    		<h4>Reacties</h4>
 				    			@foreach ($comments as $comment)
 				    				<section class="comment_section">
-					    				@if($comment->fk_user == null)
-											<h5>Anoniem</h5>
-										@else
-											<h5>{{$comment->user->name}}</h5>
-					    				@endif
-	    								<p>
-	    									<i class="fa fa-comment" aria-hidden="true"></i>
-	    									{{ucfirst( $comment->comment )}}
-	    								</p>
+					    				<section class="reaction">
+						    				@if($comment->fk_user == null)
+												<h5>Anoniem</h5>
+											@else
+												<h5>{{$comment->user->name}}</h5>
+						    				@endif
+		    								<p>
+		    									<i class="fa fa-comment" aria-hidden="true"></i>
+		    									{{ucfirst( $comment->comment )}}
+		    								</p>
+	    								</section>
+	    								@if ( !Auth::guest() AND Auth::user()->isAdmin() )
+	    								<section class="delete">
+		    								<a href="" class="btn btn-raised">
+		    									<i class="fa fa-trash-o" aria-hidden="true"></i>
+	    									</a>
+	    								</section>
+	    								@endif
     								</section>
 								@endforeach
 								<textarea name="comment"></textarea>

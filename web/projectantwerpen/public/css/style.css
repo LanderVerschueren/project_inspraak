@@ -137,16 +137,16 @@ label, input, p, a {
 #login button {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: #CF0036;
+  background-color: #219dc8;
   color: white;
-  border: 1px solid #CF0039;
+  border: 1px solid #219dc8;
   border-radius: 0;
 }
 
 #login button:hover {
   background-color: white;
   color: black;
-  border-color: #CF0039;
+  border-color: #219dc8;
 }
 
 #login_register ul {
@@ -162,9 +162,9 @@ label, input, p, a {
 #login_register ul li a {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: #CF0036;
+  background-color: #219dc8;
   color: white;
-  border: 1px solid #CF0039;
+  border: 1px solid #219dc8;
   border-radius: 0;
   margin-top: 15px;
 }
@@ -172,27 +172,27 @@ label, input, p, a {
 #login_register ul li a:hover {
   background-color: white;
   color: black;
-  border-color: #CF0039;
+  border-color: #219dc8;
 }
 
 
 
 
 
-/* ------------------- Login page ------------------- */
+/* ------------------- Register page ------------------- */
 #register button {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: #CF0036;
+  background-color: #219dc8;
   color: white;
-  border: 1px solid #CF0039;
+  border: 1px solid #219dc8;
   border-radius: 0;
 }
 
 #register button:hover {
   background-color: white;
   color: black;
-  border-color: #CF0039;
+  border-color: #219dc8;
 }
 
 
@@ -516,6 +516,8 @@ label, input, p, a {
   margin-right: 15px;
   margin-bottom: 15px;
   border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
 }
 
 #project .comments .comment_section h5 {
@@ -527,17 +529,13 @@ label, input, p, a {
   margin-right: 15px;
 }
 
-#project .comments button {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: 'antwerpen_sun300';
-  border: 1px solid #CF0036;
-  background-color: #CF0036;
+#project .comments .comment_section a {
+  background-color: #219dc8;
+  border: 1px solid #219dc8;
   color: white;
-  font-size: 20px;
 }
 
-#project .comments button:hover {
+#project .comments .comment_section a:hover {
   background-color: white;
   color: black;
 }

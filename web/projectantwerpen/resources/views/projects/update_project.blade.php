@@ -9,26 +9,26 @@
 				<form method="POST" action="{{ url('/update_project/'.$project->id) }}" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="panel-heading">
-						<h4> <input type="text" class="form-control" name="title" placeholder="Titel" value=" {{ $project->title }} "></h4>
+						<h4> <input type="text" class="form-control" name="title" placeholder="Titel" value=" {{ $project->title }} " required></h4>
 					</div>
 					<div class="panel-body">
 						<section class="main_info">					
 							<section class="image form-group">
 								<img id="preview" src="{{URL::asset('images/' . $project->title . '/' . $project->image_name)}}" alt="">
-								<input type="file" id="img_preview" name="pic">
+								<input type="file" id="img_preview" name="pic" required>
 								<input type="text" readonly class="form-control" placeholder="Kies een afbeelding">
 							</section>
 							<section class="info">
 								<ul>
 									<li>
-										<input type="text" id="datepicker" class="form-control" name="date" placeholder="Einddatum" value="{{ $project->date }}">
+										<input type="text" id="datepicker" class="form-control" name="date" placeholder="Einddatum" value="{{ $project->date }}" required>
 									</li>
 									<li>
-										<input type="text" class="form-control" name="cost" placeholder="Kostprijs" value="{{ $project->cost }}">
+										<input type="text" class="form-control" name="cost" placeholder="Kostprijs" value="{{ $project->cost }}" required>
 									</li>
 									<li>
 										<select name="category" class="form-control" required>
-											<option>
+											<option value="">
 												Selecteer Categorie
 											</option>
 											<option value="renovatie" <?= ($project->category == 'renovatie') ? 'selected' : '' ?>>
@@ -46,13 +46,13 @@
 							</section>
 						</section>
 						<section class="question">
-							<textarea name="question" id="" cols="" rows="2"> {{ $project->question }} </textarea>
+							<textarea name="question" id="" cols="" rows="2" required> {{ $project->question }} </textarea>
 						</section>
 
 						<section class="timeline_explanation">
 							<section class="timeline">
 										<select name="fase" class="form-control" required>
-											<option>
+											<option value="">
 												Selecteer Fase
 											</option>
 											<option value="1" <?= ($project->fase == '1') ? 'selected' : '' ?>>
@@ -67,7 +67,7 @@
 										</select>
 									</section>
 									<section class="explanation">
-										<textarea name="description" id="" cols="" rows="10"> {{ $project->description }} </textarea>
+										<textarea name="description" id="" cols="" rows="10" required> {{ $project->description }} </textarea>
 									</section>
 								</section>
 								<button type="submit" class="btn btn-raised btn-default"> Project Aanpassen </button>
