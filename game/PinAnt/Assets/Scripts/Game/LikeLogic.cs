@@ -6,6 +6,7 @@ public class LikeLogic : MonoBehaviour {
 
     public GameObject original;
     public GameObject GameLogic;
+    public GameObject player;
 
     public GameObject likeButton;
     public GameObject dislikeButton;
@@ -34,6 +35,7 @@ public class LikeLogic : MonoBehaviour {
         {
             isLiked = true;
             nrOfLikes++;
+
             // NOG CONTROLEREN OF REEDS GELD GEKREGEN!!!!!
             GameLogic.GetComponent<GameLogic>().GainCoins(2);
             GameLogic.GetComponent<GameLogic>().GainExp(5);
