@@ -33,27 +33,27 @@ class DatabaseSeeder extends Seeder
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'image_name' => 'mas.jpg', 'location' => 'Het Eilandje','date' => '2011-06-20', 'cost' => '20 miljoen euro', 'fase' => '1', 'likes' => '50','dislikes' => '2', 'view_amount' => '5432', 'question' => 'Wilt u meer banken rond het MAS?'),
+             	'image_name' => 'mas.jpg', 'location' => 'Het Eilandje','date' => '2011-06-20', 'cost' => '20 miljoen euro', 'phase' => '1',  'view_amount' => '5432', 'question' => 'Wilt u meer banken rond het MAS?'),
              array('title' => 'Meir', 'category' => 'heraanleg', 'description' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'image_name' => 'meir.png', 'location' => 'meir', 'date' => '2016-04-01', 'cost' => '40 miljoen euro', 'fase' => '2', 'likes' => '500', 'dislikes' => '20', 'view_amount' => '632', 'question' => 'Wilt u meer vuilbakken op de meir?'),
+             	'image_name' => 'meir.png', 'location' => 'meir', 'date' => '2016-04-01', 'cost' => '40 miljoen euro', 'phase' => '2', 'view_amount' => '632', 'question' => 'Wilt u meer vuilbakken op de meir?'),
              array('title' => 'Grote Markt', 'category' => 'opknapwerk', 'description' => '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
              	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
              	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-             	'image_name' => 'grote_markt.jpg', 'location' => 'Grote Markt', 'date' => '2013-08-31', 'cost' => '55 miljoen euro', 'fase' => '3', 'likes' => '1345', 'dislikes' => '150','view_amount' => '6543', 'question' => 'Wilt u meer groen op de Grote Markt?')
+             	'image_name' => 'grote_markt.jpg', 'location' => 'Grote Markt', 'date' => '2013-08-31', 'cost' => '55 miljoen euro', 'phase' => '3', 'view_amount' => '6543', 'question' => 'Wilt u meer groen op de Grote Markt?')
           ));
 
 		DB::table('users_projects')->delete();
          //insert some dummy records
          DB::table('users_projects')->insert(array(
-             array('fk_user' => '3', 'fk_project' => '1'),
-             array('fk_user' => '5', 'fk_project' => '2'),
-             array('fk_user' => '4', 'fk_project' => '3'),
-             array('fk_user' => '4', 'fk_project' => '2'),
-             array('fk_user' => '3', 'fk_project' => '1')
+             array('fk_user' => '3', 'fk_project' => '1', 'like' => true),
+             array('fk_user' => '5', 'fk_project' => '2', 'like' => true),
+             array('fk_user' => '4', 'fk_project' => '3', 'like' => false),
+             array('fk_user' => '4', 'fk_project' => '2', 'like' => true),
+             array('fk_user' => '3', 'fk_project' => '1', 'like' => false)
           ));
 
          DB::table('comments')->delete();

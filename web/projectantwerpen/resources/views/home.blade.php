@@ -24,7 +24,7 @@
                             <img src="{{URL::asset('images/'.$project->title.'/'.$project->image_name)}}" class=""></li>
                                 <div class="carousel-caption">
                                     <h2>{{ $project->title }}</h2>
-                                    <p>{{ $project->question }} - Al {{ $project->likes }} personen keurden dit goed!</p>
+                                    <p>{{ $project->question }} - Al {{ $project->likes($project->id) }} personen keurden dit goed!</p>
                                 </div>
                             </div>
                             <?php $count++; ?>
@@ -81,7 +81,7 @@
                         <li>
                             <div class="content__wrapper">
                             <?php $count = 0; ?>
-                                @foreach($projects->sortByDesc('likes') as $project)
+                                @foreach($projects->sortByDesc('$projects->likes($projects->id)') as $project)
                                 <?php if($count == 3) break; ?>
                                     <a href="{{ url('/project/'.$project->id) }}">
                                         <h4> {{ ucfirst( $project->title ) }} </h4>

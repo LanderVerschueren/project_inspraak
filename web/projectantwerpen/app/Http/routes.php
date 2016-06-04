@@ -14,8 +14,8 @@
 Route::auth();
 
 Route::group([ 'middleware' => 'web' ], function() {
-	Route::get('/vote/like/{id}', 'IndividualProjectController@vote_like');
-	Route::get('/vote/dislike/{id}', 'IndividualProjectController@vote_dislike');
+	Route::get('/vote/like/{id}', 'IndividualProjectController@like');
+	Route::get('/vote/dislike/{id}', 'IndividualProjectController@dislike');
 	Route::get('/home', 'HomeController@index');
 	Route::get('/', 'HomeController@index');
 	Route::get('/projecten', 'ProjectController@index');
@@ -25,8 +25,6 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/project/update/{id}','AdminController@updateProject');
 	Route::get('/project/{id}', 'IndividualProjectController@index');
 	Route::get('/project/delete/{id}', 'AdminController@delete_project');
-	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
-	Route::get('/project/unfollow/{id}', 'IndividualProjectController@unfollow');
 	Route::post('/reactie/{id}', 'IndividualProjectController@placeComment');
 	Route::get('/search', 'SearchController@index');
 	Route::post('/add_project', 'AdminController@add');

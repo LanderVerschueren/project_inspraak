@@ -18,6 +18,7 @@ class CreateUsersProjectsTable extends Migration
             $table->foreign('fk_user')->references('id')->on('users')->onDelete('cascade');
             $table->integer('fk_project')->unsigned();
             $table->foreign('fk_project')->references('id')->on('projects')->onDelete('cascade');
+            $table->boolean('like');
             $table->timestamps();
         });
     }

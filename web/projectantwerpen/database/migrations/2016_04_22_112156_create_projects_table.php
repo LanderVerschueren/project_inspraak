@@ -21,9 +21,7 @@ class CreateProjectsTable extends Migration
             $table->text('location');
             $table->date('date');
             $table->text('cost');
-            $table->integer('fase');
-            $table->integer('likes');
-            $table->integer('dislikes');
+            $table->integer('phase');
             $table->integer('view_amount');
             $table->text('question');
             $table->timestamps();

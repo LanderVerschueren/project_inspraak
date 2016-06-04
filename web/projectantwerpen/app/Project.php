@@ -3,10 +3,11 @@
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Comment;
+use App\Users_project;
 class Project extends Model
 {
     protected $table = "projects";
-    protected $fillable = array('titel', 'categorie', 'uitleg', 'einddatum', 'kostprijs', 'fase', 'vraag', 'fotonaam');
+    protected $fillable = ['title', 'category', 'description', 'date', 'cost', 'phase', 'question', 'image_name', 'location', 'view_amount'];
 
     public function scopeSearchByKeyword($query, $keyword)
     {
@@ -21,7 +22,18 @@ class Project extends Model
         
         return $query;
     }
-    public static function comments($id) {
+    public function comments($id) {
        	return Comment::where('fk_project', $id);
+    }
+
+    public function likes($id){
+        return Users_project::where(function($query) use($id){
+            $query->where('fk_project', '=', $id)->where('like', true);
+        })->count();
+    }
+    public function dislikes($id){
+        return Users_project::where(function($query) use($id){
+            $query->where('fk_project', '=', $id)->where('like', false);
+        })->count();
     }
 }
