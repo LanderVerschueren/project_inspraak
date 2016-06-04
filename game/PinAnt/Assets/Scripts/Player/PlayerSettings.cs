@@ -24,6 +24,8 @@ public class PlayerSettings : MonoBehaviour {
         playerCoins = LoadPlayerSettings.playerCoins;
         playerApoints = LoadPlayerSettings.playerApoints;
         coinMultiplier = LoadPlayerSettings.coinMultiplier;
+
+        GetComponent<UpdateUIWithProfileSettings>().SetPlayerSettings();
 	}
 	
 	// Update is called once per frame

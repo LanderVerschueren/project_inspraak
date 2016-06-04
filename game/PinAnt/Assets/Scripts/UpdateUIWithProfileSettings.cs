@@ -19,9 +19,7 @@ public class UpdateUIWithProfileSettings : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.Find("Player");
-        SetPlayerSettings();
-        
+
 	}
 	
 	// Update is called once per frame

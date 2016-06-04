@@ -51,7 +51,7 @@ public class LoadProjectTitle : MonoBehaviour
 
   IEnumerator LoadImage()
   {
-    string url = "http://bananas.multimediatechnology.be/images/" + LoadProjectSettings.projectList[currentProject].photoname;
+    string url = "http://bananas.multimediatechnology.be/images/" + LoadProjectSettings.projectList[currentProject].title + "/" + LoadProjectSettings.projectList[currentProject].photoname;
     WWW www = new WWW(url);
     yield return www;
     //Debug.Log(url);
