@@ -36,8 +36,14 @@
 									<p> {{ $project->question }} </p>
 								</section>
 								<section class="button">
-										<a href="{{ url('/vote/like/'.$project->id) }}" class="btn btn-raised"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
-										<a href="{{ url('/vote/dislike/'.$project->id) }}" class="btn btn-raised"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a>
+										<a href="{{ url('/vote/like/'.$project->id) }}" class="btn btn-raised">
+											<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+											<label>{{ $project->likes }}</label>
+										</a>
+										<a href="{{ url('/vote/dislike/'.$project->id) }}" class="btn btn-raised">
+											<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+											<label>{{ $project->dislikes }}</label>
+										</a>
 									
 								</section>
 							</section>

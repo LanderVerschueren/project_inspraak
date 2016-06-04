@@ -22,6 +22,7 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::post('/projecten/filter', 'ProjectController@filter');
 	Route::get('/projectslist', 'AdminController@index');
 	Route::get('/project/addproject', 'AdminController@addProject');
+	Route::get('/project/update/{id}','AdminController@updateProject');
 	Route::get('/project/{id}', 'IndividualProjectController@index');
 	Route::get('/project/delete/{id}', 'AdminController@delete_project');
 	Route::get('/project/follow/{id}', 'IndividualProjectController@follow');
@@ -29,6 +30,7 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::post('/reactie/{id}', 'IndividualProjectController@placeComment');
 	Route::get('/search', 'SearchController@index');
 	Route::post('/add_project', 'AdminController@add');
+	Route::post('/update_project/{id}', 'AdminController@update');
 });
 
 
