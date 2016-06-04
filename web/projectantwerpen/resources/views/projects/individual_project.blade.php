@@ -110,7 +110,7 @@
 	    								</section>
 	    								@if ( !Auth::guest() AND Auth::user()->isAdmin() )
 	    								<section class="delete">
-		    								<a href="" class="btn btn-raised">
+		    								<a href="{{url('/deleteComment/'.$comment->id) }}" class="btn btn-raised">
 		    									<i class="fa fa-trash-o" aria-hidden="true"></i>
 	    									</a>
 	    								</section>

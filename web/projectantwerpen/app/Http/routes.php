@@ -31,6 +31,7 @@ Route::group([ 'middleware' => 'web' ], function() {
 	Route::get('/search', 'SearchController@index');
 	Route::post('/add_project', 'AdminController@add');
 	Route::post('/update_project/{id}', 'AdminController@update');
+	Route::get('/deleteComment/{id}', 'AdminController@deleteComment');
 });
 
 
@@ -46,11 +47,11 @@ Route::group(['prefix' =>'api'], function()
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
     	Route::post('/setCoins/{coins}' , 'APIController@setCoins');
     	Route::post('/setRankImage/{path}' , 'APIController@changeImage');
-    	Route::post('/setXP/{xp}', 'APIController@addXP');
-    	Route::post('/addLevel', 'APIController@addLevel');
-    	Route::post('/setRank/{rank}', 'APIController@changeRank' );
-    	Route::post('/setMultiplier/{multiplier}', 'APIController@changeMultiplier');
-    	Route::post('/setPoints/{points}', 'APIController@add_a_points');
+    	Route::post('/setXP/{xp}', 'APIController@setXP');
+    	Route::post('/setLevel/{level}', 'APIController@setLevel');
+    	Route::post('/setRank/{rank}', 'APIController@setRank' );
+    	Route::post('/setMultiplier/{multiplier}', 'APIController@setMultiplier');
+    	Route::post('/setPoints/{points}', 'APIController@setPoints');
     	Route::post('/user', 'APIController@getUserInfo');
     	Route::post('/logout', 'APIController@logout');
     });

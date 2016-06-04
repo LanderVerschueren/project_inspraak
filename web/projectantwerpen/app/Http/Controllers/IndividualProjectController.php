@@ -7,7 +7,6 @@ use App\Project;
 use App\Users_project;
 use App\Comment;
 use App\Http\Controllers\Controller;
-use DB;
 use Auth;
 use Redirect;
 

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Comment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Validator;
 use File;
+use Redirect;
 
 class AdminController extends Controller
 {
@@ -118,5 +120,13 @@ class AdminController extends Controller
 		$projects = Project::all();
 
 		return view('projects.projectslist', ['projects' => $projects]);
+	}
+
+	public function deleteComment($id){
+
+		$comment = Comment::find($id);
+		$comment->delete();
+
+		return Redirect::back();
 	}
 }

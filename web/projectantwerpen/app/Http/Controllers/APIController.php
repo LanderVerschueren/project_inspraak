@@ -144,14 +144,14 @@ class APIController extends Controller
       return response(["message" => "path changed to: ".$path]);
     }
 
-    public function changeRank($rank){
+    public function setRank($rank){
       $user = JWTAuth::parseToken()->authenticate();
       $user->rank = $rank;
       $user->save();
       return response(["message" => "rank changed to: ".$user->rank]);
     }
 
-    public function changeMultiplier($multiplier){
+    public function setMultiplier($multiplier){
       $user = JWTAuth::parseToken()->authenticate();
       $user->coin_multiplier = $multiplier;
       $user->save();
