@@ -43,17 +43,17 @@ Route::group(['prefix' =>'api'], function()
 	Route::post('/comments/place/{id}', 'APIController@placeComment');
 	Route::get('/like/{id}' , 'APIController@vote_like');
 	Route::get('/dislike/{id}' , 'APIController@vote_dislike');
-    Route::group(['middleware' => ['before' => 'jwt.auth']], function() {
-    	Route::get('/addCoins/{coins}' , 'APIController@addCoins');
-    	Route::get('/removeCoins/{coins}' , 'APIController@removeCoins');
-    	Route::get('/rankImage/{path}' , 'APIController@changeImage');
-    	Route::get('/addXP/{xp}', 'APIController@addXP');
-    	Route::get('/addLevel', 'APIController@addLevel');
-    	Route::get('/rank/{rank}', 'APIController@changeRank' );
-    	Route::get('/multiplier/{multiplier}', 'APIController@changeMultiplier');
-    	Route::get('/addPoints/{points}', 'APIController@add_a_points');
-    	Route::get('/removePoints/{points}', 'APIController@remove_a_points');
-    	Route::get('/user', 'APIController@getUserInfo');
+    Route::group(['middleware' => 'jwt.auth'], function() {
+    	Route::post('/addCoins/{coins}' , 'APIController@addCoins');
+    	Route::post('/removeCoins/{coins}' , 'APIController@removeCoins');
+    	Route::post('/rankImage/{path}' , 'APIController@changeImage');
+    	Route::post('/addXP/{xp}', 'APIController@addXP');
+    	Route::post('/addLevel', 'APIController@addLevel');
+    	Route::post('/rank/{rank}', 'APIController@changeRank' );
+    	Route::post('/multiplier/{multiplier}', 'APIController@changeMultiplier');
+    	Route::post('/addPoints/{points}', 'APIController@add_a_points');
+    	Route::post('/removePoints/{points}', 'APIController@remove_a_points');
+    	Route::post('/user', 'APIController@getUserInfo');
     	Route::post('/logout', 'APIController@logout');
-    });    
+    });
 });

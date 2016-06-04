@@ -30,7 +30,7 @@ public class LoadProjectSettings : MonoBehaviour {
 
     WWW www = new WWW(url);
     yield return www;
-    Debug.Log(url);
+    //Debug.Log(url);
     if (www.error == null)
     {
       itemData = JsonMapper.ToObject(www.text);
@@ -45,9 +45,9 @@ public class LoadProjectSettings : MonoBehaviour {
     itemData = JsonMapper.ToObject(jsonString);*/
 
     projectsCreated = 0;
-    Debug.Log(itemData.Count);
+    //Debug.Log(itemData.Count);
     totalProjects = itemData[0].Count; //tel totaal aantal projecten
-    Debug.Log("totalprojects = " + totalProjects);
+    //Debug.Log("totalprojects = " + totalProjects);
 
     projectScroll.numberOfSteps = totalProjects;
 
@@ -88,23 +88,23 @@ public class LoadProjectSettings : MonoBehaviour {
     Project project = new Project();
 
     project.id = itemData[0][projectnr]["id"].ToString();
-    project.title = itemData[0][projectnr]["titel"].ToString();
-    project.category = itemData[0][projectnr]["categorie"].ToString();
-    project.info = itemData[0][projectnr]["uitleg"].ToString();
-    project.photoname = itemData[0][projectnr]["fotonaam"].ToString();
-    project.endDate = itemData[0][projectnr]["einddatum"].ToString();
-    project.price = itemData[0][projectnr]["kostprijs"].ToString();
+    project.title = itemData[0][projectnr]["title"].ToString();
+    project.category = itemData[0][projectnr]["category"].ToString();
+    project.info = itemData[0][projectnr]["description"].ToString();
+    project.photoname = itemData[0][projectnr]["image_name"].ToString();
+    project.endDate = itemData[0][projectnr]["date"].ToString();
+    project.price = itemData[0][projectnr]["cost"].ToString();
     project.phase = itemData[0][projectnr]["fase"].ToString();
     project.likes = itemData[0][projectnr]["likes"].ToString();
     project.dislikes = itemData[0][projectnr]["dislikes"].ToString();
-    project.views = itemData[0][projectnr]["aantal_bekeken"].ToString();
+    project.views = itemData[0][projectnr]["view_amount"].ToString();
     project.created_at = null; // itemData[0][projectnr]["created_at"].ToString();
     project.updated_at = null; // itemData[0][projectnr]["updated_at"].ToString();
-    project.question = itemData[0][projectnr]["vraag"].ToString();
+    project.question = itemData[0][projectnr]["question"].ToString();
 
     projectList.Add(project);
 
-    Debug.Log(projectList);
+    //Debug.Log(projectList);
 
     return project;
     
@@ -145,7 +145,7 @@ public class LoadProjectSettings : MonoBehaviour {
     for (int i = 0; i < totalProjects; i++)
     {
       LoadJsonData(i);
-      Debug.Log("PROJECTLOADED");
+      //Debug.Log("PROJECTLOADED");
     }
   }
 

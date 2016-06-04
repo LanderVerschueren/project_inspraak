@@ -573,15 +573,9 @@ class Builder
             return $values;
         }
 
-        if (count($this->getQuery()->joins) > 0) {
-            $column = $this->model->getQualifiedUpdatedAtColumn();
-        } else {
-            $column = $this->model->getUpdatedAtColumn();
-        }
+        $column = $this->model->getUpdatedAtColumn();
 
-        return array_merge($values, [
-            $column => $this->model->freshTimestampString(),
-        ]);
+        return Arr::add($values, $column, $this->model->freshTimestampString());
     }
 
     /**
@@ -744,6 +738,24 @@ class Builder
         $dots = Str::contains($name, '.');
 
         return $dots && Str::startsWith($name, $relation.'.');
+    }
+
+    /**
+     * Apply the callback's query changes if the given "value" is true.
+     *
+     * @param  bool  $value
+     * @param  \Closure  $callback
+     * @return $this
+     */
+    public function when($value, $callback)
+    {
+        $builder = $this;
+
+        if ($value) {
+            $builder = call_user_func($callback, $builder);
+        }
+
+        return $builder;
     }
 
     /**
