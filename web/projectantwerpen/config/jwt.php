@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET', 'w93rlj3bo75sW7rqJGD9gQYddagt14SE'),
+    'secret' => env('JWT_SECRET', '3agMSJOCNKg4KWZ9lK271SEMUP7BEZB3'),
 
     /*
     |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ return [
     |
     */
 
-    'ttl' => 60000,
+    'ttl' => 60,
 
     /*
     |--------------------------------------------------------------------------
@@ -133,7 +133,7 @@ return [
         |
         */
 
-        'user' => 'Tymon\JWTAuth\Providers\User\EloquentUserAdapter',
+        'user' => '\Tymon\JWTAuth\Providers\User\EloquentUserAdapter',
 
         /*
         |--------------------------------------------------------------------------
@@ -144,7 +144,7 @@ return [
         |
         */
 
-        'jwt' => 'Tymon\JWTAuth\Providers\JWT\NamshiAdapter',
+        'jwt' => '\Tymon\JWTAuth\Providers\JWT\NamshiAdapter',
 
         /*
         |--------------------------------------------------------------------------
@@ -155,7 +155,7 @@ return [
         |
         */
 
-        'auth' => 'Tymon\JWTAuth\Providers\Auth\IlluminateAuthAdapter',
+        'auth' => '\Tymon\JWTAuth\Providers\Auth\IlluminateAuthAdapter',
 
         /*
         |--------------------------------------------------------------------------
@@ -166,7 +166,7 @@ return [
         |
         */
 
-        'storage' => 'Tymon\JWTAuth\Providers\Storage\IlluminateCacheAdapter',
+        'storage' => '\Tymon\JWTAuth\Providers\Storage\IlluminateCacheAdapter',
 
     ],
 
