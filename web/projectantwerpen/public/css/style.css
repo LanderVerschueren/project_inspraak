@@ -137,16 +137,16 @@ label, input, p, a {
 #login button {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: #CF0036;
+  background-color: #219dc8;
   color: white;
-  border: 1px solid #CF0039;
+  border: 1px solid #219dc8;
   border-radius: 0;
 }
 
 #login button:hover {
   background-color: white;
   color: black;
-  border-color: #CF0039;
+  border-color: #219dc8;
 }
 
 #login_register ul {
@@ -162,9 +162,9 @@ label, input, p, a {
 #login_register ul li a {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: #CF0036;
+  background-color: #219dc8;
   color: white;
-  border: 1px solid #CF0039;
+  border: 1px solid #219dc8;
   border-radius: 0;
   margin-top: 15px;
 }
@@ -172,27 +172,27 @@ label, input, p, a {
 #login_register ul li a:hover {
   background-color: white;
   color: black;
-  border-color: #CF0039;
+  border-color: #219dc8;
 }
 
 
 
 
 
-/* ------------------- Login page ------------------- */
+/* ------------------- Register page ------------------- */
 #register button {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: #CF0036;
+  background-color: #219dc8;
   color: white;
-  border: 1px solid #CF0039;
+  border: 1px solid #219dc8;
   border-radius: 0;
 }
 
 #register button:hover {
   background-color: white;
   color: black;
-  border-color: #CF0039;
+  border-color: #219dc8;
 }
 
 
@@ -235,8 +235,8 @@ label, input, p, a {
 #filter button {
   font-family: 'antwerpen_sun500';
   font-size: 16px;
-  background-color: #CF0036;
-  border: 1px solid #CF0036;
+  background-color: #219dc8;
+  border: 1px solid #219dc8;
   color: white;
   border-radius: 0;
 }
@@ -385,8 +385,8 @@ label, input, p, a {
 }
 
 #project form .question .button a {
-  border: 1px solid #CF0036;
-  background-color: #CF0036;
+  border: 1px solid #219dc8;
+  background-color: #219dc8;
   color: white;
   width: 20%;
   font-size: 20px;
@@ -516,6 +516,8 @@ label, input, p, a {
   margin-right: 15px;
   margin-bottom: 15px;
   border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
 }
 
 #project .comments .comment_section h5 {
@@ -527,17 +529,13 @@ label, input, p, a {
   margin-right: 15px;
 }
 
-#project .comments button {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: 'antwerpen_sun300';
-  border: 1px solid #CF0036;
-  background-color: #CF0036;
+#project .comments .comment_section a {
+  background-color: #219dc8;
+  border: 1px solid #219dc8;
   color: white;
-  font-size: 20px;
 }
 
-#project .comments button:hover {
+#project .comments .comment_section a:hover {
   background-color: white;
   color: black;
 }
@@ -549,8 +547,8 @@ label, input, p, a {
 
 #project .comments button {
   font-family: 'antwerpen_sun300';
-  border: 1px solid #CF0036;
-  background-color: #CF0036;
+  border: 1px solid #219dc8;
+  background-color: #219dc8;
   color: white;
   font-size: 20px;
   border-radius: 0;
@@ -586,6 +584,19 @@ li .form-group {
 
 .admin .timeline_explanation .explanation {
   margin-left: 15px;
+}
+
+.admin button {
+  width: 100%;
+  background-color: #219dc8!important;
+  color: white!important;
+  border-radius: 0;
+  border: 1px solid #219dc8!important;
+}
+
+.admin button:hover {
+  background-color: white!important;
+  color: black!important;
 }
 
 @media screen and (max-width: 767px) {
@@ -683,9 +694,9 @@ li .form-group {
 .addProject a {
   font-family: 'antwerpen_sun300';
   font-size: 16px;
-  background-color: #CF0036!important;
+  background-color: #219dc8!important;
   color: white!important;
-  border: 1px solid #CF0039;
+  border: 1px solid #219dc8;
   border-radius: 0;
 }
 
@@ -693,7 +704,7 @@ li .form-group {
 .addProject a:hover {
   background-color: white!important;
   color: black!important;
-  border-color: #CF0039;
+  border-color: #219dc8;
 }
 
 @media screen and (max-width: 625px) {

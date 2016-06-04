@@ -43,15 +43,23 @@ class AdminController extends Controller
 		$fase 			= $request->input('fase');
 		$description 	= $request->input('description');
 
+		$validator = Validator::make([ $image ], ['mimes:gif,jpg,jpeg,bmp,png', 'image.required']);
+
+		if ($validator->fails()) {
+            return response()->json(['error' => 'Bestand moet een extensie :gif,jpg,jpeg,bmp,png hebben '], 200);
+        }
+
 		$pic_name = str_replace(' ', '_', $title);
+
 		File::makeDirectory('images/' . $title);
-		$destinationPath = $pic_name .'.'. $image->getClientOriginalExtension();
-		$image->move(public_path('images/' . $title), $destinationPath);
-		var_dump($destinationPath);
+		$destination_path = public_path('images/' . $title);
+		$image_name = $pic_name .'.'. $image->getClientOriginalExtension();
+
+		$image->move($destination_path, $image_name);
 
 		Project::insert([
 			'title' 		=> $title,
-			'image_name' 	=> $destinationPath,
+			'image_name' 	=> $image_name,
 			'date' 			=> $date,
 			'cost' 			=> $cost,
 			'category' 		=> $category,
@@ -103,7 +111,7 @@ class AdminController extends Controller
 
 	public function delete_project( $id ) {
 		$project = Project::find($id);
-		0
+		
 		File::deleteDirectory(public_path('images/' . $project->title));
 		$project->delete();
 
