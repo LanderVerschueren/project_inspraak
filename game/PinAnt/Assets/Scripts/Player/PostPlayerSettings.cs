@@ -27,6 +27,8 @@ public class PostPlayerSettings : MonoBehaviour
 
   public static JsonData playerTokenJSON;
   public static JsonData playerData;
+  public static JsonData postRespons;
+  public static string postResponsString;
 
   public static string playerToken;
 
@@ -279,13 +281,12 @@ public class PostPlayerSettings : MonoBehaviour
         introCanvas.SetActive(false);
         playerData = JsonMapper.ToObject(www.text);
         player.SetActive(true);
-
       }
-      /*else
+
+      else
       {
-        playerTokenJSON = JsonMapper.ToObject(www.text);
-        playerToken = playerTokenJSON["token"].ToString();
-      }*/
+       postResponsString = www.text;
+      }
     }
     else
     {
@@ -375,5 +376,20 @@ public class PostPlayerSettings : MonoBehaviour
     public void setCoinsPerDislike(int nrOfCoins)
     {
         LoginPlayer(playerEmail, playerPassword, coinPerDislikeLink + nrOfCoins);
+    }
+
+    public void postLike(int projectnr)
+    {
+        LoginPlayer(playerEmail, playerPassword, "http://bananas.multimediatechnology.be/api/like/" + (projectnr+1));
+    }
+
+    public void postDislike(int projectnr)
+    {
+        LoginPlayer(playerEmail, playerPassword, "http://bananas.multimediatechnology.be/api/dislike/"+ (projectnr+1));
+    }
+
+    public string returnResponse()
+    {
+        return postResponsString;
     }
 }

@@ -8,6 +8,7 @@ public class LikeLogic : MonoBehaviour {
     public GameObject original;
     public GameObject GameLogic;
     public GameObject player;
+    public GameObject postPlayer;
 
     public JsonData likesdislikesJSON;
 
@@ -24,6 +25,8 @@ public class LikeLogic : MonoBehaviour {
     private int nrOfLikes;
     private int nrOfDislikes;
 
+
+    private bool hasEarnedCoins = false;
     private bool isLiked = false;
     private bool isDisliked = false;
 
@@ -31,11 +34,14 @@ public class LikeLogic : MonoBehaviour {
     {
         if (isLiked == true && isDisliked == false)
         {
+            
             nrOfLikes--;
             isLiked = false;
         }
         else if(isLiked == false && isDisliked == false)
         {
+            postPlayer.GetComponent<PostPlayerSettings>().postLike(currentProject);
+            hasEarnedCoins = true;
             isLiked = true;
             nrOfLikes++;
 
@@ -47,6 +53,7 @@ public class LikeLogic : MonoBehaviour {
         {
             nrOfLikes++;
             nrOfDislikes--;
+            postPlayer.GetComponent<PostPlayerSettings>().postLike(currentProject);
             isLiked = true;
             isDisliked = false;
         }
@@ -71,6 +78,7 @@ public class LikeLogic : MonoBehaviour {
         {
             isDisliked = true;
             nrOfDislikes++;
+            hasEarnedCoins = true;
             // NOG CONTROLEREN OF REEDS GELD GEKREGEN!!!!!
             GameLogic.GetComponent<GameLogic>().GainDislikeCoins();
             GameLogic.GetComponent<GameLogic>().GainDislikeExp();
@@ -88,12 +96,14 @@ public class LikeLogic : MonoBehaviour {
 
     void checkText()
     {
-      /*Debug.Log("dislikes = " + nrOfDislikes);
-      Debug.Log("likes = " + nrOfLikes);
-      Debug.Log("isLiked = " + isLiked);
-      Debug.Log("isDisLiked = " + isDisliked);*/
+        /*Debug.Log("dislikes = " + nrOfDislikes);
+        Debug.Log("likes = " + nrOfLikes);
+        Debug.Log("isLiked = " + isLiked);
+        Debug.Log("isDisLiked = " + isDisliked);*/
 
-      likeButton.GetComponentInChildren<Text>().text = nrOfLikes.ToString();
+        Debug.Log(postPlayer.GetComponent<PostPlayerSettings>().returnResponse());
+
+        likeButton.GetComponentInChildren<Text>().text = nrOfLikes.ToString();
       dislikeButton.GetComponentInChildren<Text>().text = nrOfDislikes.ToString();
         if (isLiked == false && isDisliked == false)
         {
@@ -129,7 +139,7 @@ public class LikeLogic : MonoBehaviour {
 
       if (likewww.error == null)
       {
-        //Debug.Log("LIKE OK!: " + likewww.text);
+        Debug.Log("LIKE OK!: " + likewww.text);
       }
       else
       {
@@ -150,7 +160,7 @@ public class LikeLogic : MonoBehaviour {
 
     if (dislikewww.error == null)
     {
-      //Debug.Log("DISLIKE OK!: " + dislikewww.text);
+      Debug.Log("DISLIKE OK!: " + dislikewww.text);
     }
     else
     {
