@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scene_main.unity
+- path: C:/Users/bertv_000/Documents/GitHub/Copy/project_inspraak/game/PinAnt/Assets/scene_main.unity
   isLoaded: 1
   isActive: 1
