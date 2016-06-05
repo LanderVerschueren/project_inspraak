@@ -35,40 +35,40 @@
 								<h5>Fase</h5>
 								<div class="checkbox">
 									<label>
-                                        <input id="checkbox_mening" type="checkbox" name="fase[]" value="1" <?= (is_array(old('fase')) && in_array("1", old('fase'))) ? 'checked' : '' ?>>
+                                        <input id="checkbox_mening" type="checkbox" name="phase[]" value="1" <?= (is_array(old('phase')) && in_array("1", old('phase'))) ? 'checked' : '' ?>>
                                         <label id="label_mening" for="checkbox_mening">Mening</label>
                                     </label>
 								</div>
 								<div class="checkbox">
 									<label>
-                                        <input id="checkbox_afbraak" type="checkbox" name="fase[]" value="2" <?= (is_array(old('fase')) && in_array("2", old('fase'))) ? 'checked' : '' ?>>
+                                        <input id="checkbox_afbraak" type="checkbox" name="phase[]" value="2" <?= (is_array(old('phase')) && in_array("2", old('phase'))) ? 'checked' : '' ?>>
                                         <label id="label_afbraak" for="checkbox_afbraak">Afbraak</label>
                                     </label>
 								</div>
 								<div class="checkbox">
 									<label>
-                                        <input id="checkbox_opbouw" type="checkbox" name="fase[]" value="3" <?= (is_array(old('fase')) && in_array("3", old('fase'))) ? 'checked' : '' ?>>
+                                        <input id="checkbox_opbouw" type="checkbox" name="phase[]" value="3" <?= (is_array(old('phase')) && in_array("3", old('phase'))) ? 'checked' : '' ?>>
                                         <label id="label_opbouw" for="checkbox_opbouw">Opbouw</label>
                                     </label>
 								</div>
 							</section> 
 							<section>
-								<h5>Aantal likes</h5>
+								<h5>Aantal keer bekeken</h5>
 								<div class="checkbox">
 									<label>
-                                        <input id="checkbox_0" type="checkbox" name="likes[]" value="minder_dan_100" <?= (is_array(old('likes')) && in_array("minder_dan_100", old('likes'))) ? 'checked' : '' ?>>
+                                        <input id="checkbox_0" type="checkbox" name="views[]" value="minder_dan_100" <?= (is_array(old('views')) && in_array("minder_dan_100", old('views'))) ? 'checked' : '' ?>>
                                         <label id="label_0" for="checkbox_0">< 100</label>
                                     </label>
 								</div>
 								<div class="checkbox">
 									<label>
-                                        <input id="checkbox_100" type="checkbox" name="likes[]" value="100_1000" <?= (is_array(old('likes')) && in_array("100_1000", old('likes'))) ? 'checked' : '' ?>>
+                                        <input id="checkbox_100" type="checkbox" name="views[]" value="100_1000" <?= (is_array(old('views')) && in_array("100_1000", old('views'))) ? 'checked' : '' ?>>
                                         <label id="label_100" for="checkbox_100">100 - 1000</label>
                                     </label>
 								</div>
 								<div class="checkbox">
 									<label>
-                                        <input id="checkbox_1000" type="checkbox" name="likes[]" value="meer_dan_1000" <?= (is_array(old('likes')) && in_array("meer_dan_1000", old('likes'))) ? 'checked' : '' ?>>
+                                        <input id="checkbox_1000" type="checkbox" name="views[]" value="meer_dan_1000" <?= (is_array(old('views')) && in_array("meer_dan_1000", old('views'))) ? 'checked' : '' ?>>
                                         <label id="label_1000" for="checkbox_1000">> 1000</label>
                                     </label>
 								</div>

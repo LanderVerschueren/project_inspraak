@@ -93,24 +93,6 @@ class APIController extends Controller
    		return compact('token');
   	}
 
-    public function vote_like($id) {
-      $project = Project::find($id);
-      
-      $project->increment('likes');
-      $project->save();
-
-      return response('liked');
-    }
-  
-    public function vote_dislike($id) {
-      $project = Project::find($id);
-        
-      $project->increment('dislikes');
-      $project->save();
-
-      return response('disliked');
-    }
-
     public function getUserInfo(){
       $user = JWTAuth::parseToken()->authenticate();
       return response(["user" => $user]);

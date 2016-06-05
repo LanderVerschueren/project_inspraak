@@ -26,13 +26,13 @@ class CreateUsersTable extends Migration
             $table->double('coin_multiplier', 3, 1);
             $table->integer('a_points');
             $table->boolean('boughtLikeUpgrade');
-            $table->boolean('boughtDisikeUpgrade');
+            $table->boolean('boughtDislikeUpgrade');
             $table->boolean('boughtCoinDoubler');
             $table->boolean('boughtExpDoubler');
             $table->integer('expPerLike');
             $table->integer('expPerDislike');
             $table->integer('coinsPerLike');
-            $table->integer('coinsPerDislike');     
+            $table->integer('coinsPerDislike');
             $table->rememberToken();
             $table->timestamps();
         });

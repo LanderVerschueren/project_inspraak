@@ -40,8 +40,6 @@ Route::group(['prefix' =>'api'], function()
 	Route::post('/register' , 'APIController@register');
 	Route::get('/comments/{id}', 'APIController@getComments');
 	Route::post('/comments/place/{id}', 'APIController@placeComment');
-	Route::get('/like/{id}' , 'APIController@vote_like');
-	Route::get('/dislike/{id}' , 'APIController@vote_dislike');
 	Route::get('/getLikesDislikes/{id}', 'APIController@getLikes_Dislikes');
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
     	Route::post('/setCoins/{coins}' , 'APIController@setCoins');
@@ -51,8 +49,6 @@ Route::group(['prefix' =>'api'], function()
     	Route::post('/setRank/{rank}', 'APIController@setRank' );
     	Route::post('/setMultiplier/{multiplier}', 'APIController@setMultiplier');
     	Route::post('/setPoints/{points}', 'APIController@setPoints');
-    	Route::post('/like/{id}', 'APIController@like');
-    	Route::post('/dislike/{id}', 'APIController@dislike');
     	Route::post('/setBoughtCoinDoubler', 'APIController@setBoughtCoinDoubler');
     	Route::post('/setBoughtExpDoubler', 'APIController@setBoughtExpDoubler');
     	Route::post('/setBoughtLikeUpgrade', 'APIController@setBoughtLikeUpgrade');
@@ -61,6 +57,8 @@ Route::group(['prefix' =>'api'], function()
     	Route::post('/setExpPerDislike/{int}', 'APIController@setExpPerDislike');
     	Route::post('/setCoinsPerLike/{int}', 'APIController@setCoinsPerLike');
     	Route::post('/setCoinPerDislike/{int}', 'APIController@setCoinPerDislike');
+    	Route::post('/like/{id}' , 'APIController@like');
+		Route::post('/dislike/{id}' , 'APIController@dislike');
     	Route::post('/user', 'APIController@getUserInfo');
     	Route::post('/logout', 'APIController@logout');
     });

@@ -23,33 +23,33 @@ class ProjectController extends Controller
 		$projects = Project::where(function($query) use($request){
 			
 			$types = $request->input('type');
-			$fases = $request->input('fase');
-			$likes = $request->input('likes');
+			$phases = $request->input('phase');
+			$views = $request->input('views');
 			if(isset($types)){
 				foreach($types as $type){
 					$query->orWhere('category', '=', $type);			
 				}
 			}
-			if(isset($fases)){
-				foreach($fases as $fase){
-					$query->orWhere('fase', '=', $fase);
+			if(isset($phases)){
+				foreach($phases as $phase){
+					$query->orWhere('phase', '=', $phase);
 				}
 			}
-			if(isset($likes)){
-				foreach($likes as $like){
-					if($like == 'minder_dan_100'){
-						$query->orWhere('likes', '<', 100);
+			if(isset($views)){
+				foreach($views as $view){
+					if($view == 'minder_dan_100'){
+						$query->orWhere('view_amount', '<', 100);
 					}
-					if($like == '100_1000'){
-						$query->orWhereBetween('likes', array(100,1000));
+					if($view == '100_1000'){
+						$query->orWhereBetween('view_amount', array(100,1000));
 					}
-					if($like == 'meer_dan_1000'){
-						$query->orWhere('likes', '>', 1000);
+					if($view == 'meer_dan_1000'){
+						$query->orWhere('view_amount', '>', 1000);
 					}
 				}
 			}
 		})->get();
-		$data = array('types' => $request->input('type'), 'fases' => $request->input('fase'), 'likes' => $request->input('likes') );
+		$data = array('types' => $request->input('type'), 'fases' => $request->input('fase'), 'views' => $request->input('views') );
 
 		$request->flash();
 

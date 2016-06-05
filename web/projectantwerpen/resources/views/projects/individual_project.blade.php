@@ -1,7 +1,3 @@
-<?php
-echo "<pre>";
-   print_r(Session::all());
-echo "</pre>";?>
 @extends('layouts.app')
 
 @section('content')
@@ -48,9 +44,6 @@ echo "</pre>";?>
 											<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
 											<label>{{ $dislikes }}</label>
 										</a>
-										@if(Auth::guest())
-											<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Log in om te stemmen</p>
-										@endif
 								</section>
 							</section>
 							
