@@ -13,6 +13,7 @@ public class AddReaction : MonoBehaviour {
   public GameObject originalPanel;
   public GameObject reactionParent;
   public GameObject reactionUser;
+  public GameObject player;
 
   public RectTransform oldReactionRect;
   private RectTransform newReactionRect;
@@ -62,8 +63,8 @@ public class AddReaction : MonoBehaviour {
     {
       int id = int.Parse(commentData[0][i]["id"].ToString());
       string text = commentData[0][i]["comment"].ToString();
-      string userName = commentData[0][i]["comment"].ToString();
       int nrOfReactions = commentData[0].Count;
+      string userName; 
 
       try
       {
@@ -89,12 +90,12 @@ public class AddReaction : MonoBehaviour {
       currentProject = int.Parse(originalProject.name.Replace("Project", "")); //haal projectnr uit naam
       //Debug.Log(currentProject);
 
-      string reactionUrl = "http://bananas.multimediatechnology.be/api/comments/place/" + (currentProject+1) + "?text=" + addReactionField.text + "?user_id=3";
-      //Debug.Log(reactionUrl);
+      string reactionUrl = "http://bananas.multimediatechnology.be/api/comments/place/" + (currentProject+1) + "?text=" + addReactionField.text + "&user_id=" + player.GetComponent<PlayerSettings>().playerId;
+            Debug.Log(reactionUrl);
       WWWForm reactionForm = new WWWForm();
       reactionForm.AddField("text", addReactionField.text);
       //reactionForm.AddField("user_id", 0);
-      reactionForm.AddField("fk_user", 3);
+      reactionForm.AddField("fk_user", player.GetComponent<PlayerSettings>().playerId);
       WWW reactionwww = new WWW(reactionUrl, reactionForm);
 
       yield return reactionwww;

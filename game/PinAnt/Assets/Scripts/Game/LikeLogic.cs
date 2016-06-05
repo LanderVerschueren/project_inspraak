@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using LitJson;
 
 public class LikeLogic : MonoBehaviour {
 
     public GameObject original;
     public GameObject GameLogic;
     public GameObject player;
+
+    public JsonData likesdislikesJSON;
 
     public GameObject likeButton;
     public GameObject dislikeButton;
@@ -47,14 +50,13 @@ public class LikeLogic : MonoBehaviour {
             isLiked = true;
             isDisliked = false;
         }
-
-        
         checkText();
     }
     void Start()
     {
-      nrOfLikes = int.Parse(likeButton.GetComponentInChildren<Text>().text);
-      nrOfDislikes = int.Parse(dislikeButton.GetComponentInChildren<Text>().text);
+      StartCoroutine(getLikesDislikes());
+      //nrOfLikes = int.Parse(likeButton.GetComponentInChildren<Text>().text);
+      //nrOfDislikes = int.Parse(dislikeButton.GetComponentInChildren<Text>().text);
       //currentProject = int.Parse(originalProject.name.Replace("Project", "")); //haal projectnr uit naam
       //currentProject = int.Parse(projectOriginal.name.Replace("project", ""));
     }
@@ -155,4 +157,24 @@ public class LikeLogic : MonoBehaviour {
       Debug.Log("DISLIKE ERROR: " + dislikewww.error);
     }
   }
+    IEnumerator getLikesDislikes()
+    {
+        currentProject = int.Parse(original.name.Replace("Project", ""));
+        string url = "http://bananas.multimediatechnology.be/api/getLikesDislikes/" + (currentProject + 1);
+        WWW www = new WWW(url);
+        yield return www;
+
+        if (www.error == null)
+        {
+            Debug.Log( currentProject + "getlikedDislikes: " + www.text);
+            likesdislikesJSON = JsonMapper.ToObject(www.text);
+            nrOfLikes = int.Parse(likesdislikesJSON["likes"].ToString());
+            nrOfDislikes = int.Parse(likesdislikesJSON["dislikes"].ToString());
+            checkText();
+        }
+        else
+        {
+            Debug.Log("DISLIKE ERROR: " + www.error);
+        }
+    }
 }

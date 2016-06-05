@@ -71,7 +71,7 @@ public class GameLogic : MonoBehaviour {
 
     public void GainLikeExp()
     {
-        int xp = Player.GetComponent<PlayerSettings>().ExpPerLike;
+        int xp = Player.GetComponent<PlayerSettings>().expPerLike;
         if (Player.GetComponent<PlayerSettings>().boughtExpDoubler)
         { xp = xp * 2; }
         Player.GetComponent<PlayerSettings>().experiencePoints += xp;
@@ -79,14 +79,14 @@ public class GameLogic : MonoBehaviour {
     }
     public void GainLikeCoins()
     {
-        int coins = Player.GetComponent<PlayerSettings>().CoinsPerLike;
+        int coins = Player.GetComponent<PlayerSettings>().coinsPerLike;
         if (Player.GetComponent<PlayerSettings>().boughtCoinDoubler)
         { coins = coins * 2; }
         Player.GetComponent<PlayerSettings>().playerCoins += coins;
     }
     public void GainDislikeExp()
     {
-        int xp = Player.GetComponent<PlayerSettings>().ExpPerDislike;
+        int xp = Player.GetComponent<PlayerSettings>().expPerDislike;
         if (Player.GetComponent<PlayerSettings>().boughtExpDoubler)
         { xp = xp * 2; }
         Player.GetComponent<PlayerSettings>().experiencePoints += xp;

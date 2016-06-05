@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class UpdateUIWithProfileSettings : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class UpdateUIWithProfileSettings : MonoBehaviour {
     public Text lbl_APoints;
     public Text lbl_Coins_shop;
     public Text lbl_Apoints_shop;
+    public Text lbl_PlayerNameMenu;
 
     private string pathRankImg;
 
@@ -36,12 +38,15 @@ public class UpdateUIWithProfileSettings : MonoBehaviour {
         lblPlayerRank.text = player.GetComponent<PlayerSettings>().playerRank;
         lblPlayerXP.text = player.GetComponent<PlayerSettings>().experiencePoints.ToString();
         pathRankImg = player.GetComponent<PlayerSettings>().playerRankImage;
+        
+        //img_Rank = Resources.Load(pathRankImg);
+        //Debug.Log(img_Rank);
 
-        img_Rank = Resources.Load("Images" + pathRankImg) as Sprite;
-            
         lbl_Coins.text = player.GetComponent<PlayerSettings>().playerCoins.ToString();
         lbl_Coins_Main.text = lbl_Coins.text;
         lbl_APoints.text = player.GetComponent<PlayerSettings>().playerApoints.ToString();
+        lbl_PlayerNameMenu.text = player.GetComponent<PlayerSettings>().playerName;
+
 
         lbl_Coins_shop.text = lbl_Coins_Main.text;
         lbl_Apoints_shop.text = lbl_APoints.text;
