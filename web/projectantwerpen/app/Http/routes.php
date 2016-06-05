@@ -42,6 +42,7 @@ Route::group(['prefix' =>'api'], function()
 	Route::post('/comments/place/{id}', 'APIController@placeComment');
 	Route::get('/like/{id}' , 'APIController@vote_like');
 	Route::get('/dislike/{id}' , 'APIController@vote_dislike');
+	Route::get('/getLikesDislikes/{id}', 'APIController@getLikes_Dislikes');
     Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
     	Route::post('/setCoins/{coins}' , 'APIController@setCoins');
     	Route::post('/setRankImage/{path}' , 'APIController@changeImage');
@@ -50,6 +51,8 @@ Route::group(['prefix' =>'api'], function()
     	Route::post('/setRank/{rank}', 'APIController@setRank' );
     	Route::post('/setMultiplier/{multiplier}', 'APIController@setMultiplier');
     	Route::post('/setPoints/{points}', 'APIController@setPoints');
+    	Route::post('/like/{id}', 'APIController@like');
+    	Route::post('/dislike/{id}', 'APIController@dislike');
     	Route::post('/user', 'APIController@getUserInfo');
     	Route::post('/logout', 'APIController@logout');
     });

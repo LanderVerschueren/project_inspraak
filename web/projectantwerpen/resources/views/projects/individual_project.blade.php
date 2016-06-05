@@ -51,7 +51,7 @@
 							<section class="timeline_explanation">
 						    	<section class="timeline">
 										<div id="timeline">
-											<div class="timeline-item <?= ($project->fase >= 1) ? 'selected' : '' ?>">
+											<div class="timeline-item <?= ($project->phase >= 1) ? 'selected' : '' ?>">
 												<div class="timeline-icon">
 													<i class="fa fa-comment-o" aria-hidden="true"></i>
 												</div>
@@ -60,7 +60,7 @@
 												</div>
 											</div>
 
-											<div class="timeline-item <?= ($project->fase >= 2) ? 'selected' : '' ?>">
+											<div class="timeline-item <?= ($project->phase >= 2) ? 'selected' : '' ?>">
 												<div class="timeline-icon">
 													<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 												</div>
@@ -69,7 +69,7 @@
 												</div>
 											</div>
 
-											<div class="timeline-item <?= ($project->fase == 3) ? 'selected' : '' ?>">
+											<div class="timeline-item <?= ($project->phase == 3) ? 'selected' : '' ?>">
 												<div class="timeline-icon">
 													<i class="fa fa-cog" aria-hidden="true"></i>
 												</div>

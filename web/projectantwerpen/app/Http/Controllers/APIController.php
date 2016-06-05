@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Project;
 use App\User;
 use App\Comment;
+use App\Users_project;
 use Hash;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -163,5 +164,50 @@ class APIController extends Controller
       $user->a_points = $points;
       $user->save();
       return response(["message" => $user->a_points. " total"]);
+    }
+    public function getLikes_Dislikes($id){
+      $project = Project::find($id);
+      $likes = $project->likes($id);
+      $dislikes = $project->dislikes($id);
+      return response(['likes' => $likes, 'dislikes' => $dislikes]);
+    }
+
+    public function like($id){
+      $project = Project::find($id);
+      $user = JWTAuth::parseToken()->authenticate();
+      $user_id = $user->id;
+      $like = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', true)->first();
+      $dislike = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', false)->first();
+      if($dislike){
+        $dislike->delete();
+        $users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => true]);
+        return response('deleted dislike, like created');
+      }
+      elseif($like){
+        return response('already liked');
+      }
+      elseif(!$like && !$dislike){
+        $users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => true]);
+        return response('like created');
+      }
+    }
+    public function dislike($id){
+      $project = Project::find($id);
+      $user = JWTAuth::parseToken()->authenticate();
+      $user_id = $user->id;
+      $like = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', true)->first();
+      $dislike = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', false)->first();
+      if($like){
+        $like->delete();
+        $users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => false]);
+        return response('deleted like, dislike created');
+      }
+      elseif($dislike){
+        return response('already disliked');
+      }
+      elseif(!$like && !$dislike){
+        $users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => false]);
+        return response('dislike created');
+      }
     }
 }

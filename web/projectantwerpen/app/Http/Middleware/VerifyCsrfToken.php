@@ -25,6 +25,8 @@ class VerifyCsrfToken extends BaseVerifier
         '/api/setRank/*',
         '/api/setRankImage/*',
         '/api/setMultiplier/*',
-        '/api/setPoints/*'
+        '/api/setPoints/*',
+        '/api/like/*',
+        '/api/dislike/*'
     ];
 }
