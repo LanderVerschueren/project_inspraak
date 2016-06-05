@@ -78,6 +78,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Game\BuyApoints.cs" />
+    <Compile Include="Assets\Scripts\Game\BuyUpgrades.cs" />
     <Compile Include="Assets\Scripts\Game\GameLogic.cs" />
     <Compile Include="Assets\Scripts\Game\GetCanvasSize.cs" />
     <Compile Include="Assets\Scripts\Game\LikeLogic.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Assets\Scripts\Projects\projectPosition.cs" />
     <Compile Include="Assets\Scripts\Projects\updateReactionContect.cs" />
     <Compile Include="Assets\Scripts\UpdateUIWithProfileSettings.cs" />
+    <Compile Include="Assets\SwitchProject.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

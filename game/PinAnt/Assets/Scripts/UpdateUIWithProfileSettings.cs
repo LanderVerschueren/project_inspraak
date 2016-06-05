@@ -14,6 +14,8 @@ public class UpdateUIWithProfileSettings : MonoBehaviour {
     public Text lbl_Coins;
     public Text lbl_Coins_Main;
     public Text lbl_APoints;
+    public Text lbl_Coins_shop;
+    public Text lbl_Apoints_shop;
 
     private string pathRankImg;
 
@@ -40,6 +42,9 @@ public class UpdateUIWithProfileSettings : MonoBehaviour {
         lbl_Coins.text = player.GetComponent<PlayerSettings>().playerCoins.ToString();
         lbl_Coins_Main.text = lbl_Coins.text;
         lbl_APoints.text = player.GetComponent<PlayerSettings>().playerApoints.ToString();
+
+        lbl_Coins_shop.text = lbl_Coins_Main.text;
+        lbl_Apoints_shop.text = lbl_APoints.text;
     }
 
 

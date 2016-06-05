@@ -37,8 +37,8 @@ public class LikeLogic : MonoBehaviour {
             nrOfLikes++;
 
             // NOG CONTROLEREN OF REEDS GELD GEKREGEN!!!!!
-            GameLogic.GetComponent<GameLogic>().GainCoins(2);
-            GameLogic.GetComponent<GameLogic>().GainExp(5);
+            GameLogic.GetComponent<GameLogic>().GainLikeCoins();
+            GameLogic.GetComponent<GameLogic>().GainLikeExp();
         }
         else if(isLiked == false && isDisliked == true)
         {
@@ -70,8 +70,8 @@ public class LikeLogic : MonoBehaviour {
             isDisliked = true;
             nrOfDislikes++;
             // NOG CONTROLEREN OF REEDS GELD GEKREGEN!!!!!
-            GameLogic.GetComponent<GameLogic>().GainCoins(1);
-            GameLogic.GetComponent<GameLogic>().GainExp(2);
+            GameLogic.GetComponent<GameLogic>().GainDislikeCoins();
+            GameLogic.GetComponent<GameLogic>().GainDislikeExp();
         }
         else if (isLiked == true && isDisliked == false)
         {

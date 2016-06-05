@@ -9,7 +9,8 @@ public class GameLogic : MonoBehaviour {
     private string[] ranks = { "Level I", "Level II", "Level III", "Level IV", "Level V", "Level VI", "Level VII", "Level VIII", "Level IX", "Level X" };
    
     private int[] xpNeeded = {100, 200, 300, 500, 600, 700, 1000, 1500, 2000, 3000};
-    private double[] CoinMultipliers = { 0, 1.1, 1.1, 1.3, 1.3, 1.3, 1.5, 1.6, 1.8, 2 };
+
+   
 
     
     
@@ -17,6 +18,7 @@ public class GameLogic : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+
         
         Player = GameObject.Find("Player");
 
@@ -67,14 +69,34 @@ public class GameLogic : MonoBehaviour {
 
     }
 
-    public void GainExp(int mXP)
+    public void GainLikeExp()
     {
-        Player.GetComponent<PlayerSettings>().experiencePoints += mXP;
+        int xp = Player.GetComponent<PlayerSettings>().ExpPerLike;
+        if (Player.GetComponent<PlayerSettings>().boughtExpDoubler)
+        { xp = xp * 2; }
+        Player.GetComponent<PlayerSettings>().experiencePoints += xp;
         DetermineLevel(Player.GetComponent<PlayerSettings>().experiencePoints);
     }
-    public void GainCoins(int mCoins)
+    public void GainLikeCoins()
     {
-        Player.GetComponent<PlayerSettings>().playerCoins += mCoins;
+        int coins = Player.GetComponent<PlayerSettings>().CoinsPerLike;
+        if (Player.GetComponent<PlayerSettings>().boughtCoinDoubler)
+        { coins = coins * 2; }
+        Player.GetComponent<PlayerSettings>().playerCoins += coins;
     }
-    
+    public void GainDislikeExp()
+    {
+        int xp = Player.GetComponent<PlayerSettings>().ExpPerDislike;
+        if (Player.GetComponent<PlayerSettings>().boughtExpDoubler)
+        { xp = xp * 2; }
+        Player.GetComponent<PlayerSettings>().experiencePoints += xp;
+        DetermineLevel(Player.GetComponent<PlayerSettings>().experiencePoints);
+    }
+    public void GainDislikeCoins()
+    {
+        int coins = Player.GetComponent<PlayerSettings>().coinsPerDislike;
+        if (Player.GetComponent<PlayerSettings>().boughtCoinDoubler)
+        { coins = coins * 2; }
+        Player.GetComponent<PlayerSettings>().playerCoins += coins;
+    }
 }
