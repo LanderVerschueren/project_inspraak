@@ -17,6 +17,9 @@ public class LoadProjectTitle : MonoBehaviour
   public GameObject questionPanel;
   public GameObject extraInfoPanel;
   public GameObject extraInfoTitle;
+  public GameObject extraInfoCategorie;
+  public GameObject extraInfoKostprijs;
+  public GameObject extraInfoEinddatum;
   public RawImage projectImage;
 
   private int totalProjects;
@@ -39,6 +42,9 @@ public class LoadProjectTitle : MonoBehaviour
     questionPanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].question;
     extraInfoPanel.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].info;
     extraInfoTitle.GetComponent<Text>().text = "Extra Info - " + LoadProjectSettings.projectList[currentProject].title;
+    extraInfoCategorie.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].category;
+    extraInfoKostprijs.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].price;
+    extraInfoEinddatum.GetComponentInChildren<Text>().text = LoadProjectSettings.projectList[currentProject].endDate;
 
     StartCoroutine(addReaction.LoadComments(currentProject + 1));
   }
