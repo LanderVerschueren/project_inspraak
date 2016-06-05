@@ -51,7 +51,7 @@
 
 						<section class="timeline_explanation">
 							<section class="timeline">
-										<select name="fase" class="form-control" required>
+										<select name="phase" class="form-control" required>
 											<option value="">
 												Selecteer Fase
 											</option>

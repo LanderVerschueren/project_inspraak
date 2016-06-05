@@ -53,6 +53,14 @@ Route::group(['prefix' =>'api'], function()
     	Route::post('/setPoints/{points}', 'APIController@setPoints');
     	Route::post('/like/{id}', 'APIController@like');
     	Route::post('/dislike/{id}', 'APIController@dislike');
+    	Route::post('/setBoughtCoinDoubler', 'APIController@setBoughtCoinDoubler');
+    	Route::post('/setBoughtExpDoubler', 'APIController@setBoughtExpDoubler');
+    	Route::post('/setBoughtLikeUpgrade', 'APIController@setBoughtLikeUpgrade');
+    	Route::post('/setBoughtDislikeUpgrade', 'APIController@setBoughtDislikeUpgrade');
+    	Route::post('/setExpPerLike/{int}', 'APIController@setExpPerLike');
+    	Route::post('/setExpPerDislike/{int}', 'APIController@setExpPerDislike');
+    	Route::post('/setCoinsPerLike/{int}', 'APIController@setCoinsPerLike');
+    	Route::post('/setCoinPerDislike/{int}', 'APIController@setCoinPerDislike');
     	Route::post('/user', 'APIController@getUserInfo');
     	Route::post('/logout', 'APIController@logout');
     });

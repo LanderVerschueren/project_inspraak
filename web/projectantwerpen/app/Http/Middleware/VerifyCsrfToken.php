@@ -27,6 +27,15 @@ class VerifyCsrfToken extends BaseVerifier
         '/api/setMultiplier/*',
         '/api/setPoints/*',
         '/api/like/*',
-        '/api/dislike/*'
+        '/api/dislike/*',
+        '/api/setBoughtCoinDoubler',
+        '/api/setBoughtExpDoubler',
+        '/api/setBoughtLikeUpgrade',
+        '/api/setBoughtDislikeUpgrade',
+        '/api/setBoughtCoinExpPerLike/*',
+        '/api/setExpPerLike/*',
+        '/api/setExpPerDislike/*',
+        '/api/setCoinsPerLike/*',
+        '/api/setCoinPerDislike/*'
     ];
 }

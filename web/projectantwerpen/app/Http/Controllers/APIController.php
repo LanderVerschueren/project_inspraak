@@ -19,7 +19,6 @@ class APIController extends Controller
     public function requestProjects(){
     	$projects = Project::all();
       $all = array('projects' => $projects );
-
     	return response()->json($all);
     }
 
@@ -209,5 +208,55 @@ class APIController extends Controller
         $users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => false]);
         return response('dislike created');
       }
+    }
+
+    public function setBoughtLikeUpgrade(){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->boughtLikeUpgrade = true;
+      $user->save();
+      return response('Like upgrade bought');
+    }
+
+    public function setBoughtDislikeUpgrade(){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->boughtDislikeUpgrade = true;
+      $user->save();
+      return respone('Dislike upgrade bought ');
+    }
+    public function setBoughtCoinDoubler(){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->boughtCoinDoubler = true;
+      $user->save();
+      return response('Coin doubler bought');
+    }
+    public function setBoughtExpDoubler(){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->boughtExpDoubler = true;
+      $user->save();
+      return response('Exp doubler bought');
+    }
+    public function setExpPerLike($int){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->expPerLike = $int;
+      $user->save();
+      return response('Exp per like set to:' . $user->expPerLike);
+    }
+    public function setExpPerDislike($int){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->expPerDislike = $int;
+      $user->save();
+      return response('Exp per dislike set to:' . $user->expPerDislike);
+    }
+    public function setCoinsPerLike($int){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->coinsPerLike = $int;
+      $user->save();
+      return response('Coins per like set to:' . $user->coinsPerLike);
+    }
+    public function setCoinsPerDislike($int){
+      $user = JWTAuth::parseToken()->authenticate();
+      $user->coinsPerDislike = $int;
+      $user->save();
+      return response('Coins per dislike set to:' . $user->coinsPerDislike);
     }
 }

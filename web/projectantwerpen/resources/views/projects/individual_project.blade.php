@@ -1,3 +1,7 @@
+<?php
+echo "<pre>";
+   print_r(Session::all());
+echo "</pre>";?>
 @extends('layouts.app')
 
 @section('content')

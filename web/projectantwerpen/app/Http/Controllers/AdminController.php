@@ -41,7 +41,7 @@ class AdminController extends Controller
 		$cost 			= $request->input('cost');
 		$category 		= $request->input('category');
 		$question 		= $request->input('question');
-		$fase 			= $request->input('fase');
+		$phase 			= $request->input('phase');
 		$description 	= $request->input('description');
 
 		$validator = Validator::make([ $image ], ['mimes:gif,jpg,jpeg,bmp,png', 'image.required']);
@@ -65,7 +65,7 @@ class AdminController extends Controller
 			'cost' 			=> $cost,
 			'category' 		=> $category,
 			'question'		=> $question,
-			'fase' 			=> $fase,
+			'phase' 		=> $phase,
 			'description' 	=> $description
 		]);
 
@@ -84,7 +84,7 @@ class AdminController extends Controller
 		$cost 			= $request->input('cost');
 		$category 		= $request->input('category');
 		$question 		= $request->input('question');
-		$fase 			= $request->input('fase');
+		$phase 			= $request->input('phase');
 		$description 	= $request->input('description');
 
 		File::deleteDirectory(public_path('images/' . $project->title));
@@ -101,7 +101,7 @@ class AdminController extends Controller
 			'cost' 			=> $cost,
 			'category' 		=> $category,
 			'question'		=> $question,
-			'fase' 			=> $fase,
+			'phase' 		=> $phase,
 			'description' 	=> $description
         ]);
 
