@@ -15,6 +15,7 @@ public class PostPlayerSettings : MonoBehaviour
 
   public GameObject introCanvas;
   public GameObject mainCanvas;
+  public GameObject originalProject;
 
   public GameObject error1;
   public GameObject error2;
@@ -55,6 +56,15 @@ public class PostPlayerSettings : MonoBehaviour
   private string multiplierLink;
   private string aPointsLink;
 
+  private string coinDoublerLink;
+  private string expDoublerLink;
+  private string likeUpgradeLink;
+  private string dislikeUpgradeLink;
+  private string expPerLikeLink;
+  private string expPerDisLikeLink;
+  private string coinPerLikeLink;
+  private string coinPerDislikeLink;
+
   // Use this for initialization
   public void Start()
   {
@@ -77,7 +87,17 @@ public class PostPlayerSettings : MonoBehaviour
     imageLink = "http://bananas.multimediatechnology.be/api/setRankImage/";
     multiplierLink = "http://bananas.multimediatechnology.be/api/setMultiplier/";
     aPointsLink = "http://bananas.multimediatechnology.be/api/setPoints/";
-  }
+
+    coinDoublerLink = "http://bananas.multimediatechnology.be/api/setBoughtCoinDoubler";
+    expDoublerLink = "http://bananas.multimediatechnology.be/api/setBoughtExpDoubler";
+    likeUpgradeLink = "http://bananas.multimediatechnology.be/api/setBoughtLikeUpgrade";
+    dislikeUpgradeLink = "http://bananas.multimediatechnology.be/api/setBoughtDislikeUpgrade";
+    expPerDisLikeLink = "http://bananas.multimediatechnology.be/api/setExpPerDislike/";
+    expPerLikeLink = "http://bananas.multimediatechnology.be/api/setExpPerLike/";
+    coinPerDislikeLink = "http://bananas.multimediatechnology.be/api/setCoinPerDislike/";
+    coinPerLikeLink = "http://bananas.multimediatechnology.be/api/setCoinsPerLike/";
+
+    }
   public void CheckRegisterFields()
   {
     playerEmail = emailField.text;
@@ -175,7 +195,7 @@ public class PostPlayerSettings : MonoBehaviour
     error2.SetActive(false);
     errormsg.SetActive(false);
 
-    playerEmail = "john@test.be";//emailField.text;//"mazurek.piotr@student.kdg.be";////
+    playerEmail = "frank@test.be";//emailField.text;//"mazurek.piotr@student.kdg.be";////
     playerPassword = "password";//passwordField.text;//"projectant";//
 
     if (playerEmail != "")
@@ -257,8 +277,9 @@ public class PostPlayerSettings : MonoBehaviour
       if (url == userLink)
       {
         introCanvas.SetActive(false);
-                playerData = JsonMapper.ToObject(www.text);
+        playerData = JsonMapper.ToObject(www.text);
         player.SetActive(true);
+
       }
       /*else
       {
@@ -315,4 +336,44 @@ public class PostPlayerSettings : MonoBehaviour
   {
     LoginPlayer(playerEmail, playerPassword, aPointsLink + aPoints);
   }
+
+  public void setBoughtCoinDoubler()
+  {
+        LoginPlayer(playerEmail, playerPassword, coinDoublerLink);
+    }
+
+    public void setBoughtExpDoubler()
+    {
+        LoginPlayer(playerEmail, playerPassword, expDoublerLink);
+    }
+
+    public void setBoughtLikeUpgrade()
+    {
+        LoginPlayer(playerEmail, playerPassword, likeUpgradeLink);
+    }
+
+    public void setBoughtDislikeUpgrade()
+    {
+        LoginPlayer(playerEmail, playerPassword, dislikeUpgradeLink);
+    }
+
+    public void setExpPerLike(int nrOfExp)
+    {
+        LoginPlayer(playerEmail, playerPassword, expPerLikeLink + nrOfExp);
+    }
+
+    public void setExpPerDislike(int nrOfExp)
+    {
+        LoginPlayer(playerEmail, playerPassword, expPerDisLikeLink + nrOfExp);
+    }
+
+    public void setCoinsPerLike(int nrOfCoins)
+    {
+        LoginPlayer(playerEmail, playerPassword, coinPerLikeLink + nrOfCoins);
+    }
+
+    public void setCoinsPerDislike(int nrOfCoins)
+    {
+        LoginPlayer(playerEmail, playerPassword, coinPerDislikeLink + nrOfCoins);
+    }
 }

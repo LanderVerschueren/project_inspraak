@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class PlayerSettings : MonoBehaviour {
 
     //Player settings
+    public string playerId;
     public string playerName;
     public int playerLevel;
     public string playerRank;
@@ -22,15 +23,16 @@ public class PlayerSettings : MonoBehaviour {
     public bool boughtExpDoubler;
 
     //game variables
-    public int ExpPerLike;
-    public int ExpPerDislike;
-    public int CoinsPerLike;
+    public int expPerLike;
+    public int expPerDislike;
+    public int coinsPerLike;
     public int coinsPerDislike;
 
-    public List <int> LikedProjects = new List<int>();
+    public List <int> likedProjects = new List<int>();
 
     // Use this for initialization
     void Start () {
+        playerId = LoadPlayerSettings.playerId;
         playerName = LoadPlayerSettings.playerName;
         playerLevel = LoadPlayerSettings.playerLevel;
         playerRank = LoadPlayerSettings.playerRank;
@@ -38,18 +40,16 @@ public class PlayerSettings : MonoBehaviour {
         experiencePoints = LoadPlayerSettings.playerXP;
         playerCoins = LoadPlayerSettings.playerCoins;
         playerApoints = LoadPlayerSettings.playerApoints;
-        coinMultiplier = LoadPlayerSettings.coinMultiplier;
-
-
-        //NOG OP TE LADEN UIT DATABASE!!!
+       
+         //NOG OP TE LADEN UIT DATABASE!!!
         boughtLikeUpgrade = false;
         boughtDislikeUpgrade = false;
         boughtCoinDoubler = false;
         boughtExpDoubler = false;
 
-        ExpPerLike = 5;
-        ExpPerDislike = 2;
-        CoinsPerLike = 2;
+        expPerLike = LoadPlayerSettings.
+        expPerDislike = 2;
+        coinsPerLike = 2;
         coinsPerDislike = 1;
 
 

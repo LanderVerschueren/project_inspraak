@@ -12,7 +12,17 @@ public class LoadPlayerSettings : MonoBehaviour {
   public static string playerRankImage;
   public static int playerXP;
   public static int playerCoins;
-  public static float coinMultiplier;
+
+    public static bool boughtLikeUpgrade;
+    public static bool boughtDislikeUpgrade;
+    public static bool boughtCoinDoubler;
+    public static bool boughtExpDoubler;
+
+    public static int expPerLike;
+    public static int expPerDislike;
+    public static int coinPerLike;
+    public static int coinPerDislike;
+
   public static int playerApoints;
   public static string playerCreatedAt;
   public static string playerUpdatedAt;
@@ -36,12 +46,15 @@ public class LoadPlayerSettings : MonoBehaviour {
     playerRankImage = PostPlayerSettings.playerData["user"]["path_rank_image"].ToString();
     playerXP = int.Parse(PostPlayerSettings.playerData["user"]["XP"].ToString());
     playerCoins = int.Parse(PostPlayerSettings.playerData["user"]["coins"].ToString());
-    coinMultiplier = float.Parse(PostPlayerSettings.playerData["user"]["coin_multiplier"].ToString());
     playerApoints = int.Parse(PostPlayerSettings.playerData["user"]["a_points"].ToString());
+
+   //  boughtLikeUpgrade = PostPlayerSettings.playerData["user"]["id"].ToString();
+
     playerCreatedAt = null; //PostPlayerSettings.playerData["created_at"].ToString();
     playerUpdatedAt = null; // PostPlayerSettings.playerData["updated_at"].ToString();
-    //Debug.Log(playerId + " " + playerName + " " + playerEmail + " " + playerType + " " + playerLevel + " " + playerRank + " " + playerXP + " " + playerCoins + " " + coinMultiplier + " " + playerApoints + " " + playerCreatedAt + " " + playerUpdatedAt);
-  }
+                            //Debug.Log(playerId + " " + playerName + " " + playerEmail + " " + playerType + " " + playerLevel + " " + playerRank + " " + playerXP + " " + playerCoins + " " + coinMultiplier + " " + playerApoints + " " + playerCreatedAt + " " + playerUpdatedAt);
+
+    }
 
 	// Update is called once per frame
 	void Update () {

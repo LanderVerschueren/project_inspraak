@@ -96,9 +96,9 @@ public class LoadProjectSettings : MonoBehaviour {
     project.photoname = itemData[0][projectnr]["image_name"].ToString();
     project.endDate = itemData[0][projectnr]["date"].ToString();
     project.price = itemData[0][projectnr]["cost"].ToString();
-    project.phase = itemData[0][projectnr]["fase"].ToString();
-    project.likes = itemData[0][projectnr]["likes"].ToString();
-    project.dislikes = itemData[0][projectnr]["dislikes"].ToString();
+    project.phase = itemData[0][projectnr]["phase"].ToString();
+    //project.likes = itemData[0][projectnr]["likes"].ToString();
+    //project.dislikes = itemData[0][projectnr]["dislikes"].ToString();
     project.views = itemData[0][projectnr]["view_amount"].ToString();
     project.created_at = null; // itemData[0][projectnr]["created_at"].ToString();
     project.updated_at = null; // itemData[0][projectnr]["updated_at"].ToString();
@@ -132,16 +132,26 @@ public class LoadProjectSettings : MonoBehaviour {
 
   void UpdateContent() //stelt grootte van content panel in
   {
-    /*foreach (Project project in projectList)
-    {*/
-    for (int i = 0; i < totalProjects; i++)
-    {
-      //Debug.Log("loop");
-      content.GetComponent<RectTransform>().sizeDelta = new Vector2(800 * totalProjects, 0);
-      //content.GetComponent<RectTransform>().offsetMax = new Vector2(content.GetComponent<RectTransform>().offsetMax.x + 533.325f, (content.GetComponent<RectTransform>().offsetMax.y));
+    if(totalProjects == 3)
+        {
+            content.GetComponent<AspectRatioFitter>().aspectRatio = 1.875F;
+        }
+    if (totalProjects == 4)
+        {
+            content.GetComponent<AspectRatioFitter>().aspectRatio = 2.5045F;
+        }
+
+        /*foreach (Project project in projectList)
+        {*/
+        /*for (int i = 0; i < totalProjects; i++)
+        {
+                //Debug.Log("loop");
+
+          //content.GetComponent<RectTransform>().sizeDelta = new Vector2(800 * totalProjects, 0);
+          //content.GetComponent<RectTransform>().offsetMax = new Vector2(content.GetComponent<RectTransform>().offsetMax.x + 533.325f, (content.GetComponent<RectTransform>().offsetMax.y));
+        }*/
+        //}
     }
-    //}
-  }
 
   void LoadAllProjects() //alle projectdata laden vanuit JSON
   {
