@@ -36,7 +36,6 @@ class AdminController extends Controller
 
 	public function add(Request $request) {
 		$title 			= $request->input('title');
-		$title			= strtolower($title);
 		$image	 		= $request->file('pic');
 		$date 			= date("Y-m-d", strtotime($request->input('date')));
 		$cost 			= $request->input('cost');

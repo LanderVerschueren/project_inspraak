@@ -84,7 +84,7 @@ class APIController extends Controller
   		$credentials = $request->only('name','email', 'password');
 
    		try {
-       		$user = User::create(array('name' => $credentials['name'], 'email' => $credentials['email'], 'password' => Hash::make($credentials['password']), 'type_of_user' => 'regular', 'level' => '1', 'rank' => 'Level I', 'path_rank_image' => 'level1.psd', 'coin_multiplier' => 1.00));
+       		$user = User::create(array('name' => $credentials['name'], 'email' => $credentials['email'], 'password' => Hash::make($credentials['password']), 'type_of_user' => 'regular', 'level' => '1', 'rank' => 'Level I', 'path_rank_image' => 'level1.psd', 'coin_multiplier' => 1.00, 'XP' => 0, 'coins' => 0, 'a_points' => 0 ));
    		} catch (Exception $e) {
        		return response()->json(['error' => 'User already exists.'], HttpResponse::HTTP_CONFLICT);
    		}
