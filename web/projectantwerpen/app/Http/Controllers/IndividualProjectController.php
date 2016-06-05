@@ -30,22 +30,25 @@ class IndividualProjectController extends Controller
 	public function like($id) {
 		$project = Project::find($id);
 		$user_id = Auth::user()->id;
-		$like = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', true)->first();
-		$dislike = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', false)->first();
-		var_dump(('like'));
-		if($dislike){
+		if(Auth::user()){
+			$like = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', true)->first();
+			$dislike = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', false)->first();
+			var_dump(('like'));
+			if($dislike){
 
-			$dislike->delete();
-			$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => true]);
-			return Redirect::back();
+				$dislike->delete();
+				$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => true]);
+				return Redirect::back();
+			}
+			elseif($like){
+				return Redirect::back();
+			}
+			elseif(!$like && !$dislike){
+				$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => true]);
+				return Redirect::back();
+			}
 		}
-		elseif($like){
-			return Redirect::back();
-		}
-		elseif(!$like && !$dislike){
-			$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => true]);
-			return Redirect::back();
-		}
+		
 		$likes = $project->likes($id);
 		$dislikes = $project->dislikes($id);
 		$comments = $project->comments($id)->with('user')->get();
@@ -56,21 +59,23 @@ class IndividualProjectController extends Controller
 	public function dislike($id) {
 		$project = Project::find($id);
 		$user_id = Auth::user()->id;
-
-		$like = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', true)->first();
-		$dislike = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', false)->first();
-		if($like){
-			$like->delete();
-			$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => false]);
-			return Redirect::back();
+		if(Auth::user()){
+			$like = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', true)->first();
+			$dislike = Users_project::where('fk_user', $user_id)->where('fk_project', $id)->where('like', false)->first();
+			if($like){
+				$like->delete();
+				$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => false]);
+				return Redirect::back();
+			}
+			elseif($dislike){
+				return Redirect::back();
+			}
+			else{
+				$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => false]);
+				return Redirect::back();
+			}
 		}
-		elseif($dislike){
-			return Redirect::back();
-		}
-		else{
-			$users_project = Users_project::create(['fk_user' => $user_id, 'fk_project' => $id, 'like' => false]);
-			return Redirect::back();
-		}
+		
 		$likes = $project->likes($id);
 		$dislikes = $project->dislikes($id);
 		$comments = $project->comments($id)->with('user')->get();

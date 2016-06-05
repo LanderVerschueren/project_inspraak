@@ -384,9 +384,17 @@ label, input, p, a {
   text-align: center;
 }
 
-#project form .question .button a {
-  border: 1px solid #219dc8;
-  background-color: #219dc8;
+#project form .question .button .btn-like {
+  border: 1px solid #7fd56b;
+  background-color: #7fd56b;
+  color: white;
+  width: 20%;
+  font-size: 20px;
+}
+
+#project form .question .button .btn-dislike {
+  border: 1px solid #d24444;
+  background-color: #d24444;
   color: white;
   width: 20%;
   font-size: 20px;
@@ -395,10 +403,16 @@ label, input, p, a {
 #project form .question .button a label {
   color: white;
   font-size: 20px;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 #project form .question .button a:hover {
   background-color: white;
+  color: black;
+}
+
+#project form .question .button a:hover label {
   color: black;
 }
 

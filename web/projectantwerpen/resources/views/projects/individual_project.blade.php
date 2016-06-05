@@ -36,15 +36,17 @@
 									<p> {{ $project->question }} </p>
 								</section>
 								<section class="button">
-										<a href="{{ url('/vote/like/'.$project->id) }}" class="btn btn-raised">
+										<a href="{{ url('/vote/like/'.$project->id) }}" class="btn btn-raised btn-like">
 											<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 											<label>{{ $likes }}</label>
 										</a>
-										<a href="{{ url('/vote/dislike/'.$project->id) }}" class="btn btn-raised">
+										<a href="{{ url('/vote/dislike/'.$project->id) }}" class="btn btn-raised btn-dislike">
 											<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
 											<label>{{ $dislikes }}</label>
 										</a>
-									
+										@if(Auth::guest())
+											<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Log in om te stemmen</p>
+										@endif
 								</section>
 							</section>
 							
