@@ -26,7 +26,7 @@ public class LikeLogic : MonoBehaviour {
     private int nrOfDislikes;
 
 
-    private bool hasEarnedCoins = false;
+    private bool EarnedCoins = false;
     private bool isLiked = false;
     private bool isDisliked = false;
 
@@ -41,13 +41,18 @@ public class LikeLogic : MonoBehaviour {
         else if(isLiked == false && isDisliked == false)
         {
             postPlayer.GetComponent<PostPlayerSettings>().postLike(currentProject);
-            hasEarnedCoins = true;
+            
             isLiked = true;
             nrOfLikes++;
 
-            // NOG CONTROLEREN OF REEDS GELD GEKREGEN!!!!!
-            GameLogic.GetComponent<GameLogic>().GainLikeCoins();
-            GameLogic.GetComponent<GameLogic>().GainLikeExp();
+            if(!EarnedCoins)
+            {
+                GameLogic.GetComponent<GameLogic>().GainLikeCoins();
+                GameLogic.GetComponent<GameLogic>().GainLikeExp();
+            }
+            
+
+            EarnedCoins = true;
         }
         else if(isLiked == false && isDisliked == true)
         {
@@ -57,6 +62,7 @@ public class LikeLogic : MonoBehaviour {
             isLiked = true;
             isDisliked = false;
         }
+        player.GetComponent<PlayerSettings>().PostSettings();
         checkText();
     }
     void Start()
@@ -78,10 +84,14 @@ public class LikeLogic : MonoBehaviour {
         {
             isDisliked = true;
             nrOfDislikes++;
-            hasEarnedCoins = true;
-            // NOG CONTROLEREN OF REEDS GELD GEKREGEN!!!!!
-            GameLogic.GetComponent<GameLogic>().GainDislikeCoins();
-            GameLogic.GetComponent<GameLogic>().GainDislikeExp();
+
+            
+            if (!EarnedCoins)
+            {
+                GameLogic.GetComponent<GameLogic>().GainDislikeCoins();
+                GameLogic.GetComponent<GameLogic>().GainDislikeExp();
+            }
+            EarnedCoins = true;
         }
         else if (isLiked == true && isDisliked == false)
         {
@@ -90,7 +100,7 @@ public class LikeLogic : MonoBehaviour {
             isLiked = false;
             isDisliked = true;
         }
-
+        player.GetComponent<PlayerSettings>().PostSettings();
         checkText();
     }
 

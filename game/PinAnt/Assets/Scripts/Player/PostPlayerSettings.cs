@@ -197,7 +197,7 @@ public class PostPlayerSettings : MonoBehaviour
     error2.SetActive(false);
     errormsg.SetActive(false);
 
-    playerEmail = "frank@test.be";//emailField.text;//"mazurek.piotr@student.kdg.be";////
+    playerEmail = "john@test.be";//emailField.text;//"mazurek.piotr@student.kdg.be";////
     playerPassword = "password";//passwordField.text;//"projectant";//
 
     if (playerEmail != "")
@@ -308,9 +308,13 @@ public class PostPlayerSettings : MonoBehaviour
     StartCoroutine(PostPlayerLogin(registerwww, RegisterUrl));
   }
 
+    public void updateRank(string rank)
+    {
+        LoginPlayer(playerEmail, playerPassword, rankLink + rank);
+    }
   public void updateRankImage(string ImageRank)
   {
-    LoginPlayer(playerEmail, playerPassword, rankLink + ImageRank);
+    LoginPlayer(playerEmail, playerPassword, imageLink + ImageRank);
   }
 
   public void updateCoins(int nrOfCoins)

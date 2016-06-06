@@ -7,9 +7,10 @@ public class BuyUpgrades : MonoBehaviour {
     public GameObject player;
     public GameObject UI;
 
-    
+    public Button btn_Buy;
+    public Text txt_BuyText;
     public GameObject errorMsg;
-
+    public Color passiveColor;
 	// Use this for initialization
 	void Start () {
 	    
@@ -26,7 +27,11 @@ public class BuyUpgrades : MonoBehaviour {
         if (player.GetComponent<PlayerSettings>().playerCoins - cost >= 0)
         {
             player.GetComponent<PlayerSettings>().playerCoins -= cost;
-            player.GetComponent<PlayerSettings>().boughtLikeUpgrade = true;
+            player.GetComponent<PlayerSettings>().boughtLikeUpgrade = "1";
+            player.GetComponent<PlayerSettings>().coinsPerLike = 10;
+            SetBuyButtonDisabled();
+            player.GetComponent<PlayerSettings>().PostSettings();
+
         }
         else ShowErrorMessage();
     }
@@ -37,7 +42,11 @@ public class BuyUpgrades : MonoBehaviour {
         if (player.GetComponent<PlayerSettings>().playerCoins - cost >= 0)
         {
             player.GetComponent<PlayerSettings>().playerCoins -= cost;
-            player.GetComponent<PlayerSettings>().boughtDislikeUpgrade = true;
+            player.GetComponent<PlayerSettings>().boughtDislikeUpgrade = "1";
+            
+            player.GetComponent<PlayerSettings>().coinsPerDislike = 5;
+            SetBuyButtonDisabled();
+            player.GetComponent<PlayerSettings>().PostSettings();
         }
         else ShowErrorMessage();
     }
@@ -48,7 +57,9 @@ public class BuyUpgrades : MonoBehaviour {
         if (player.GetComponent<PlayerSettings>().playerCoins - cost >= 0)
         {
             player.GetComponent<PlayerSettings>().playerCoins -= cost;
-            player.GetComponent<PlayerSettings>().boughtCoinDoubler = true;
+            player.GetComponent<PlayerSettings>().boughtCoinDoubler = "1";
+            SetBuyButtonDisabled();
+            player.GetComponent<PlayerSettings>().PostSettings();
         }
         else ShowErrorMessage();
     }
@@ -58,14 +69,25 @@ public class BuyUpgrades : MonoBehaviour {
         if (player.GetComponent<PlayerSettings>().playerCoins - cost >= 0)
         {
             player.GetComponent<PlayerSettings>().playerCoins -= cost;
-            player.GetComponent<PlayerSettings>().boughtExpDoubler = true;
+            player.GetComponent<PlayerSettings>().boughtExpDoubler = "1";
+            SetBuyButtonDisabled();
+
+            player.GetComponent<PlayerSettings>().PostSettings();
         }
         else ShowErrorMessage();
     }
+  
 
    private void ShowErrorMessage()
     {
         UI.GetComponent<UILogic>().OpenTab(errorMsg);
+    }
+
+    public void SetBuyButtonDisabled()
+    {
+        txt_BuyText.text = "Gekocht";
+        btn_Buy.interactable = false;
+        btn_Buy.image.color = passiveColor;
     }
 
 }

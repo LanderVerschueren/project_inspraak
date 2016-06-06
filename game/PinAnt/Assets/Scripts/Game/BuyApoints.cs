@@ -32,6 +32,7 @@ public class BuyApoints: MonoBehaviour {
         {
             player.GetComponent<PlayerSettings>().playerCoins -= pCoins;
             player.GetComponent<PlayerSettings>().playerApoints += rewApoints;
+            player.GetComponent<PlayerSettings>().PostSettings();
         }
         else
         {

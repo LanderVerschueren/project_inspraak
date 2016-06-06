@@ -4,20 +4,16 @@ using System.Collections;
 
 public class UILogic : MonoBehaviour {
 
-    public GameObject PlayerLogic;
+    public GameObject player;
     public Transform startMarker;
     public Transform endMarker;
     public Color activeColor;
     public Color passiveColor;
     public Scrollbar reactionScroll;
-    
 
-
-
-
-	// Use this for initialization
-	void Start () {
-                PlayerLogic = GameObject.Find("Player");
+    // Use this for initialization
+    void Start () {
+                player = GameObject.Find("Player");
         
         
 	}
@@ -73,6 +69,7 @@ public class UILogic : MonoBehaviour {
     {
         Application.Quit();
     }
-    
 
+    
+    
 }

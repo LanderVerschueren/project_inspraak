@@ -13,10 +13,10 @@ public class LoadPlayerSettings : MonoBehaviour {
   public static int playerXP;
   public static int playerCoins;
 
-    public static bool boughtLikeUpgrade;
-    public static bool boughtDislikeUpgrade;
-    public static bool boughtCoinDoubler;
-    public static bool boughtExpDoubler;
+    public static string boughtLikeUpgrade;
+    public static string boughtDislikeUpgrade;
+    public static string boughtCoinDoubler;
+    public static string boughtExpDoubler;
 
     public static int expPerLike;
     public static int expPerDislike;
@@ -47,10 +47,15 @@ public class LoadPlayerSettings : MonoBehaviour {
     playerXP = int.Parse(PostPlayerSettings.playerData["user"]["XP"].ToString());
     playerCoins = int.Parse(PostPlayerSettings.playerData["user"]["coins"].ToString());
     playerApoints = int.Parse(PostPlayerSettings.playerData["user"]["a_points"].ToString());
-
-   //  boughtLikeUpgrade = PostPlayerSettings.playerData["user"]["id"].ToString();
-
-    playerCreatedAt = null; //PostPlayerSettings.playerData["created_at"].ToString();
+    boughtLikeUpgrade = PostPlayerSettings.playerData["user"]["boughtLikeUpgrade"].ToString();
+    boughtDislikeUpgrade = PostPlayerSettings.playerData["user"]["boughtDislikeUpgrade"].ToString();
+    boughtCoinDoubler = PostPlayerSettings.playerData["user"]["boughtCoinDoubler"].ToString();
+    boughtExpDoubler = PostPlayerSettings.playerData["user"]["boughtExpDoubler"].ToString();
+        expPerLike = int.Parse(PostPlayerSettings.playerData["user"]["expPerLike"].ToString());
+        expPerDislike = int.Parse(PostPlayerSettings.playerData["user"]["expPerDislike"].ToString());
+        coinPerLike = int.Parse(PostPlayerSettings.playerData["user"]["coinsPerLike"].ToString());
+        coinPerDislike = int.Parse(PostPlayerSettings.playerData["user"]["coinsPerDislike"].ToString());
+        playerCreatedAt = null; //PostPlayerSettings.playerData["created_at"].ToString();
     playerUpdatedAt = null; // PostPlayerSettings.playerData["updated_at"].ToString();
                             //Debug.Log(playerId + " " + playerName + " " + playerEmail + " " + playerType + " " + playerLevel + " " + playerRank + " " + playerXP + " " + playerCoins + " " + coinMultiplier + " " + playerApoints + " " + playerCreatedAt + " " + playerUpdatedAt);
 
